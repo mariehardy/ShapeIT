@@ -10,7 +10,7 @@ document.getElementById("root").innerText =
   "The React app has not connected to the backend yet.";
 
 axios
-  .get("/checkuser")
+  .get("/api/checkuser")
   .then((res) => {
     ReactDOM.render(
       <Router>

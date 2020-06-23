@@ -31,7 +31,6 @@ class App extends Component {
         <Switch>
           <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>
           <Route exact path='/' render={() => <Login updateUser={this.updateTheUser}/>}/>
-          {/* <Route exact path="/projects" component={ProjectList}/> */}
           <Route exact path="/projects" render={() => {
             if (this.state.loggedInUser) {
               return <ProjectList />
@@ -41,7 +40,7 @@ class App extends Component {
             }
           }} />
           <Route exact path="/projects/:id" component={ProjectDetails} />
-          {/* <Route exact path="/tasks/:taskId" component={TaskDetails} /> */}
+          <Route exact path="/tasks/:taskId" component={TaskDetails} />
         </Switch>
       </div>
     );
