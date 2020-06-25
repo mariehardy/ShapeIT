@@ -36,38 +36,6 @@ router.get('/day/:id', (req, res, next) => {
       res.json(error);
     });
 });
- 
-// PUT route => to update a specific project
-// router.put('/projects/:id', (req, res, next) => {
-//   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-//     res.status(400).json({ message: 'Specified id is not valid' });
-//     return;
-//   }
- 
-//   Project.findByIdAndUpdate(req.params.id, req.body)
-//     .then(() => {
-//       res.json({ message: `Project with ${req.params.id} is updated successfully.` });
-//     })
-//     .catch(error => {
-//       res.json(error);
-//     });
-// });
- 
-// DELETE route => to delete a specific project
-// router.delete('/day/:id', (req, res, next) => {
-//   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-//     res.status(400).json({ message: 'Specified id is not valid' });
-//     return;
-//   }
- 
-//   Project.findByIdAndRemove(req.params.id)
-//     .then(() => {
-//       res.json({ message: `Project with ${req.params.id} is removed successfully.` });
-//     })
-//     .catch(error => {
-//       res.json(error);
-//     });
-// });
 
 
 module.exports = router;

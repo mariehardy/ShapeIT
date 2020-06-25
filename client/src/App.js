@@ -33,7 +33,19 @@ class App extends Component {
         <Navbar userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
         <Switch>
           <Route exact path='/signup' render={() => <Signup updateUser={this.updateUser}></Signup>}/>
-          <Route exact path="/login" render={() => <Login updateUser={this.updateUser}></Login>} />
+          <Route exact path="/login" render={() => {
+            if (!this.state.loggedInUser) {
+              return <Login updateUser={this.updateUser}></Login>
+            } else {
+            // if the user is not logged in, redirects to `/`
+              return <Redirect to={{pathname: '/calendar'}}/> 
+            }
+          }} />
+          
+          
+          
+          {/* render={() => <Login updateUser={this.updateUser}></Login>} /> */}
+
           <Route exact path="/calendar" render={() => {
             if (this.state.loggedInUser) {
               return <Calendar />

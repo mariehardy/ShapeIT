@@ -9,18 +9,18 @@ class Calendar extends Component {
       this.state = { listOfProjects: [] };
   }
 
-  getAllProjects = () =>{
-    axios.get("/api/projects")
-    .then(responseFromApi => {
-      this.setState({
-        listOfProjects: responseFromApi.data
-      })
-    })
-  }
+  // getAllProjects = () =>{
+  //   axios.get("/api/projects")
+  //   .then(responseFromApi => {
+  //     this.setState({
+  //       listOfProjects: responseFromApi.data
+  //     })
+  //   })
+  // }
 
-  componentDidMount() {
-    this.getAllProjects();
-  }
+  // componentDidMount() {
+  //   this.getAllProjects();
+  // }
 
   render(){
     return(
