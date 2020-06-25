@@ -23,7 +23,7 @@ require('./configs/passport');
 // IF YOU STILL DIDN'T, GO TO 'configs/passport.js' AND UN-COMMENT OUT THE WHOLE FILE
 
 mongoose
-  .connect('mongodb://localhost/project-management-server', {useNewUrlParser: true})
+  .connect('mongodb://localhost/shapeit-server', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -92,8 +92,8 @@ app.use('/', index);
 const authRoutes = require('./routes/auth-routes');
 app.use('/api', authRoutes);
 
-app.use('/api', require('./routes/project-routes'));
-app.use('/api', require('./routes/task-routes'));
+app.use('/api', require('./routes/day-routes'));
+app.use('/api', require('./routes/exercise-routes'));
 
 
 

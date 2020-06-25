@@ -18,7 +18,7 @@ const navbar = (props) => {
         <ul>
           <li>Welcome, {props.userInSession.email}</li>
           <li>
-            <Link to='/projects' style={{ textDecoration: 'none' }}>Projects</Link>
+            <Link to='/calendar' style={{ textDecoration: 'none' }}>Calendar</Link>
           </li>
           <li>
             <Link to='/'>

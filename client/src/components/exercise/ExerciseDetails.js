@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-class TaskDetails extends Component {
+class ExerciseDetails extends Component {
   constructor(props){
     super(props);
     this.state = {};
@@ -14,10 +14,10 @@ class TaskDetails extends Component {
 
   getTheTask = () => {
     const { params } = this.props.match;
-    axios.get(`/api/tasks/${params.taskId}`)
+    axios.get(`/api/exercises/${params.exerciseId}`)
     .then( responseFromApi =>{
-      const theTask = responseFromApi.data;
-      this.setState(theTask);
+      const theExercise = responseFromApi.data;
+      this.setState(theExercise);
     })
     .catch((err)=>{
         console.log(err)
@@ -27,11 +27,11 @@ class TaskDetails extends Component {
   render(){
     return(
       <div>
-        <h1>{this.state.title}</h1>
-        <p>{this.state.description}</p>
+        <h1>{this.state.name}</h1>
+        <p>{this.state.type}</p>
       </div>
     )
   }
 }
 
-export default TaskDetails;
+export default ExerciseDetails;
