@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const Exercise = require('../models/task-model');
-const Day = require('../models/project-model');
+const Exercise = require('../models/exercise-model');
+const Day = require('../models/day-model');
  
 const router = express.Router();
  
