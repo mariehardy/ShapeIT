@@ -6,17 +6,18 @@ import { Link } from 'react-router-dom';
 class Login extends Component {
   constructor(props){
     super(props);
-    this.state = { username: '', password: '' };
+    this.state = { email: '', password: '' };
   }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    const username = this.state.username;
+    const email = this.state.email;
     const password = this.state.password;
-    login(username, password)
+
+    login(email, password)
     .then( response => {
-        this.setState({ username: "", password: "" });
-        this.props.updateUser(response)
+        this.props.updateUser(response.data)
+        this.setState({ email: "", password: "" });
     })
     .catch( error => console.log(error) )
   }
@@ -30,10 +31,10 @@ class Login extends Component {
     return(
       <div>
         <form onSubmit={this.handleFormSubmit}>
-          <label>Username:</label>
-          <input type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
+          <label>email:</label>
+          <input type="text" name="email" value={this.state.email} onChange={ e => this.handleChange(e)}/>
           <label>Password:</label>
-          <textarea name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
+          <input type="text" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
           
           <input type="submit" value="Login" />
         </form>

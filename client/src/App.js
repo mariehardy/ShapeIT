@@ -15,10 +15,13 @@ class App extends Component {
 
   constructor(props){
     super(props)
-    this.state = { loggedInUser: this.props.user };
+    this.state = { 
+      loggedInUser: this.props.user 
+    };
+    console.log('this.state.loggedInUser ===== ', this.state.loggedInUser)
   }
 
-  updateTheUser = (userObj) => {
+  updateUser = (userObj) => {
     this.setState({
       loggedInUser: userObj
     })
@@ -27,10 +30,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar userInSession={this.state.loggedInUser} updateUser={this.updateTheUser} />
+        <Navbar userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
         <Switch>
-          <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>
-          <Route exact path='/' render={() => <Login updateUser={this.updateTheUser}/>}/>
+          <Route exact path='/signup' render={() => <Signup updateUser={this.updateUser}></Signup>}/>
+          <Route exact path="/login" render={() => <Login updateUser={this.updateUser}></Login>} />
           <Route exact path="/projects" render={() => {
             if (this.state.loggedInUser) {
               return <ProjectList />
@@ -39,8 +42,8 @@ class App extends Component {
               return <Redirect to={{pathname: '/'}}/> 
             }
           }} />
-          <Route exact path="/projects/:id" component={ProjectDetails} />
-          <Route exact path="/tasks/:taskId" component={TaskDetails} />
+          {/* <Route exact path="/projects/:id" component={ProjectDetails} />
+          <Route exact path="/tasks/:taskId" component={TaskDetails} /> */}
         </Switch>
       </div>
     );

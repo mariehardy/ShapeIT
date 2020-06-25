@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const User = require('./user-model');
+const Task = require('./task-model');
 
  
 const projectSchema = new Schema({

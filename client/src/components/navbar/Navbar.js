@@ -16,7 +16,7 @@ const navbar = (props) => {
     return (
       <nav className="nav-style">
         <ul>
-          <li>Welcome, {props.userInSession.username}</li>
+          <li>Welcome, {props.userInSession.email}</li>
           <li>
             <Link to='/projects' style={{ textDecoration: 'none' }}>Projects</Link>
           </li>
@@ -33,7 +33,7 @@ const navbar = (props) => {
       <div>
         <nav className="nav-style">
           <ul>
-            <li><Link to='/' style={{ textDecoration: 'none' }}>Login</Link></li>
+            <li><Link to='/login' style={{ textDecoration: 'none' }}>Login</Link></li>
             <li><Link to='/signup' style={{ textDecoration: 'none' }}>Signup</Link></li>
           </ul>
         </nav>
