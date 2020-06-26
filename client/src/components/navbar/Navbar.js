@@ -12,7 +12,18 @@ const logoutUser = (props) =>{
 
 const navbar = (props) => {
 
-  if (props.userInSession) {
+  if (!props.userInSession) { // when user is logged OUT
+    return (
+      <div>
+        <nav className="nav-style">
+          <ul>
+            <li><Link to='/login' style={{ textDecoration: 'none' }}>Login</Link></li>
+            <li><Link to='/signup' style={{ textDecoration: 'none' }}>Signup</Link></li>
+          </ul>
+        </nav>
+      </div>
+    )
+  } else { // when user is logged IN
     return (
       <nav className="nav-style">
         <ul>
@@ -28,17 +39,8 @@ const navbar = (props) => {
         </ul>
       </nav>
     )
-  } else {
-    return (
-      <div>
-        <nav className="nav-style">
-          <ul>
-            <li><Link to='/login' style={{ textDecoration: 'none' }}>Login</Link></li>
-            <li><Link to='/signup' style={{ textDecoration: 'none' }}>Signup</Link></li>
-          </ul>
-        </nav>
-      </div>
-    )
+
+    
   }
 }
 
