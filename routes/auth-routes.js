@@ -90,6 +90,7 @@ authRoutes.post('/login', (req, res, next) => {
 
             // We are now logged in (that's why we can also send req.user)
             res.status(200).json(theUser);
+            console.log('authRoutes/login theUser is ======', theUser)
         });
     })(req, res, next);
 });
@@ -103,6 +104,7 @@ authRoutes.get("/checkuser", (req, res, next) => {
       res.json({ userDoc: req.user });
     } else {
       res.json({ userDoc: null });
+      console.log('authRoutes/checkuser ===== User is not logged in')
     }
   });
 

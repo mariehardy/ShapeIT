@@ -11,10 +11,11 @@ document.getElementById("root").innerText =
 
 axios
   .get("/api/checkuser")
-  .then((res) => {
+  .then((response) => {
+    console.log('on refresh response.data.userDoc is =====', response.data.userDoc)
     ReactDOM.render(
       <Router>
-        <App user={res.data} />
+        <App user={response.data.userDoc} />
       </Router>,
       document.getElementById("root")
     );
@@ -23,12 +24,6 @@ axios
     alert("backend not running or /checkuser route not defined !");
   });
 
-// ReactDOM.render(
-//   <Router>
-//     <App />
-//     </Router>,
-//   document.getElementById('root')
-// );
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
+import Signup from './components/auth/Signup';
 import Navbar from './components/navbar/Navbar';
 import Calendar from './components/calendar/Calendar';
 import DayDetails from './components/day/DayDetails';
@@ -16,15 +16,18 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = { 
-      loggedInUser: this.props.user 
+      loggedInUser: this.props.user
     };
     console.log('this.state.loggedInUser ===== ', this.state.loggedInUser)
+
   }
 
   updateUser = (userObj) => {
     this.setState({
       loggedInUser: userObj
     })
+    console.log('after updateUser: this.state.loggedInUser ===== ', this.state.loggedInUser)
+
   }
 
   render() {
@@ -32,26 +35,31 @@ class App extends Component {
       <div className="App">
         <Navbar userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
         <Switch>
-          <Route exact path='/signup' render={() => <Signup updateUser={this.updateUser}></Signup>}/>
-          <Route exact path="/login" render={() => {
-            if (!this.state.loggedInUser) {
-              return <Login updateUser={this.updateUser}></Login>
+          <Route exact path='/signup' render={() => {
+          if (!this.state.loggedInUser) {
+            // if user is NOT logged in
+              return <Signup updateUser={this.updateUser}></Signup>
             } else {
-            // if the user is not logged in, redirects to `/`
+            // once user IS logged in, redirect to `/calendar`
               return <Redirect to={{pathname: '/calendar'}}/> 
             }
           }} />
-          
-          
-          
-          {/* render={() => <Login updateUser={this.updateUser}></Login>} /> */}
-
-          <Route exact path="/calendar" render={() => {
-            if (this.state.loggedInUser) {
-              return <Calendar />
+          <Route exact path="/login" render={() => {
+            if (!this.state.loggedInUser) {
+            // if user is NOT logged in
+              return <Login updateUser={this.updateUser}></Login>
             } else {
-            // if the user is not logged in, redirects to `/`
+            // once user IS logged in, redirect to `/calendar`
+              return <Redirect to={{pathname: '/calendar'}}/> 
+            }
+          }} />
+          <Route exact path="/calendar" render={() => {
+            if (!this.state.loggedInUser) {
+              // if user is NOT logged in, redirect to '/'
               return <Redirect to={{pathname: '/'}}/> 
+            } else {
+            // if user IS logged in, show calendar
+            return <Calendar />
             }
           }} />
           <Route exact path="/day/:id" component={DayDetails} />
