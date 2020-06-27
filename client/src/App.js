@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
+import GoogleBtn from './components/auth/GoogleBtn';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import Navbar from './components/navbar/Navbar';
 import Calendar from './components/calendar/Calendar';
 import DayDetails from './components/day/DayDetails';
 import ExerciseDetails from './components/exercise/ExerciseDetails';
-
 
 
 class App extends Component {
@@ -19,7 +19,6 @@ class App extends Component {
       loggedInUser: this.props.user
     };
     console.log('this.state.loggedInUser ===== ', this.state.loggedInUser)
-
   }
 
   updateUser = (userObj) => {
@@ -27,13 +26,16 @@ class App extends Component {
       loggedInUser: userObj
     })
     console.log('after updateUser: this.state.loggedInUser ===== ', this.state.loggedInUser)
-
   }
+
+
 
   render() {
     return (
       <div className="App">
         <Navbar userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
+        <GoogleBtn/>
+
         <Switch>
           <Route exact path='/signup' render={() => {
           if (!this.state.loggedInUser) {
