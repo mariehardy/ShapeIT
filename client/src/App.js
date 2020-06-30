@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
+import Profile from './components/auth/Profile'
 import Navbar from './components/navbar/Navbar';
 import Calendar from './components/calendar/Calendar';
 import DayDetails from './components/day/DayDetails';
@@ -34,6 +35,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
+
         <Switch>
           <Route exact path='/signup' render={() => {
           if (!this.state.loggedInUser) {
@@ -51,6 +53,15 @@ class App extends Component {
             } else {
             // once user IS logged in, redirect to `/calendar`
               return <Redirect to={{pathname: '/calendar'}}/> 
+            }
+          }} />
+          <Route exact path="/profile" render={() => {
+            if (!this.state.loggedInUser) {
+              // if user is NOT logged in, redirect to '/'
+              return <Redirect to={{pathname: '/'}}/> 
+            } else {
+            // if user IS logged in, show calendar
+            return <Profile loggedInUser = {this.state.loggedInUser} />
             }
           }} />
           <Route exact path="/calendar" render={() => {
