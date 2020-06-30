@@ -5,7 +5,7 @@ const Exercise = require('./exercise-model');
 
  
 const daySchema = new Schema({
-  name: 0,
+  name: Number,
   exercises: [{ type: Schema.Types.ObjectId, ref: 'Exercise' }]
 });
  
