@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import GoogleBtn from './components/auth/GoogleBtn';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import Navbar from './components/navbar/Navbar';
@@ -31,11 +30,10 @@ class App extends Component {
 
 
   render() {
+
     return (
       <div className="App">
         <Navbar userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
-        <GoogleBtn/>
-
         <Switch>
           <Route exact path='/signup' render={() => {
           if (!this.state.loggedInUser) {
@@ -64,7 +62,7 @@ class App extends Component {
             return <Calendar />
             }
           }} />
-          <Route exact path="/day/:id" component={DayDetails} />
+          {/* <Route exact path="/day/:id" component={DayDetails} /> */}
           <Route exact path="/exercise/:exerciseId" component={ExerciseDetails} />
         </Switch>
       </div>
