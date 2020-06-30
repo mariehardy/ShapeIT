@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import GoogleBtn from './components/auth/GoogleBtn';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import Profile from './components/auth/Profile'
@@ -32,13 +31,10 @@ class App extends Component {
 
 
   render() {
+
     return (
       <div className="App">
         <Navbar userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
-        <h1>Hello, the user is {this.state.loggedInUser.email}</h1>
-
-        
-        
 
         <Switch>
           <Route exact path='/signup' render={() => {
@@ -77,7 +73,7 @@ class App extends Component {
             return <Calendar />
             }
           }} />
-          <Route exact path="/day/:id" component={DayDetails} />
+          {/* <Route exact path="/day/:id" component={DayDetails} /> */}
           <Route exact path="/exercise/:exerciseId" component={ExerciseDetails} />
         </Switch>
       </div>
