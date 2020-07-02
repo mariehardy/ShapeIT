@@ -100,6 +100,7 @@ authRoutes.post('/login', (req, res, next) => {
 // (a) if we are logged-in
 // (b) the details of the logged-in user (if any)
 authRoutes.get("/checkuser", (req, res, next) => {
+    console.log(req.user)
     if (req.user) {
       res.json({ userDoc: req.user });
     } else {

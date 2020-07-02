@@ -13,7 +13,7 @@ const userSchema = new Schema({
   // Personal Data
   firstName: {
     type: String,
-    required: true,
+    // required: true,
   },
   lastName: String,
   birthday: Number, //new Date(year, month, day), ??

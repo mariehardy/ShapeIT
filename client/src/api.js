@@ -14,3 +14,8 @@ export const logout = () => {
   return axios.post('/api/logout', {})
     .then(response => response.data)
 }
+
+export const profileEdit = (email,instagramID,firstName,lastName,birthday,country,city,weight,height) => {
+  return axios.put('/api/profile-edit', {email,instagramID,firstName,lastName,birthday,country,city,weight,height})
+    .then(response => response.data)
+}

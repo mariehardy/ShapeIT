@@ -18,6 +18,7 @@ const cors         = require('cors');
 const session       = require('express-session');
 const passport      = require('passport');
 
+
 require('./configs/passport');
 
 // IF YOU STILL DIDN'T, GO TO 'configs/passport.js' AND UN-COMMENT OUT THE WHOLE FILE
@@ -91,6 +92,9 @@ app.use('/', index);
 
 const authRoutes = require('./routes/auth-routes');
 app.use('/api', authRoutes);
+
+const profileRoutes = require('./routes/profile-routes')
+app.use('/api', profileRoutes);
 
 app.use('/api', require('./routes/day-routes'));
 app.use('/api', require('./routes/exercise-routes'));
