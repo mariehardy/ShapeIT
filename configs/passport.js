@@ -39,3 +39,40 @@ passport.use(new LocalStrategy({usernameField: 'email'}, (email, password, next)
 }));
 
 
+// GOOGLE Strategy
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
+
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: "/google/callback",
+    },
+    (accessToken, refreshToken, profile, done) => {
+      // to see the structure of the data in received response:
+      console.log("Google account details ========== ", profile);
+
+      // User.findOne({ googleID: profile.id })
+      User.findOne({ email: profile.emails[0].value })
+        .then((user) => {
+          if (user) {
+            done(null, user);
+            return;
+          }
+
+          User.create({ 
+            googleID: profile.id,
+            firstName: profile.displayName,
+            email: profile.emails[0].value,
+            verifiedEmail: profile.emails[0].verified,
+          })
+            .then((newUser) => {
+              done(null, newUser);
+            })
+            .catch((err) => done(err)); // closes User.create()
+        })
+        .catch((err) => done(err)); // closes User.findOne()
+    }
+  )
+);
