@@ -3,7 +3,7 @@ const Day = require('../models/day-model');
 const Exercise = require('../models/exercise-model');
 
 mongoose
-  .connect('mongodb://localhost', {useNewUrlParser: true})
+  .connect('mongodb://localhost/shapeit-server', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -12,38 +12,31 @@ mongoose
   });
 
 const daysSeed = [
-  {
+  new Day({
     name: 1,
-    exercises: [{ type: Schema.Types.ObjectId, _id: 1 }]
-  },
-  {
+    exercises: ['5efdcb10ffaa210af107850d', '5efdcb10ffaa210af107850e']
+  }),
+  new Day({
     name: 2,
-    exercises: [{ type: Schema.Types.ObjectId, ref: 'Exercise' }]
-  },
-  {
+    // exercises: [{ type: Schema.Types.ObjectId, ref: 'Exercise' }]
+  }),
+  new Day({
     name: 3,
-    exercises: [{ type: Schema.Types.ObjectId, ref: 'Exercise' }]
-  }
+    // exercises: [{ type: Schema.Types.ObjectId, ref: 'Exercise' }]
+  }),
 ];
 
 
-
-// Exercise.insertMany(exercisesSeed).then(() => { 
-//   Day.insertMany(daysSeed).then(() => {
-//     mongoose.connection.close();
-//   })
-// });
 
 
 
 Day.deleteMany()
   .then(() => {
     console.log('All days have been deleted')
-    return 
-      Day.create(dayDocs)
+    return Day.create(daysSeed)
   })
-  .then(() => {
-    console.log(`${dayDocs.length} days created`)
+  .then((response) => {
+    console.log(`${response.length} days created`)
     mongoose.disconnect()
   })
   .catch(err => {
