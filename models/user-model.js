@@ -10,6 +10,10 @@ const userSchema = new Schema({
   password: String,
   instagramID: String,
   googleID: String,
+  verifiedEmail: {
+    type: Boolean,
+    default: false,
+  },
   // Personal Data
   firstName: {
     type: String,

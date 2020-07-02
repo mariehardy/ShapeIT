@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { logout } from '../../api'
+import { logout } from '../../services/api.js'
+import { googlelogin } from '../../services/api.js'
 
 
 
@@ -20,6 +21,7 @@ const navbar = (props) => {
         <nav className="nav-style">
           <ul>
             <li><Link to='/login' style={{ textDecoration: 'none' }}>Login</Link></li>
+            <li><Link to="/google">Login with Google</Link></li>
             <li><Link to='/signup' style={{ textDecoration: 'none' }}>Signup</Link></li>
           </ul>
         </nav>
