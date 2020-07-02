@@ -72,7 +72,7 @@ class App extends Component {
               return <Redirect to={{pathname: '/'}}/> 
             } else {
             // if user IS logged in, show calendar
-            return <ProfileEdit/>
+            return <ProfileEdit updateUser={this.updateUser} loggedInUser={this.state.loggedInUser}/>
             }
           }} />
           

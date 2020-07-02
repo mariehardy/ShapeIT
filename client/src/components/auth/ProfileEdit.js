@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class EditProfile extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-        // email: this.props.theProject.email,
-        // firstName: this.props.theProject.firstName,
-        // lastName: this.props.theProject.lastName
-    }
+  state = {
+    email: this.props.loggedInUser.email,
+    firstName: this.props.loggedInUser.firstName,
+    lastName: this.props.loggedInUser.lastName,
+    redirect: false
+    // email: this.props.theProject.email,
+    // firstName: this.props.theProject.firstName,
+    // lastName: this.props.theProject.lastName
+
   }
+
 
 
   handleFormSubmit = (event) => {
@@ -20,38 +24,44 @@ class EditProfile extends Component {
     const lastName = this.state.lastName;
 
     axios.put(`/api/profile-edit`, { email, firstName, lastName })
-    .then(response => response.data)
-    .catch( error => console.log(error) )
+      .then(response => {
+        //response.data
+        this.props.updateUser(response.data)
+        this.setState({ redirect: true })
+        
+      })
+      .catch(error => console.log(error))
   }
 
-  handleChangeEmail = (event) => {  
+  handleChangeEmail = (event) => {
     this.setState({
-      email:event.target.value
+      email: event.target.value
     })
   }
 
-  handleChangeFirstName = (event) => {  
+  handleChangeFirstName = (event) => {
     this.setState({
-      firstName:event.target.value
+      firstName: event.target.value
     })
   }
 
-  handleChangeLastName = (event) => {  
+  handleChangeLastName = (event) => {
     this.setState({
-      lastName:event.target.value
+      lastName: event.target.value
     })
   }
 
-  render(){
+  render() {
     return (
       <div>
+        { this.state.redirect ? <Redirect to="/profile"></Redirect> : null}
         <hr />
         <h3>Edit form</h3>
         <form onSubmit={this.handleFormSubmit}>
           <label>Email:</label>
-          <input type="text" name="email" value={this.state.email} onChange={e => this.handleChangeEmail(e)}/>
+          <input type="text" name="email" value={this.state.email} onChange={e => this.handleChangeEmail(e)} />
           <label>First Name:</label>
-          <input name="firtsName" value={this.state.firstName} onChange={e => this.handleChangeFirstName(e)} />
+          <input name="firstName" value={this.state.firstName} onChange={e => this.handleChangeFirstName(e)} />
           <label>Last Name:</label>
           <input name="lastName" value={this.state.lastName} onChange={e => this.handleChangeLastName(e)} />
 

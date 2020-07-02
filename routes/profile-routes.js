@@ -38,12 +38,12 @@ router.put('/profile-edit', (req, res, next)=>{
       weight,
       height
       
-  })
+  }, { new: true})
     // .then(() => {
     //   res.json({ message: `Project with ${req.user._id} is updated successfully.` });
     // })
-    .then((res) => {
-          res.redirect('/profile')
+    .then((user) => {
+          res.json(user)
       })
     .catch(err => {
       res.json(err);
