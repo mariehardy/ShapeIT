@@ -5,10 +5,12 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import Profile from './components/auth/Profile'
+import ProfileEdit from './components/auth/ProfileEdit';
 import Navbar from './components/navbar/Navbar';
 import Calendar from './components/calendar/Calendar';
 import DayDetails from './components/day/DayDetails';
 import ExerciseDetails from './components/exercise/ExerciseDetails';
+import { profileEdit } from './api';
 
 
 class App extends Component {
@@ -64,6 +66,16 @@ class App extends Component {
             return <Profile loggedInUser = {this.state.loggedInUser} />
             }
           }} />
+          <Route exact path="/profile-edit" render={() => {
+            if (!this.state.loggedInUser) {
+              // if user is NOT logged in, redirect to '/'
+              return <Redirect to={{pathname: '/'}}/> 
+            } else {
+            // if user IS logged in, show calendar
+            return <ProfileEdit updateUser={this.updateUser} loggedInUser={this.state.loggedInUser}/>
+            }
+          }} />
+          
           <Route exact path="/calendar" render={() => {
             if (!this.state.loggedInUser) {
               // if user is NOT logged in, redirect to '/'
