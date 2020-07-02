@@ -6,7 +6,7 @@ const Exercise = require('./exercise-model');
  
 const daySchema = new Schema({
   name: Number,
-  exercises: [{ type: Schema.Types.ObjectId, ref: 'Exercise' }]
+  exercises: [{ type: String }]
 });
  
 const Day = mongoose.model('Day', daySchema);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { login } from '../../api'
+import { login } from '../../services/api.js'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 

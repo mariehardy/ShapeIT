@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { signup } from '../../api.js';
+import { signup } from '../../services/api.js';
 
 import { Link } from 'react-router-dom';
 
