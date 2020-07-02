@@ -18,11 +18,11 @@ const daysSeed = [
   }),
   new Day({
     name: 2,
-    // exercises: [{ type: Schema.Types.ObjectId, ref: 'Exercise' }]
+    // exercises: ['']
   }),
   new Day({
     name: 3,
-    // exercises: [{ type: Schema.Types.ObjectId, ref: 'Exercise' }]
+    // exercises: ['']
   }),
 ];
 
