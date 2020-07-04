@@ -5,7 +5,13 @@ import { Link, Redirect } from "react-router-dom";
 
 // JUST AN EXPERIMENT WITH SEEDS.JS 
 // IF NOT WORKING, DELETE, and UNCOMMENT ALL THAT IS COMMENTED OUT BELOW
-function DayDetails(props) {
+const DayDetails = (props) => {
+
+console.log('props are ===== ' + props.match);
+
+let dayDetails = countriesData.find((el) => el.videoUrl === props.match.params.id)
+console.log('dayDetails is === ' + dayDetails)
+
   return (
     <div>
       {props.name}
