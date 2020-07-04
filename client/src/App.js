@@ -10,7 +10,7 @@ import Navbar from './components/navbar/Navbar';
 import Calendar from './components/calendar/Calendar';
 import DayDetails from './components/day/DayDetails';
 import ExerciseDetails from './components/exercise/ExerciseDetails';
-import { profileEdit } from './api';
+import { profileEdit } from './services/api';
 
 
 class App extends Component {
