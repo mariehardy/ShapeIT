@@ -1,42 +1,44 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-
+import React, { Component } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 class Plan extends Component {
-  constructor(){
-      super();
-      this.state = { listOfdays: [] };
+  constructor() {
+    super();
+    this.state = { listOfDays: [] };
   }
 
-  getAllDays = () =>{
-    axios.get("/api/day")
-    .then(responseFromApi => {
+  getAllDays = () => {
+    axios.get("/api/day").then((responseFromApi) => {
       this.setState({
-        listOfDays: responseFromApi.data
-      })
-    })
-  }
+        listOfDays: responseFromApi.data,
+      });
+      console.log("listOfDays ====== ", this.state.listOfDays);
+    });
+  };
 
   componentDidMount() {
     this.getAllDays();
   }
 
-  render(){
+  render() {
     return (
-    <div>
-    HERE IS THE PLAN - LIST OF DAYS
+      <div>
+        HERE IS THE PLAN - LIST OF DAYS
         <ul>
-        {this.state.listOfdays.map((el) => {
-    return (
-      <li key={el._id}>
-        <h3><Link to={"/day" + el._id}>{el.name}</Link></h3>
-      </li>
-    )
-  })}
+          {this.state.listOfDays.map((el) => {
+            console.log("el ========= ", el);
+            return (
+              <li key={el._id}>
+                <Link to={"/day/" + el._id} listOfDays={this.state.listOfDays}>
+                  {el.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
-    </div>
-  )
+      </div>
+    );
   }
 }
 
