@@ -15,20 +15,11 @@ const userSchema = new Schema({
     default: false,
   },
   // Personal Data
-  firstName: {
-    type: String,
-    // required: true,
-  },
+  firstName: String,
   lastName: String,
   birthday: Number, //new Date(year, month, day), ??
-  country: {
-    type: String,
-    enum: ['Canada', 'Germany', 'Mexico']
-  },
-  city: {
-    type: String,
-    enum: ['Montreal', 'Berlin', 'Mexico City']
-  },
+  country: String,
+  city: String,
   weight: Number, //kg
   height: Number, //cm
   avatarUrl: String,

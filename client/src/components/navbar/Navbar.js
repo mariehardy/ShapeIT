@@ -35,7 +35,10 @@ const navbar = (props) => {
         <ul>
           <li>Welcome, {props.userInSession.email}</li>
           <li>
-            <Link to='/calendar'>Calendar</Link>
+            <Link to='/profile'>Profile</Link>
+            <Link to='/plan'>Plan</Link>
+            <Link to='/nutrition'>Nutrition</Link>
+            <Link to='/donate'>Donate</Link>
           </li>
           <li>
             <Link to='/'>
