@@ -17,7 +17,7 @@ const userSchema = new Schema({
   // Personal Data
   firstName: String,
   lastName: String,
-  birthday: Number, //new Date(year, month, day), ??
+  birthday: Date, //new Date(year, month, day), ??
   country: String,
   city: String,
   weight: Number, //kg

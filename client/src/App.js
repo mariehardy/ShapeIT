@@ -84,7 +84,7 @@ class App extends Component {
               return <Redirect to={{pathname: '/'}}/> 
             } else {
             // if user IS logged in, show route
-            return <Profile loggedInUser = {this.state.loggedInUser} />
+            return <Profile updateUser={this.updateUser} loggedInUser = {this.state.loggedInUser} />
             }
           }} />
 
