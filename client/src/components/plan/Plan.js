@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
-class Calendar extends Component {
+class Plan extends Component {
   constructor(){
       super();
       this.state = { listOfdays: [] };
@@ -25,7 +25,7 @@ class Calendar extends Component {
   render(){
     return (
     <div>
-    HERE IS THE CALENDAR - LIST OF DAYS
+    HERE IS THE PLAN - LIST OF DAYS
         <ul>
         {this.state.listOfdays.map((el) => {
     return (
@@ -40,4 +40,4 @@ class Calendar extends Component {
   }
 }
 
-export default Calendar;
+export default Plan;
