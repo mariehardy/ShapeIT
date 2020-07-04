@@ -11,8 +11,6 @@ import Navbar from './components/navbar/Navbar';
 import Plan from './components/plan/Plan';
 import DayDetails from './components/day/DayDetails';
 import ExerciseDetails from './components/exercise/ExerciseDetails';
-<<<<<<< HEAD
-=======
 import ExerciseShare from './components/exercise/ExerciseShare';
 import Nutrition from './components/nutrition/Nutrition';
 import NutritionBasics from './components/nutrition/NutritionBascis';
@@ -21,7 +19,6 @@ import NutritionHowToEat from './components/nutrition/NutritionHowToEat';
 import Donate from './components/donate/Donate';
 
 
->>>>>>> 12b63430a48564dea3d842b318159281795944c7
 import { profileEdit } from './services/api';
 
 
@@ -88,7 +85,7 @@ class App extends Component {
               return <Redirect to={{pathname: '/'}}/> 
             } else {
             // if user IS logged in, show route
-            return <Profile loggedInUser = {this.state.loggedInUser} />
+            return <Profile updateUser={this.updateUser} loggedInUser = {this.state.loggedInUser} />
             }
           }} />
 
