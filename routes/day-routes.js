@@ -9,7 +9,6 @@ const Exercise = require('../models/exercise-model'); // <== !!!
 // GET route => to get all the projects
 router.get('/day', (req, res, next) => {
   Day.find()
-    .populate('exercises')  // puts the whole task array in the project instead of only the task id
     .then(allTheDays => {
       res.json(allTheDays);
     })

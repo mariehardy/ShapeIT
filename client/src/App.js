@@ -18,7 +18,6 @@ import NutritionHealthyMeal from './components/nutrition/NutritionHealthyMeal';
 import NutritionHowToEat from './components/nutrition/NutritionHowToEat';
 import Donate from './components/donate/Donate';
 
-
 import { profileEdit } from './services/api';
 
 
