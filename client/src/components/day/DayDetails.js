@@ -5,10 +5,20 @@ import { Link, Redirect } from "react-router-dom";
 
 // JUST AN EXPERIMENT WITH SEEDS.JS 
 // IF NOT WORKING, DELETE, and UNCOMMENT ALL THAT IS COMMENTED OUT BELOW
-function DayDetails(props) {
+const DayDetails = (props) => {
+
+console.log('props are ===== ' + props.match);
+
+//state passed from Plan with list of all days
+let listOfDays = props.state.listOfdays
+
+let dayDetails = listOfDays.find((el) => el.videoUrl === props.match.params.id)
+console.log('dayDetails is === ' + dayDetails)
+
   return (
     <div>
-      {props.name}
+      props name; {props.name}
+      Name of dayDetails: {dayDetails.name}
     </div>
   );
 }
@@ -92,7 +102,7 @@ function DayDetails(props) {
 //       <div>
 //         <h1>{this.state.name}</h1>
 //         <p>{this.state.exercises}</p> {/* iterate through exercises array */}
-//         <Link to={'/calendar'}>Back to calendar</Link>
+//         <Link to={'/plan'}>Back to Plan</Link>
 //       </div>
 //     )
 //   }
