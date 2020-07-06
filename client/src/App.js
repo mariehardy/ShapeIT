@@ -108,7 +108,7 @@ class App extends Component {
             }
           }} />
 
-          <Route exact path="/day/:id" render={() => {
+          <Route path="/day/:id" render={() => {
             if (!this.state.loggedInUser) {
               // if user is NOT logged in, redirect to '/'
               return <Redirect to={{pathname: '/'}}/> 
@@ -118,7 +118,7 @@ class App extends Component {
             }
           }} />
           
-          <Route exact path="/exercise/:id" render={() => {
+          <Route path="/exercise/:id" render={() => {
             if (!this.state.loggedInUser) {
               // if user is NOT logged in, redirect to '/'
               return <Redirect to={{pathname: '/'}}/> 
@@ -128,7 +128,7 @@ class App extends Component {
             }
           }} />
 
-          <Route exact path="/exercise/:id/share" render={() => {
+          <Route path="/exercise/:id/share" render={() => {
             if (!this.state.loggedInUser) {
               // if user is NOT logged in, redirect to '/'
               return <Redirect to={{pathname: '/'}}/> 
