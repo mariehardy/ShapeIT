@@ -97,6 +97,7 @@ const profileRoutes = require('./routes/profile-routes')
 app.use('/api', profileRoutes);
 
 app.use('/api', require('./routes/day-routes'));
+// app.use('/api', require('./routes/donation-routes'));
 app.use('/api', require('./routes/exercise-routes'));
 
 

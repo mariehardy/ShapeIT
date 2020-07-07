@@ -12,7 +12,7 @@ class EditProfile extends Component {
     weight: this.props.loggedInUser.weight,
     height: this.props.loggedInUser.height,
     instagramID: this.props.loggedInUser.instagramID,
-    avatarUrl: "",
+    avatarUrl: this.props.loggedInUser.avatarUrl,
     redirect: false
     // email: this.props.theProject.email,
     // firstName: this.props.theProject.firstName,
