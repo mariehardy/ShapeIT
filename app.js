@@ -98,6 +98,7 @@ app.use('/api', profileRoutes);
 
 app.use('/api', require('./routes/plan-routes'));
 app.use('/api', require('./routes/day-routes'));
+// app.use('/api', require('./routes/donation-routes'));
 app.use('/api', require('./routes/exercise-routes'));
 
 
