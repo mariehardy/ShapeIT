@@ -7,30 +7,36 @@ const Exercise = require('../models/exercise-model'); // <== !!!
  
  
 // GET route => to get all the projects
-router.get('/day', (req, res, next) => {
-  Day.find()
-    .then(allTheDays => {
-      res.json(allTheDays);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-});
+// router.get('/plan', (req, res, next) => {
+//   Day.find()
+//     .then(allTheDays => {
+//       res.json(allTheDays);
+//     })
+//     .catch(err => {
+//       res.json(err);
+//     });
+// });
 
 // GET route => to get a specific day/detailed view
 router.get('/day/:id', (req, res, next) => {
-  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-    res.status(400).json({ message: 'Specified id is not valid' });
-    return;
-  }
+  // ***** IS THIS IMPORTANT???******
+  // if (!mongoose.Types.ObjectId.isValid(req.params.id)) { // BUT HERE I WANT ***NAME*** AS :ID...
+  //   res.status(400).json({ message: 'Specified id is not valid' });
+  //   return;
+  // }
  
   // Our days have array of exercises' ids and
-  // we can use .populate() method to get the whole exercise objects
-  Day.findById(req.params.id)
-    .populate('exercises')
+  // we can use .populate() method to get the whole exercise objects  
+  Day.findOne({name: req.params.id})
+    // Populate only works when populating an ID
+    // .populate('exercises')
     .then(day => {
-      res.status(200).json(day);
+      Exercise.find({ videoUrl: { $in: day.exercises }})
+      .then(response => {
+        res.json(response)
+      })
     })
+
     .catch(error => {
       res.json(error);
     });

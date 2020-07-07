@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const exerciseSchema = new Schema({
   name: String,
   type: String,
-  reps: Number,
-  secs: Number,
+  description: String,
+  repSec: String,
   thumbnail: String,
   videoUrl: String
 });
