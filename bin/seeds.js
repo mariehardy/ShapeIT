@@ -138,16 +138,16 @@ const exercisesSeed = [
   new Exercise({
     name: 'Fantastic Headstand',
     type: 'balance',
-    reps: 10,
-    secs: 0,
+    description: 'Blockchain encompasses wide-ranging disciplines including economics, computer science, law, finance, and mathematics.',
+    repSec: '10 reps',
     thumbnail: 'https://cdn.shopify.com/s/files/1/1195/1556/products/Frida-white-womens-cycling-jersey_1296x.jpg?v=1552015120',
     videoUrl: 'https://youtu.be/HrDQRFfRMV4'
   }),
   new Exercise({
     name: 'Old-school Push-ups',
-    type: 'endurance',
-    reps: 300,
-    secs: 0,
+    type: 'cardio',
+    description: 'With the wealth of resources out there, it can often be overwhelming to figure out where to begin.',
+    repSec: '20 sec',
     thumbnail: 'http://upl.stack.com/wp-content/uploads/2012/10/Flex_o001_2_-e1350409352620.jpg',
     videoUrl: 'https://www.youtube.com/watch?v=lnR_kb5Wjf8'
   }),

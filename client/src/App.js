@@ -108,23 +108,23 @@ class App extends Component {
             }
           }} />
 
-          <Route exact path="/day/:id" render={() => {
+          <Route exact path="/day/:id" render={(props) => {
             if (!this.state.loggedInUser) {
               // if user is NOT logged in, redirect to '/'
               return <Redirect to={{pathname: '/'}}/> 
             } else {
             // if user IS logged in, show route
-            return <DayDetails updateUser={this.updateUser} loggedInUser={this.state.loggedInUser}  />
+            return <DayDetails updateUser={this.updateUser} loggedInUser={this.state.loggedInUser} {...props} />
             }
           }} />
           
-          <Route exact path="/exercise/:id" render={() => {
+          <Route exact path="/exercise/:id" render={(props) => {
             if (!this.state.loggedInUser) {
               // if user is NOT logged in, redirect to '/'
               return <Redirect to={{pathname: '/'}}/> 
             } else {
             // if user IS logged in, show route
-            return <ExerciseDetails updateUser={this.updateUser} loggedInUser={this.state.loggedInUser}  />
+            return <ExerciseDetails updateUser={this.updateUser} loggedInUser={this.state.loggedInUser} {...props} />
             }
           }} />
 

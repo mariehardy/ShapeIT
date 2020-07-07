@@ -20,6 +20,17 @@ export const profileEdit = (email,instagramID,firstName,lastName,birthday,countr
     .then(response => response.data)
 }
 
+export const allDays = () => {
+  return axios.get("/api/plan")
+  .then(response => response.data)
+}
+
+export const singleDay = () => {
+  return axios.get('/day/:id')
+  .then(response => response.data)
+
+}
+
 // Cloudinary
 
 // export default {

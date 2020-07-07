@@ -96,6 +96,7 @@ app.use('/api', authRoutes);
 const profileRoutes = require('./routes/profile-routes')
 app.use('/api', profileRoutes);
 
+app.use('/api', require('./routes/plan-routes'));
 app.use('/api', require('./routes/day-routes'));
 app.use('/api', require('./routes/exercise-routes'));
 
