@@ -41,32 +41,61 @@ class DayDetails extends Component {
 
 
 
-  // {this.state.singleDay.exercises.map((el) => {
-  //   return (
-  //     <li key={el._id}>
-  //       {el.name}
-  //     </li>
-  //   );
-  // })}
-  // </ul>
+
+
+  
 
 
 
+// {this.state.singleDay.map((el) => {
+//   return (
+//     <div key={el._id}>
+//       {el.name}
+//     </div>
+//   );
+// })}  
 
+        // {/* <p>{JSON.stringify(this.props.match, null, 2)}</p> */}
+
+
+
+    //     <div>day's name : {this.state.singleDay[0].name}
+    //  // exercise's name : {this.state.singleDay.exercises}</div>
 
 
   render() {
     return (
       <div>
-        {/* <p>{JSON.stringify(this.props.match, null, 2)}</p> */}
         {
-            this.state.singleDay 
-            ? <div>day's name : {this.state.singleDay.name}
-             // exercise's name : {this.state.singleDay.exercises}</div>
-            : (
-                'LOADING ...'
-                )
-        }
+          this.state.singleDay 
+          ? 
+          this.state.singleDay.map((el) => {
+            return (
+              <div className="day-exercise-box" key={el._id}>
+              <div className="day-exercise-thumbnail-box">
+                <img src={el.thumbnail} alt={el.name} />
+              </div>
+              <div className="day-exercise-details-box">
+                <p className="day-exercise-name">
+                  {el.name}
+                </p>
+                <p className="day-exercise-repSec">
+                  {el.repSec}
+                </p>
+              </div>
+              </div>
+            );
+          })
+
+    
+
+
+
+    : (
+        'LOADING ...'
+        )
+}        
+
       </div>
     );
   }
