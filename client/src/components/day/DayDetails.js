@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { singleDay } from "../../services/api";
 
 class DayDetails extends Component {
@@ -14,8 +14,9 @@ class DayDetails extends Component {
   getSingleDay = () => {
     console.log("this.props.match of DayDetails is ==== " + this.props.match);
     // singleDay()
-    axios.get("/api/day/" + this.props.match.params.id).then((response) => {
-      console.log("response from singleDay is ==== " + response.data);
+    axios.get("/api/day/" + this.props.match.params.id)
+    .then((response) => {
+      // console.log("response from singleDay is ==== " + response.data);
       this.setState({
         singleDay: response.data,
       });
@@ -71,31 +72,29 @@ class DayDetails extends Component {
           ? 
           this.state.singleDay.map((el) => {
             return (
-              <div className="day-exercise-box" key={el._id}>
-              <div className="day-exercise-thumbnail-box">
-                <img src={el.thumbnail} alt={el.name} />
-              </div>
-              <div className="day-exercise-details-box">
-                <p className="day-exercise-name">
-                  {el.name}
-                </p>
-                <p className="day-exercise-repSec">
-                  {el.repSec}
-                </p>
-              </div>
-              </div>
+              <Link to={"/exercise/" + el._id}>
+              {/* // <Link to={"/day/:dayId/exercise/:exerciseId/" + el.name}> */}
+                <div className="day-exercise-box" key={el._id}>
+                  <div className="day-exercise-thumbnail-box">
+                    <img src={el.thumbnail} alt={el.name} />
+                  </div>
+                  <div className="day-exercise-details-box">
+                    <p className="day-exercise-name">
+                      {el.name}
+                    </p>
+                    <p className="day-exercise-repSec">
+                      {el.repSec}
+                    </p>
+                  </div>
+                </div>
+              </Link>
             );
           })
 
-    
-
-
-
-    : (
-        'LOADING ...'
-        )
-}        
-
+        : (
+          'LOADING ...'
+          )
+        }
       </div>
     );
   }

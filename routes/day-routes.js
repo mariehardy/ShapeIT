@@ -19,11 +19,10 @@ router.get('/day/:id', (req, res, next) => {
     .then(day => {
       Exercise.find({ videoUrl: { $in: day.exercises }})
       .then(response => {
-        console.log('response is ======== ', response)
+        // console.log('Day Route response is ======== ', response)
         res.json(response)
       })
     })
-
     .catch(error => {
       res.json(error);
     });
