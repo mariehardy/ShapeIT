@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import VideoPlayer from "./VideoPlayer"
+import ReactPlayer from 'react-player'
 
 
 class ExerciseDetails extends Component {
@@ -37,16 +37,16 @@ class ExerciseDetails extends Component {
   render(){
     return(
       <div>
-      INSIDE EXERCISE COMPONENT
-        {/* <h1>{this.state.singleExercise.name}</h1> */}
-        {/* <p>{this.state.singleExercise.type}</p> */}
+
+        {/* TO DO:::NAVIGATION BETWEEN PREVIOUS AND NEXT EXERCISE!!!! */}
 
         {
           this.state.singleExercise
           ? (
               <div className="exercise-box" key={this.state.singleExercise._id}>
                 <div className="day-exercise-thumbnail-box">
-                    <VideoPlayer youtubeId="HrDQRFfRMV4" />
+                  {/* <VideoPlayer youtubeId="HrDQRFfRMV4" /> */}
+                  <ReactPlayer url={this.state.singleExercise.videoUrl} />
                 </div>
                 <div className="exercise-details-box">
                   <p className="exercise-name">

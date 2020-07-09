@@ -70,6 +70,9 @@ class DayDetails extends Component {
         {
           this.state.singleDay 
           ? 
+
+          // TO DO::: SORT EXERCISES BY TYPES !!!!!!!!
+
           this.state.singleDay.map((el) => {
             return (
               <Link to={"/exercise/" + el._id}>
