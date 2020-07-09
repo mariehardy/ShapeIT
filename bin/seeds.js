@@ -134,10 +134,15 @@ const daysSeed = [
   }),
 ];
 
+
+// REMINDER: For property 'type' please choose one of the following option:
+//   enum: ['Warm-up', 'Cardio', 'Vacuum', 'Isolation', 'Stretching']
+
+
 const exercisesSeed = [
   new Exercise({
     name: 'Fantastic Headstand',
-    type: 'balance',
+    type: 'Stretching',
     description: 'Blockchain encompasses wide-ranging disciplines including economics, computer science, law, finance, and mathematics.',
     repSec: '10 reps',
     thumbnail: 'https://cdn.shopify.com/s/files/1/1195/1556/products/Frida-white-womens-cycling-jersey_1296x.jpg?v=1552015120',
@@ -145,7 +150,7 @@ const exercisesSeed = [
   }),
   new Exercise({
     name: 'Old-school Push-ups',
-    type: 'cardio',
+    type: 'Cardio',
     description: 'With the wealth of resources out there, it can often be overwhelming to figure out where to begin.',
     repSec: '20 sec',
     thumbnail: 'http://upl.stack.com/wp-content/uploads/2012/10/Flex_o001_2_-e1350409352620.jpg',
