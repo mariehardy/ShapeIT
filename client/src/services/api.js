@@ -26,7 +26,7 @@ export const allDays = () => {
 }
 
 export const singleDay = () => {
-  return axios.get('/day/:id')
+  return axios.get('/day/:id' + this.props.match.params.id)
   .then(response => response.data)
 
 }

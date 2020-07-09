@@ -37,7 +37,6 @@ class Plan extends Component {
               console.log("el ========= ", el);
               return (
                 <li key={el._id}>
-                  
                   <Link to={"/day/" + el.name}>{el.name}</Link>
                   {/* Same as: */}
                   {/* <Link to={`/day/${el._id}`}>{el.name}</Link> */}
