@@ -20,5 +20,13 @@ router.get('/exercise/:id', (req, res, next) => {
     });
 });
 
+
+router.post('/increaseCurrentDay', (req, res, next) => {
+  req.user.currentDay ++
+  req.user.save()
+  .then(response => {
+    res.json(response)
+  })
+})
  
 module.exports = router;

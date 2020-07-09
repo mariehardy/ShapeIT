@@ -11,7 +11,7 @@ import Navbar from './components/navbar/Navbar';
 import Plan from './components/plan/Plan';
 import DayDetails from './components/day/DayDetails';
 import ExerciseDetails from './components/exercise/ExerciseDetails';
-import ExerciseShare from './components/exercise/ExerciseShare';
+import Share from './components/exercise/Share';
 import Nutrition from './components/nutrition/Nutrition';
 import NutritionBasics from './components/nutrition/NutritionBascis';
 import NutritionHealthyMeal from './components/nutrition/NutritionHealthyMeal';
@@ -128,13 +128,23 @@ class App extends Component {
             }
           }} />
 
-          <Route exact path="/exercise/:id/share" render={() => {
+          <Route exact path="/increaseCurrentDay" render={() => {
             if (!this.state.loggedInUser) {
               // if user is NOT logged in, redirect to '/'
               return <Redirect to={{pathname: '/'}}/> 
             } else {
             // if user IS logged in, show route
-            return <ExerciseShare updateUser={this.updateUser} loggedInUser={this.state.loggedInUser}  />
+              return <Redirect to={{pathname: '/share'}}/> 
+            }
+          }} />
+
+          <Route exact path="/share" render={() => {
+            if (!this.state.loggedInUser) {
+              // if user is NOT logged in, redirect to '/'
+              return <Redirect to={{pathname: '/'}}/> 
+            } else {
+            // if user IS logged in, show route
+            return <Share updateUser={this.updateUser} loggedInUser={this.state.loggedInUser}  />
             }
           }} />
 
