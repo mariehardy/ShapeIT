@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import ReactPlayer from 'react-player'
 
 
@@ -27,6 +27,14 @@ class ExerciseDetails extends Component {
         console.log(err)
     })
   }
+
+    clickHandler = (event) => {
+      axios.post('/api/increaseCurrentDay')
+      .then( response => {
+          this.props.updateUser(response.data)
+      })
+      .catch( error => console.log(error) )
+    }
 
   componentDidMount(){
     this.getSingleExercise();
@@ -55,7 +63,12 @@ class ExerciseDetails extends Component {
                   <p className="exercise-description">
                     {this.state.singleExercise.description}
                   </p>
-                </div>
+                </div>    
+                <button onClick={this.clickHandler}>
+                {/* <Redirect to={{pathname: '/share'}}> */}
+                  COMPLETE
+                {/* </Redirect> */}
+                </button>
               </div>
           )
           : (

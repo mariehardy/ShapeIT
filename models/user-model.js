@@ -24,7 +24,10 @@ const userSchema = new Schema({
   height: Number, //cm
   avatarUrl: String,
   // The day user has yet to do
-  currentDay: [{ type: Schema.Types.ObjectId, ref: 'Day' }]
+  currentDay: {
+    type: Number,
+    default: 1
+  }
 }, 
 {
   timestamps: true

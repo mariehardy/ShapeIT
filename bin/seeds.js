@@ -22,7 +22,7 @@ const daysSeed = [
   }),
   new Day({
     name: 3,
-    exercises: ['']
+    exercises: ['https://www.youtube.com/watch?v=wD-MJ5t77So']
   }),
   new Day({
     name: 4,
@@ -156,6 +156,14 @@ const exercisesSeed = [
     thumbnail: 'http://upl.stack.com/wp-content/uploads/2012/10/Flex_o001_2_-e1350409352620.jpg',
     videoUrl: 'https://www.youtube.com/watch?v=lnR_kb5Wjf8'
   }),
+  new Exercise({
+    name: 'roooock',
+    type: 'Cardio',
+  description: 'aaaaaaaaaaaaaa there, it can often be overwhelming to figure out where to begin.',
+  repSec: '20 sec',
+  thumbnail: '',
+  videoUrl: 'https://www.youtube.com/watch?v=wD-MJ5t77So'
+})
 ];
 
 
