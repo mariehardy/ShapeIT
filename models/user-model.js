@@ -23,10 +23,10 @@ const userSchema = new Schema({
   weight: Number, //kg
   height: Number, //cm
   avatarUrl: String,
-  // The day user has yet to do
   currentDay: {
     type: Number,
-    default: 1
+    default: 1,
+    max: 30
   }
 }, 
 {

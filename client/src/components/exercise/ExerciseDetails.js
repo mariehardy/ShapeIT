@@ -64,11 +64,12 @@ class ExerciseDetails extends Component {
                     {this.state.singleExercise.description}
                   </p>
                 </div>    
-                <button onClick={this.clickHandler}>
+                {/* <button onClick={this.clickHandler}> */}
+                <Link to={{pathname: '/share'}} onClick={this.clickHandler}>COMPLETE</Link>
                 {/* <Redirect to={{pathname: '/share'}}> */}
-                  COMPLETE
+                  {/* COMPLETE */}
                 {/* </Redirect> */}
-                </button>
+                {/* </button> */}
               </div>
           )
           : (

@@ -8,7 +8,6 @@ import DayDetails from "../day/DayDetails";
 class Plan extends Component {
   state = {
     listOfDays: [],
-    isCurrentDay: false
   }
 
   getAllDays = () => {
@@ -25,7 +24,14 @@ class Plan extends Component {
     this.getAllDays();
   }
 
+  
+
+
   render() {
+
+    // let copiedListOfDays = this.state.listOfDays.splice()
+    // let sortedListOfDays = copiedListOfDays.sort((a, b) => b - a)
+
     return (
       <div>
         HERE IS THE PLAN - LIST OF DAYS
@@ -33,13 +39,19 @@ class Plan extends Component {
           this.state.listOfDays 
           ? (
           <ul>
-            {this.state.listOfDays.map((el) => {
+          {this.state.listOfDays.sort((a, b) => a - b).map((el) => {
               console.log("el ========= ", el);
+              console.log("this.props.loggedInUser.currentDay ========= ", this.props.loggedInUser.currentDay);
               return (
                 <li key={el._id}>
+                { el.name <= this.props.loggedInUser.currentDay
+                  ? (
                   <Link to={"/day/" + el.name}>{el.name}</Link>
-                  {/* Same as: */}
-                  {/* <Link to={`/day/${el._id}`}>{el.name}</Link> */}
+                  )
+                  : (
+                  <p>{el.name}</p>
+                  )
+                }
                 </li>
               );
             })}
