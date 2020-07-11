@@ -12,10 +12,10 @@ import Plan from './components/plan/Plan';
 import DayDetails from './components/day/DayDetails';
 import ExerciseDetails from './components/exercise/ExerciseDetails';
 import Share from './components/exercise/Share';
-import Nutrition from './components/nutrition/Nutrition';
-import NutritionBasics from './components/nutrition/NutritionBascis';
-import NutritionHealthyMeal from './components/nutrition/NutritionHealthyMeal';
-import NutritionHowToEat from './components/nutrition/NutritionHowToEat';
+import Nutrition from '../src/components/nutrition/Nutrition';
+import NutritionBasics from '../src/components/nutrition/NutritionBascis';
+import NutritionHealthyMeal from '../src/components/nutrition/NutritionHealthyMeal';
+import NutritionHowToEat from '../src/components/nutrition/NutritionHowToEat';
 import Donate from './components/donate/Donate';
 
 import { profileEdit } from './services/api';
