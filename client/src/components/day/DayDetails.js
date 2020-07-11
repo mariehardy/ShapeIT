@@ -12,11 +12,9 @@ class DayDetails extends Component {
   }
 
   getSingleDay = () => {
-    // console.log("this.props.match of DayDetails is ==== " + this.props.match);
     // singleDay()
     axios.get("/api/day/" + this.props.match.params.id)
     .then((response) => {
-      // console.log("response from singleDay is ==== " + response.data);
       this.setState({
         singleDay: response.data,
       });
@@ -26,57 +24,23 @@ class DayDetails extends Component {
 
   componentDidMount() {
     this.getSingleDay();
-
-
-    // let dayDetails = this.props.listOfDays.find((el) => el._id === this.props.match.params.id)
-    // console.log('dayDetails is === ', dayDetails)
   }
-
-  // TO DELETE??
-  // state passed from Plan with list of all days
-  // let dayDetails = props.listOfDays.find((el) => el._id === this.props.match.params.id)
-  // console.log('dayDetails is === ', dayDetails)
-
-
-
-
-
-
-
-
-  
-
-
-
-// {this.state.singleDay.map((el) => {
-//   return (
-//     <div key={el._id}>
-//       {el.name}
-//     </div>
-//   );
-// })}  
-
-        // {/* <p>{JSON.stringify(this.props.match, null, 2)}</p> */}
-
-
-
-    //     <div>day's name : {this.state.singleDay[0].name}
-    //  // exercise's name : {this.state.singleDay.exercises}</div>
 
 
   render() {
+
     return (
       <div>
         {
           this.state.singleDay 
           ? 
-
-          // TO DO::: SORT EXERCISES BY TYPES !!!!!!!!
-
-          this.state.singleDay.map((el,i) => {
-            return (
+           this.state.singleDay.map((el,i) => {
+             return(
+            el.type=='Cardio'
+            ? (
+              <div>
+              <h3>CARDIO</h3>
               <Link to={"/exercise/" + el._id +"?index=" +i + "&&?day="+ this.props.match.params.id }>
-              {/* // <Link to={"/day/:dayId/exercise/:exerciseId/" + el.name}> */}
                 <div className="day-exercise-box" key={el._id}>
                   <div className="day-exercise-thumbnail-box">
                     <img src={el.thumbnail} alt={el.name} />
@@ -91,11 +55,16 @@ class DayDetails extends Component {
                   </div>
                 </div>
               </Link>
-            );
-          })
-
+              </div>
+            )
+            : (
+          'NO CARDIO'
+          )
+          )
+           })
+        
         : (
-          'LOADING ...'
+          'PAGE LOADING ...'
           )
         }
       </div>

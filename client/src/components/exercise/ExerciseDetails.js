@@ -19,53 +19,35 @@ class ExerciseDetails extends Component {
     this.state = {
       singleExercise: null,
       day: getParameterByName("day") * 1,
-      index: getParameterByName("index") *1,
+      index: getParameterByName("index") * 1,
       todaysExercises: [],
       id: "",
     };
   }
 
   getSingleDay = () => {
-    // console.log("this.props.match of DayDetails is ==== " + this.props.match);
     // singleDay()
     axios.get("/api/day/" + this.state.day).then((response) => {
-      // console.log("response from singleDay is ==== " + response.data);
       this.setState({
         todaysExercises: response.data,
       });
-      // console.log("singleDay ====== ", this.state.singleDay);
+      console.log("index ======= ", this.state.index)
+      // console.log("last index of array ======= ", this.state.todaysExercises.length-1)
     });
   };
 
   getSingleExercise = () => {
     // console.log("exercise this.props.match.params.id ====== ", this.props.match.params.id);
-
     axios
       .get("/api/exercise/" + this.props.match.params.id)
-
       .then((response) => {
         this.setState({
           singleExercise: response.data,
         });
-        // console.log("singleExercise ====== ", this.state.singleExercise);
       })
       .catch((err) => {
         console.log(err);
       });
-  };
-
-  getNextExercise = () => {
-    // console.log("exercise this.props.match.params.id ====== ", this.props.match.params.id);
-    // axios.get("/api/exercise/" + this.props.match.params.id)
-    // .then((response) =>{
-    //   this.setState({
-    //     singleExercise: response.data
-    //   });
-    //   console.log("singleExercise ====== ", this.state.singleExercise);
-    // })
-    // .catch((err)=>{
-    //     console.log(err)
-    // })
   };
 
   clickHandler = (event) => {
@@ -78,10 +60,7 @@ class ExerciseDetails extends Component {
   };
 
 
-
   getPreviousExercise = () => {
-
-    //write a condition so index is not the last item
     this.state.todaysExercises.map((e, i) => {
       if (i == this.state.index - 1) {
         this.setState(
@@ -92,12 +71,10 @@ class ExerciseDetails extends Component {
           () => {
             axios
               .get("/api/exercise/" + this.state.id)
-
               .then((response) => {
                 this.setState({
                   singleExercise: response.data,
                 });
-                // console.log("singleExercise ====== ", this.state.singleExercise);
               })
               .catch((err) => {
                 console.log(err);
@@ -112,7 +89,6 @@ class ExerciseDetails extends Component {
 
   getNextExercise = () => {
 
-    //write a condition so index is not the last item
     this.state.todaysExercises.map((e, i) => {
       if (i == this.state.index + 1) {
         this.setState(
@@ -123,12 +99,10 @@ class ExerciseDetails extends Component {
           () => {
             axios
               .get("/api/exercise/" + this.state.id)
-
               .then((response) => {
                 this.setState({
                   singleExercise: response.data,
                 });
-                // console.log("singleExercise ====== ", this.state.singleExercise);
               })
               .catch((err) => {
                 console.log(err);
@@ -148,10 +122,10 @@ class ExerciseDetails extends Component {
     console.log("props from exercise", this.state);
     return (
       <div>
-        {this.state.singleExercise ? (
+        {this.state.singleExercise 
+        ? (
           <div className="exercise-box" key={this.state.singleExercise._id}>
             <div className="day-exercise-thumbnail-box">
-              {/* <VideoPlayer youtubeId="HrDQRFfRMV4" /> */}
               <ReactPlayer url={this.state.singleExercise.videoUrl} />
             </div>
             <div className="exercise-details-box">
@@ -160,16 +134,30 @@ class ExerciseDetails extends Component {
                 {this.state.singleExercise.description}
               </p>
             </div>
-            {/* <button onClick={this.clickHandler}> */}
+
             <Link to={{ pathname: "/share" }} onClick={this.clickHandler}>
               COMPLETE
             </Link>
-            {/* <Redirect to={{pathname: '/share'}}> */}
-            {/* COMPLETE */}
-            {/* </Redirect> */}
-            {/* </button> */}
-            <button onClick={this.getPreviousExercise}>Previous Exercise</button>
-            <button onClick={this.getNextExercise}>Next Exercise</button>
+
+            {!this.state.index == 0
+            ? (
+              <button onClick={this.getPreviousExercise}>Previous Exercise</button>
+            )
+            : (
+              <Link to={{ pathname: "/day/" + this.state.day }}>Back To Day</Link>
+            )
+            }
+
+            <p>{this.state.index} / {this.state.todaysExercises.length-1}</p>
+
+            {this.state.index != this.state.todaysExercises.length-1
+            ? (
+              <button onClick={this.getNextExercise}>Next Exercise</button>
+            )
+            : (
+              "LAST EXERCISE"
+            )
+            }
           </div>
         ) : (
           "LOADING..."
