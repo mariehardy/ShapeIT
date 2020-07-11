@@ -5,6 +5,12 @@ export class Nutrition extends Component {
     return (
       <div>
         NUTRITION MAIN PAGE
+        <br/>
+        <a href="/nutrition-basics">Nutrition Basics</a>
+        <br/>
+        <a href="/nutrition-how-to-eat">How to Eat?</a>
+        <br/>
+        <a href="/nutrition-healthy-meals">Meal Plans</a>
       </div>
     )
   }
