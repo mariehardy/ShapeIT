@@ -14,7 +14,7 @@ mongoose
 const daysSeed = [
   new Day({
     name: 1,
-    exercises: ['https://youtu.be/HrDQRFfRMV4', 'https://www.youtube.com/watch?v=lnR_kb5Wjf8']
+    exercises: ['https://youtu.be/HrDQRFfRMV4', 'https://www.youtube.com/watch?v=lnR_kb5Wjf8', 'https://www.youtube.com/watch?v=wD-MJ5t77So']
   }),
   new Day({
     name: 2,
@@ -143,7 +143,7 @@ const exercisesSeed = [
   new Exercise({
     name: 'Fantastic Headstand',
     type: 'Stretching',
-    description: 'Blockchain encompasses wide-ranging disciplines including economics, computer science, law, finance, and mathematics.',
+    description: '1)Blockchain encompasses wide-ranging\n 2)disciplines including economics,3)\n computer science, law, finance, and mathematics.',
     repSec: '10 reps',
     thumbnail: 'https://cdn.shopify.com/s/files/1/1195/1556/products/Frida-white-womens-cycling-jersey_1296x.jpg?v=1552015120',
     videoUrl: 'https://youtu.be/HrDQRFfRMV4'
@@ -151,7 +151,7 @@ const exercisesSeed = [
   new Exercise({
     name: 'Old-school Push-ups',
     type: 'Cardio',
-    description: 'With the wealth of resources out there, it can often be overwhelming to figure out where to begin.',
+    description: '1)With the wealth 2)\n of resources out there, it can often be overwhelming 3)\n to figure out where to begin.',
     repSec: '20 sec',
     thumbnail: 'http://upl.stack.com/wp-content/uploads/2012/10/Flex_o001_2_-e1350409352620.jpg',
     videoUrl: 'https://www.youtube.com/watch?v=lnR_kb5Wjf8'
@@ -159,7 +159,7 @@ const exercisesSeed = [
   new Exercise({
     name: 'roooock',
     type: 'Cardio',
-  description: 'aaaaaaaaaaaaaa there, it can often be overwhelming to figure out where to begin.',
+  description: 'aaaaaaaaaaaaaa there, it can often be overwhelming\n to figure out where to begin.',
   repSec: '20 sec',
   thumbnail: '',
   videoUrl: 'https://www.youtube.com/watch?v=wD-MJ5t77So'

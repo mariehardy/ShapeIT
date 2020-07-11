@@ -12,7 +12,7 @@ class DayDetails extends Component {
   }
 
   getSingleDay = () => {
-    console.log("this.props.match of DayDetails is ==== " + this.props.match);
+    // console.log("this.props.match of DayDetails is ==== " + this.props.match);
     // singleDay()
     axios.get("/api/day/" + this.props.match.params.id)
     .then((response) => {
@@ -20,7 +20,7 @@ class DayDetails extends Component {
       this.setState({
         singleDay: response.data,
       });
-      console.log("singleDay ====== ", this.state.singleDay);
+      // console.log("singleDay ====== ", this.state.singleDay);
     });
   };
 
@@ -73,9 +73,9 @@ class DayDetails extends Component {
 
           // TO DO::: SORT EXERCISES BY TYPES !!!!!!!!
 
-          this.state.singleDay.map((el) => {
+          this.state.singleDay.map((el,i) => {
             return (
-              <Link to={"/exercise/" + el._id}>
+              <Link to={"/exercise/" + el._id +"?index=" +i + "&&?day="+ this.props.match.params.id }>
               {/* // <Link to={"/day/:dayId/exercise/:exerciseId/" + el.name}> */}
                 <div className="day-exercise-box" key={el._id}>
                   <div className="day-exercise-thumbnail-box">
