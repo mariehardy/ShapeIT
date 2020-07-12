@@ -153,9 +153,17 @@ class ExerciseDetails extends Component {
               <button onClick={this.getNextExercise}>Next Exercise</button>
             )
             : (
-              <Link to={{ pathname: "/share" }} onClick={this.clickHandler}>
-              COMPLETE
-            </Link>
+              this.props.loggedInUser.currentDay < 30
+              ? (
+                <Link to={{ pathname: "/share" }} onClick={this.clickHandler}>
+                COMPLETE
+                </Link>
+              )
+              : (
+                <Link to={{ pathname: "/share" }}>
+                SHARE YOUR PROGRESS
+                </Link>
+              )
             )
             }
           </div>
