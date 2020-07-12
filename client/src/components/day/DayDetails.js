@@ -85,7 +85,73 @@ class DayDetails extends Component {
           }
 
 
+          <h3>VACUUM</h3>
+          {this.state.singleDay.filter((el) => el.type.includes('Vacuum')).map((filteredExercise,i) => (
+            <div>
+              <Link to={"/exercise/" + filteredExercise._id +"?index=" +i + "&&?day="+ this.props.match.params.id }>
+                <div className="day-exercise-box" key={filteredExercise._id}>
+                  <div className="day-exercise-thumbnail-box">
+                    <img src={filteredExercise.thumbnail} alt={filteredExercise.name} />
+                  </div>
+                  <div className="day-exercise-details-box">
+                    <p className="day-exercise-name">
+                      {filteredExercise.name}
+                    </p>
+                    <p className="day-exercise-repSec">
+                      {filteredExercise.repSec}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))
+          }
 
+
+          <h3>ISOLATION</h3>
+          {this.state.singleDay.filter((el) => el.type.includes('Isolation')).map((filteredExercise,i) => (
+            <div>
+              <Link to={"/exercise/" + filteredExercise._id +"?index=" +i + "&&?day="+ this.props.match.params.id }>
+                <div className="day-exercise-box" key={filteredExercise._id}>
+                  <div className="day-exercise-thumbnail-box">
+                    <img src={filteredExercise.thumbnail} alt={filteredExercise.name} />
+                  </div>
+                  <div className="day-exercise-details-box">
+                    <p className="day-exercise-name">
+                      {filteredExercise.name}
+                    </p>
+                    <p className="day-exercise-repSec">
+                      {filteredExercise.repSec}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))
+          }
+
+
+          <h3>STRETCHING</h3>
+          {this.state.singleDay.filter((el) => el.type.includes('Stretching')).map((filteredExercise,i) => (
+            <div>
+              <Link to={"/exercise/" + filteredExercise._id +"?index=" +i + "&&?day="+ this.props.match.params.id }>
+                <div className="day-exercise-box" key={filteredExercise._id}>
+                  <div className="day-exercise-thumbnail-box">
+                    <img src={filteredExercise.thumbnail} alt={filteredExercise.name} />
+                  </div>
+                  <div className="day-exercise-details-box">
+                    <p className="day-exercise-name">
+                      {filteredExercise.name}
+                    </p>
+                    <p className="day-exercise-repSec">
+                      {filteredExercise.repSec}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))
+          }
 
 
           </div>

@@ -14,7 +14,17 @@ mongoose
 const daysSeed = [
   new Day({
     name: 1,
-    exercises: ['https://youtu.be/HrDQRFfRMV4', 'https://www.youtube.com/watch?v=lnR_kb5Wjf8', 'https://www.youtube.com/watch?v=wD-MJ5t77So']
+    exercises: ['https://www.youtube.com/watch?v=9uKVI6_Fm4g',
+    'https://www.youtube.com/watch?v=6gmChsPD2N8',
+    'https://www.youtube.com/watch?v=lnR_kb5Wjf8',
+    'https://www.youtube.com/watch?v=wD-MJ5t77So',
+    'https://www.youtube.com/watch?v=3tQs6l4d8hM',
+    'https://www.youtube.com/watch?v=Jn09UdSb3aA',
+    'https://www.youtube.com/watch?v=vqUuH2ka-xk',
+    'https://www.youtube.com/watch?v=tUEJkwA1VI4',
+    'https://www.youtube.com/watch?v=uwUt1fVLb3E',
+    'https://www.youtube.com/watch?v=N9TT5kO4p7Q'
+    ]
   }),
   new Day({
     name: 2,
@@ -163,7 +173,71 @@ const exercisesSeed = [
   repSec: '20 sec',
   thumbnail: '',
   videoUrl: 'https://www.youtube.com/watch?v=wD-MJ5t77So'
-})
+}),
+  new Exercise({
+    name: 'exercise warmup1',
+    type: 'Warm-up',
+    description: ['With the wealth', '2) of resources out there, it can often be overwhelming', '3) to figure out where to begin.'],
+    repSec: '2 sec',
+    thumbnail: 'https://i.pinimg.com/originals/27/d8/3a/27d83acb2be3cbcade7403b8b8ca41b4.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=9uKVI6_Fm4g'
+  }),
+  new Exercise({
+    name: 'exercise warmup2',
+    type: 'Warm-up',
+    description: ['With the wealth', '2) of resources out there, it can often be overwhelming', '3) to figure out where to begin.'],
+    repSec: '2 sec',
+    thumbnail: 'https://i.pinimg.com/originals/27/d8/3a/27d83acb2be3cbcade7403b8b8ca41b4.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=6gmChsPD2N8'
+  }),
+  new Exercise({
+    name: 'exercise Vacuum 1',
+    type: 'Vacuum',
+    description: ['With the wealth', '2) of resources out there, it can often be overwhelming', '3) to figure out where to begin.'],
+    repSec: '2 sec',
+    thumbnail: 'https://i.pinimg.com/originals/27/d8/3a/27d83acb2be3cbcade7403b8b8ca41b4.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=3tQs6l4d8hM'
+  }),
+  new Exercise({
+    name: 'exercise Vacuum 2',
+    type: 'Vacuum',
+    description: ['With the wealth', '2) of resources out there, it can often be overwhelming', '3) to figure out where to begin.'],
+    repSec: '2 sec',
+    thumbnail: 'https://i.pinimg.com/originals/27/d8/3a/27d83acb2be3cbcade7403b8b8ca41b4.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=Jn09UdSb3aA'
+  }),
+  new Exercise({
+    name: 'exercise Isolation 1',
+    type: 'Isolation',
+    description: ['With the wealth', '2) of resources out there, it can often be overwhelming', '3) to figure out where to begin.'],
+    repSec: '2 sec',
+    thumbnail: 'https://i.pinimg.com/originals/27/d8/3a/27d83acb2be3cbcade7403b8b8ca41b4.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=vqUuH2ka-xk'
+  }),
+  new Exercise({
+    name: 'exercise Isolation 2',
+    type: 'Isolation',
+    description: ['With the wealth', '2) of resources out there, it can often be overwhelming', '3) to figure out where to begin.'],
+    repSec: '2 sec',
+    thumbnail: 'https://i.pinimg.com/originals/27/d8/3a/27d83acb2be3cbcade7403b8b8ca41b4.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=tUEJkwA1VI4'
+  }),
+  new Exercise({
+    name: 'exercise Stretching 1',
+    type: 'Stretching',
+    description: ['With the wealth', '2) of resources out there, it can often be overwhelming', '3) to figure out where to begin.'],
+    repSec: '2 sec',
+    thumbnail: 'https://i.pinimg.com/originals/27/d8/3a/27d83acb2be3cbcade7403b8b8ca41b4.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=uwUt1fVLb3E'
+  }),
+  new Exercise({
+    name: 'exercise Stretching 2',
+    type: 'Stretching',
+    description: ['With the wealth', '2) of resources out there, it can often be overwhelming', '3) to figure out where to begin.'],
+    repSec: '2 sec',
+    thumbnail: 'https://i.pinimg.com/originals/27/d8/3a/27d83acb2be3cbcade7403b8b8ca41b4.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=N9TT5kO4p7Q'
+  })
 ];
 
 
@@ -178,7 +252,7 @@ Promise.all([Day.deleteMany(), Exercise.deleteMany()])
   })
   .then(() => {
     console.log(`${daysSeed.length} days created`)
-    console.log(`${exercisesSeed.length} days created`)
+    console.log(`${exercisesSeed.length} exercises created`)
     mongoose.disconnect()
   })
   .catch(err => {
