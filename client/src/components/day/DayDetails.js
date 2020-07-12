@@ -18,7 +18,7 @@ class DayDetails extends Component {
       this.setState({
         singleDay: response.data,
       });
-      // console.log("singleDay ====== ", this.state.singleDay);
+      console.log("singleDay ====== ", this.state.singleDay);
     });
   };
 
@@ -29,43 +29,72 @@ class DayDetails extends Component {
 
   render() {
 
+    //let cardioExercisesFilter = this.state.singleDay.filter((el) => el.type.includes('Cardio'))
+
+
+
     return (
       <div>
         {
           this.state.singleDay 
-          ? 
-           this.state.singleDay.map((el,i) => {
-             return(
-            el.type=='Cardio'
-            ? (
-              <div>
-              <h3>CARDIO</h3>
-              <Link to={"/exercise/" + el._id +"?index=" +i + "&&?day="+ this.props.match.params.id }>
-                <div className="day-exercise-box" key={el._id}>
+        ? ( 
+          <div>
+          <h3>WARM-UP</h3>
+          {this.state.singleDay.filter((el) => el.type.includes('Warm-up')).map((filteredExercise,i) => (
+            <div>
+              <Link to={"/exercise/" + filteredExercise._id +"?index=" +i + "&&?day="+ this.props.match.params.id }>
+                <div className="day-exercise-box" key={filteredExercise._id}>
                   <div className="day-exercise-thumbnail-box">
-                    <img src={el.thumbnail} alt={el.name} />
+                    <img src={filteredExercise.thumbnail} alt={filteredExercise.name} />
                   </div>
                   <div className="day-exercise-details-box">
                     <p className="day-exercise-name">
-                      {el.name}
+                      {filteredExercise.name}
                     </p>
                     <p className="day-exercise-repSec">
-                      {el.repSec}
+                      {filteredExercise.repSec}
                     </p>
                   </div>
                 </div>
               </Link>
-              </div>
-            )
-            : (
-          'NO CARDIO'
-          )
-          )
-           })
-        
-        : (
+            </div>
+          ))
+          }
+
+
+          <h3>CARDIO</h3>
+          {this.state.singleDay.filter((el) => el.type.includes('Cardio')).map((filteredExercise,i) => (
+            <div>
+              <Link to={"/exercise/" + filteredExercise._id +"?index=" +i + "&&?day="+ this.props.match.params.id }>
+                <div className="day-exercise-box" key={filteredExercise._id}>
+                  <div className="day-exercise-thumbnail-box">
+                    <img src={filteredExercise.thumbnail} alt={filteredExercise.name} />
+                  </div>
+                  <div className="day-exercise-details-box">
+                    <p className="day-exercise-name">
+                      {filteredExercise.name}
+                    </p>
+                    <p className="day-exercise-repSec">
+                      {filteredExercise.repSec}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))
+          }
+
+
+
+
+
+          </div>
+      
+        )
+        :(
           'PAGE LOADING ...'
-          )
+
+        )
         }
       </div>
     );
