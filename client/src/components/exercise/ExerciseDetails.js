@@ -135,9 +135,7 @@ class ExerciseDetails extends Component {
               </p>
             </div>
 
-            <Link to={{ pathname: "/share" }} onClick={this.clickHandler}>
-              COMPLETE
-            </Link>
+            
 
             {!this.state.index == 0
             ? (
@@ -148,14 +146,16 @@ class ExerciseDetails extends Component {
             )
             }
 
-            <p>{this.state.index} / {this.state.todaysExercises.length-1}</p>
+            <p>{this.state.index+1} / {this.state.todaysExercises.length}</p>
 
             {this.state.index != this.state.todaysExercises.length-1
             ? (
               <button onClick={this.getNextExercise}>Next Exercise</button>
             )
             : (
-              "LAST EXERCISE"
+              <Link to={{ pathname: "/share" }} onClick={this.clickHandler}>
+              COMPLETE
+            </Link>
             )
             }
           </div>
