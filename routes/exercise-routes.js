@@ -20,11 +20,20 @@ router.get('/exercise/:id', (req, res, next) => {
 
 
 router.post('/increaseCurrentDay', (req, res, next) => {
-  req.user.currentDay ++
-  req.user.save()
-  .then(response => {
-    res.json(response)
-  })
+
+  if (req.user.currentDay == 5 || req.user.currentDay == 12 || req.user.currentDay == 19 || req.user.currentDay == 26) {
+    req.user.currentDay += 3
+    req.user.save()
+    .then(response => {
+      res.json(response)
+    })
+  } else {
+    req.user.currentDay ++
+    req.user.save()
+    .then(response => {
+      res.json(response)
+    })
+  }
 })
  
 module.exports = router;
