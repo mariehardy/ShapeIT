@@ -153,7 +153,7 @@ class ExerciseDetails extends Component {
               <button onClick={this.getNextExercise}>Next Exercise</button>
             )
             : (
-              this.props.loggedInUser.currentDay < 30
+              this.props.loggedInUser.currentDay < 22
               ? (
                 <Link to={{ pathname: "/share" }} onClick={this.clickHandler}>
                 COMPLETE
