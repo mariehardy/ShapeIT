@@ -28,18 +28,25 @@ class Plan extends Component {
 
 
   render() {
+    
+    // SORT DAYS IN ORDER
+    let copiedListOfDays = [...this.state.listOfDays]
+    let sortedListOfDays = copiedListOfDays.sort(function (a, b) {
+       if (a.name > b.name) {
+         return 1;
+     } else {
+         return -1;
+     }
+     })
 
-    // let copiedListOfDays = this.state.listOfDays.splice()
-    // let sortedListOfDays = copiedListOfDays.sort((a, b) => b - a)
 
     return (
       <div>
-        HERE IS THE PLAN - LIST OF DAYS
         {
           this.state.listOfDays 
           ? (
           <ul>
-          {this.state.listOfDays.sort((a, b) => a - b).map((el) => {
+          {sortedListOfDays.map((el) => {
               console.log("el ========= ", el);
               console.log("this.props.loggedInUser.currentDay ========= ", this.props.loggedInUser.currentDay);
               return (
