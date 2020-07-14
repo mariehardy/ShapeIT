@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { singleDay } from "../../services/api";
+import "./DayDetails.css"
 
 class DayDetails extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class DayDetails extends Component {
     axios.get("/api/day/" + this.props.match.params.id)
     .then((response) => {
       this.setState({
+        
         singleDay: response.data,
       });
       console.log("singleDay ====== ", this.state.singleDay);
@@ -38,7 +40,6 @@ class DayDetails extends Component {
           {this.state.singleDay.map((filteredExercise,i) => (
             <div>
              <h3>{filteredExercise.type}</h3>
-                    
               <Link to={"/exercise/" + filteredExercise._id +"?index=" +i + "&&?day="+ this.props.match.params.id }>
                 <div className="day-exercise-box" key={filteredExercise._id}>
                   <div className="day-exercise-thumbnail-box">
@@ -57,6 +58,7 @@ class DayDetails extends Component {
             </div>
           ))
           }
+
 
 
           </div>

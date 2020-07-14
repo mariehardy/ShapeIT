@@ -20,7 +20,7 @@ router.get('/day/:id', (req, res, next) => {
       Exercise.find({ videoUrl: { $in: day.exercises }})
       .then(response => {
         // console.log('Day Route response is ======== ', response)
-
+        
         let warmups =response.filter(e=> e.type == "Warm-up")
         let cardio =response.filter(e=> e.type == "Cardio")
         let vacuum =response.filter(e=> e.type == "Vacuum")
