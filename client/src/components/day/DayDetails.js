@@ -37,12 +37,9 @@ class DayDetails extends Component {
           this.state.singleDay 
         ? ( 
           <div>
-          
-          <h3>WARM-UP</h3>
-          <h4>1 circuit</h4>
           {this.state.singleDay.map((filteredExercise,i) => (
             <div>
-
+             <h3>{filteredExercise.type}</h3>
               <Link to={"/exercise/" + filteredExercise._id +"?index=" +i + "&&?day="+ this.props.match.params.id }>
                 <div className="day-exercise-box" key={filteredExercise._id}>
                   <div className="day-exercise-thumbnail-box">
@@ -62,10 +59,6 @@ class DayDetails extends Component {
           ))
           }
 
-
-          <h3>CARDIO</h3>
-          <h4>2-4 circuits</h4>
-          
 
 
           </div>
