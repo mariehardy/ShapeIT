@@ -19,7 +19,7 @@ router.get('/day/:id', (req, res, next) => {
     .then(day => {
       Exercise.find({ videoUrl: { $in: day.exercises }})
       .then(response => {
-        console.log('Day Route response is ======== ', response)
+        // console.log('Day Route response is ======== ', response)
 
         let warmups =response.filter(e=> e.type == "Warm-up")
         let cardio =response.filter(e=> e.type == "Cardio")
@@ -27,7 +27,7 @@ router.get('/day/:id', (req, res, next) => {
         let isolation =response.filter(e=> e.type == "Isolation")
         let stretching =response.filter(e=> e.type == "Stretching")
 
-        data = [...warmups,...cardio,...vacuum,...isolation,...stretching]
+        data = [...warmups, ...cardio, ...vacuum, ...isolation, ...stretching]
 
         res.json(data)
       })
