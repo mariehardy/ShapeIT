@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import ReactPlayer from "react-player";
+import './ExerciseDetails.scss'
 
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
@@ -124,11 +125,16 @@ class ExerciseDetails extends Component {
       <div>
         {this.state.singleExercise 
         ? (
-          <div className="exercise-box" key={this.state.singleExercise._id}>
-            <div className="day-exercise-thumbnail-box">
-              <ReactPlayer url={this.state.singleExercise.videoUrl} />
+          <div className="exercise-container" key={this.state.singleExercise._id}>
+            <div className="player-wrapper">
+              <ReactPlayer url={this.state.singleExercise.videoUrl} 
+              className='react-player'
+              controls={true} 
+              loop={true} 
+              width='100%'
+              height='100%'/>
             </div>
-            <div className="exercise-details-box">
+            <div className="exercise-details-container">
               <p className="exercise-name">{this.state.singleExercise.name}</p>
               <p className="exercise-description">
                 {this.state.singleExercise.description}

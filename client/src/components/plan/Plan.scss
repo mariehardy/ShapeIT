@@ -1,0 +1,52 @@
+// https://codepen.io/capynet
+
+@mixin flex-grid($cols, $gutter: 0) {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+     /* Reset to prevent external styles break the grid. */
+    margin-left: 0;
+    margin-bottom: 0;
+    $item-width: calc((100% / #{$cols}) - #{$gutter} + (#{$gutter} / #{$cols}));
+    margin-right: $gutter;
+    width: $item-width;
+    box-sizing: border-box;
+
+     /* We add the gutter for all items except the first row. */
+    &:nth-child(n+#{$cols + 1}) {
+      margin-top: $gutter;
+    }
+
+     /* When we reach the cols per line, the last */
+     /* col item must not have margin right. */
+    &:nth-child(#{$cols}n) {
+      margin-right: 0;
+    }
+
+  }
+}
+
+.plan-container {
+  // margin: auto 8%;
+  min-width: 400px;
+  width: 100%;
+}
+
+.flex-5-cols{
+  @include flex-grid(6, 20px);
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.plan-ul {
+  // margin: 0;
+  padding:0;
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.plan-li {
+  padding: 30px;
+}
