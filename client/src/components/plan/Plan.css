@@ -1,0 +1,22 @@
+.parent-wrapper {
+  height:100%;
+    width:100%;
+    border: 1px solid black;
+}
+
+.plan-container {
+  margin: 100px;
+  list-style: none;
+  display: flex;
+  flex: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.plan-item {
+  width: 16%;
+  /* height: 100px; */
+
+  flex-grow: 1;
+  padding: 30px;
+}
