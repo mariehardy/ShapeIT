@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { allDays } from '../../services/api'
-import './Plan.css'
+import './Plan.scss'
 
 import DayDetails from "../day/DayDetails";
 
@@ -42,16 +42,17 @@ class Plan extends Component {
 
 
     return (
-      <div className="parent-wrapper">
+      <div>
         {
           this.state.listOfDays 
           ? (
-          <ul className="plan-container">
+          <div className="plan-container">
+          <ul className="flex-5-cols plan-ul">
           {sortedListOfDays.map((el) => {
               {/* console.log("el ========= ", el); */}
               {/* console.log("this.props.loggedInUser.currentDay ========= ", this.props.loggedInUser.currentDay); */}
               return (
-                <li key={el._id} className="plan-item">                
+                <li key={el._id} className="plan-li">                
                 { el.name == 6 || el.name == 7 || el.name == 13 || el.name == 14 || el.name == 20 || el.name == 21 || el.name == 27 || el.name == 28
                 ? (
                     <p style={{color: "red"}}>{el.name}</p>
@@ -70,6 +71,7 @@ class Plan extends Component {
               );
             })}
           </ul>
+          </div>
           ) 
           : (
           "LOADING ..."
