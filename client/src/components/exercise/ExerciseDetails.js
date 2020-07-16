@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import ReactPlayer from "react-player";
 import './ExerciseDetails.scss'
+import {Button} from 'reactstrap';
+
 
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
@@ -156,7 +158,7 @@ class ExerciseDetails extends Component {
 
             {this.state.index != this.state.todaysExercises.length-1
             ? (
-              <button onClick={this.getNextExercise}>Next Exercise</button>
+              <Button onClick={this.getNextExercise} className="btn-round" color="primary">Next Exercise</Button>
             )
             : (
               this.props.loggedInUser.currentDay < 22

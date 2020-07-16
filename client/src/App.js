@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import LandingVideo from './components/Landing/LandingVideo';
+import Landing from './components/Landing/Landing';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import Profile from './components/auth/Profile'
@@ -19,7 +19,8 @@ import NutritionHealthyMeal from '../src/components/nutrition/NutritionHealthyMe
 import NutritionHowToEat from '../src/components/nutrition/NutritionHowToEat';
 import Donate from './components/donate/Donate';
 
-import { profileEdit } from './services/api';
+
+
 
 
 class App extends Component {
@@ -51,7 +52,7 @@ class App extends Component {
           <Route exact path='/' render={() => {
           if (!this.state.loggedInUser) {
             // if user is NOT logged in
-              return <LandingVideo updateUser={this.updateUser}></LandingVideo>
+              return <Landing updateUser={this.updateUser}></Landing>
             } else {
             // if user IS logged in, redirect to `/plan`
               return <Redirect to={{pathname: '/plan'}}/>
