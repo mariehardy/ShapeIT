@@ -50,7 +50,7 @@ export class Donate extends Component {
   render() {
     
     return (
-      <div className = "container">
+      <div className = "container global-botton-margin">
         <h1>Shape the future together!</h1>
 
         {this.state.donationID ? <div className="plg-donate" key={this.state.donationID} data-widget-id={this.state.donationID}></div> : null}

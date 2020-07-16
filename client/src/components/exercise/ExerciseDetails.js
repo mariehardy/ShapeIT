@@ -122,7 +122,7 @@ class ExerciseDetails extends Component {
   render() {
     console.log("props from exercise", this.state);
     return (
-      <div>
+      <div className="global-botton-margin">
         {this.state.singleExercise 
         ? (
           <div className="exercise-container" key={this.state.singleExercise._id}>

@@ -1,8 +1,5 @@
-import React, { Component } from 'react';
-import { login } from '../../services/api.js'
+import React from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios'
-import App from '../../App.css'
 
 class Profile extends React.Component {
 
@@ -12,7 +9,7 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="global-botton-margin">
         <h1>Hello from Profile Page!</h1>
         <div className="container">
         <p><img src = {this.props.loggedInUser.avatarUrl}/></p>

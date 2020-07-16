@@ -32,7 +32,7 @@ class DayDetails extends Component {
   render() {
 
     return (
-      <div>
+      <div className="global-botton-margin">
         {
           this.state.singleDay 
         ? ( 

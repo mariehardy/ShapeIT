@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export class NutritionHealthyMeal extends Component {
   render() {
     return (
-      <div>
+      <div className="global-botton-margin">
         HEALTHY MEAL PLAN
 
         <br />
