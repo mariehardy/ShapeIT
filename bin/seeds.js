@@ -14,7 +14,9 @@ mongoose
 const daysSeed = [
   new Day({
     name: 1,
+
     exercises: ['https://www.youtube.com/watch?v=68Qj_MJfbeQ','https://www.youtube.com/watch?v=V6gyuUyOYhc', 'https://www.youtube.com/watch?v=UYrVa1mNht8','https://www.youtube.com/watch?v=pazqN85Ket8','https://www.youtube.com/watch?v=TVesRKTc9-8','https://www.youtube.com/watch?v=rh4hfpofKC4','https://www.youtube.com/watch?v=La50nIO_jH0','https://www.youtube.com/watch?v=Q6xkygxwUzw','https://www.youtube.com/watch?v=wD-MJ5t77So','https://www.youtube.com/watch?v=eseFjzRvDIc','https://www.youtube.com/watch?v=vo7rXUwPYl0','https://www.youtube.com/watch?v=4j6qLd6qgU8','https://www.youtube.com/watch?v=YwTvkI6hB4E']
+
   }),
   new Day({
     name: 2,
@@ -146,6 +148,7 @@ const exercisesSeed = [
 // Warm-up Week 1-4
 
   new Exercise({
+
     name: 'Warm-up',
     type: 'Warm-up',
     description: ['Repeat after the Fitness-Trainer'],
@@ -802,6 +805,7 @@ new Exercise({
   videoUrl: 'https://www.youtube.com/watch?v=EhXpYvW3XEM'
 })
 
+
 ];
 
 
@@ -816,7 +820,7 @@ Promise.all([Day.deleteMany(), Exercise.deleteMany()])
   })
   .then(() => {
     console.log(`${daysSeed.length} days created`)
-    console.log(`${exercisesSeed.length} days created`)
+    console.log(`${exercisesSeed.length} exercises created`)
     mongoose.disconnect()
   })
   .catch(err => {

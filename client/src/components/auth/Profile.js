@@ -1,8 +1,5 @@
-import React, { Component } from 'react';
-import { login } from '../../services/api.js'
+import React from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios'
-import App from '../../App.css'
 
 class Profile extends React.Component {
 
@@ -12,7 +9,7 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="global-botton-margin">
         <h1>Hello from Profile Page!</h1>
         <div className="container">
         <p><img src = {this.props.loggedInUser.avatarUrl}/></p>
@@ -34,39 +31,5 @@ class Profile extends React.Component {
 
 }
 
-
-// class Profile extends Component {
-//   constructor(props){
-//       super(props);
-//       this.state = {};
-//   }
-
-//   componentDidMount(){
-//       this.getSingleProfile();
-//   }
-
-//   getSingleProfile = () => {
-//       const { params } = this.props.match;
-//       axios.get(`/api/profile/${params.id}`)
-//       .then( responseFromApi =>{
-//           const theProfile = responseFromApi.data;
-//           this.setState(theProfile);
-//       })
-//       .catch((err)=>{
-//           console.log(err)
-//       })
-//   }
-
-//   render(){
-//     return(
-//       <div>
-//         <h1> PROFILE - I AM HERE</h1>
-//         <h1>{this.state.firstName}</h1>
-//         <p>{this.state.lastName}</p>
-//         <Link to={'/'}>Back to the main page</Link>
-//       </div>
-//     )
-//   }
-// }
 
 export default Profile;

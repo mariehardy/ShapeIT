@@ -7,7 +7,8 @@ import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import Profile from './components/auth/Profile'
 import ProfileEdit from './components/auth/ProfileEdit';
-import Navbar from './components/navbar/Navbar';
+import NavTop from './components/navbar/NavTop';
+import NavBottom from './components/navbar/NavBottom';
 import Plan from './components/plan/Plan';
 import DayDetails from './components/day/DayDetails';
 import ExerciseDetails from './components/exercise/ExerciseDetails';
@@ -44,8 +45,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Navbar userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
-        
+        <NavTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
 
         <Switch>
           <Route exact path='/' render={() => {
@@ -199,6 +199,9 @@ class App extends Component {
           }} />
 
         </Switch>
+
+        <NavBottom userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
+
       </div>
     );
   }

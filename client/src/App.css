@@ -41,3 +41,11 @@
   width: 20%;
   height: auto;
 }
+
+ul {
+  list-style: none;
+}
+
+.global-botton-margin {
+  margin-bottom: 130px;
+}

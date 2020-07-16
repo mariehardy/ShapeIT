@@ -14,10 +14,6 @@ class EditProfile extends Component {
     instagramID: this.props.loggedInUser.instagramID,
     avatarUrl: this.props.loggedInUser.avatarUrl,
     redirect: false
-    // email: this.props.theProject.email,
-    // firstName: this.props.theProject.firstName,
-    // lastName: this.props.theProject.lastName
-
   }
 
   handleFormSubmit = (event) => {
