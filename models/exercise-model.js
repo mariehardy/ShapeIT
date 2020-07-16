@@ -8,7 +8,7 @@ const exerciseSchema = new Schema({
     type: String,
     enum: ['Warm-up', 'Cardio', 'Vacuum', 'Isolation', 'Stretching']
   },
-  description: String,
+  description: [String],
   repSec: String,
   thumbnail: String,
   videoUrl: String
