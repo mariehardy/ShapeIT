@@ -42,7 +42,7 @@ class Plan extends Component {
 
 
     return (
-      <div>
+      <div className="global-botton-margin">
         {
           this.state.listOfDays 
           ? (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { logout } from '../../services/api.js'
-
+import './NavTop.scss'
 
 
 const logoutUser = (props) =>{
@@ -12,11 +12,11 @@ const logoutUser = (props) =>{
 }
 
 
-const navbar = (props) => {
+const NavTop = (props) => {
 
   if (!props.userInSession) { // when user is logged OUT
     return (
-      <div>
+      <div className="navtop-container">
         <nav className="nav-style">
           <ul>
             <li><Link to='/login' style={{ textDecoration: 'none' }}>Login</Link></li>
@@ -29,6 +29,7 @@ const navbar = (props) => {
     )
   } else { // when user is logged IN
     return (
+      <div className="navtop-container">
       <nav className="nav-style">
         <ul>
           <li>Welcome, {props.userInSession.email}</li>
@@ -45,10 +46,11 @@ const navbar = (props) => {
           </li>
         </ul>
       </nav>
+      </div>
     )
 
     
   }
 }
 
-export default navbar;
+export default NavTop;
