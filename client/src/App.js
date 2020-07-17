@@ -8,7 +8,7 @@ import Signup from './components/auth/Signup';
 import Profile from './components/auth/Profile'
 import ProfileEdit from './components/auth/ProfileEdit';
 import NavTop from './components/navbar/NavTop';
-import NavBottom from './components/navbar/NavBottom';
+// import NavBottom from './components/navbar/NavBottom';
 import Plan from './components/plan/Plan';
 import DayDetails from './components/day/DayDetails';
 import ExerciseDetails from './components/exercise/ExerciseDetails';
@@ -52,7 +52,7 @@ class App extends Component {
           <Route exact path='/' render={() => {
           if (!this.state.loggedInUser) {
             // if user is NOT logged in
-              return <Landing updateUser={this.updateUser}></Landing>
+              return <Landing updateUser={this.updateUser} updateUser={this.updateUser}></Landing>
             } else {
             // if user IS logged in, redirect to `/plan`
               return <Redirect to={{pathname: '/plan'}}/>
@@ -201,7 +201,7 @@ class App extends Component {
 
         </Switch>
 
-        <NavBottom userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
+        {/* <NavBottom userInSession={this.state.loggedInUser} updateUser={this.updateUser} /> */}
 
       </div>
     );

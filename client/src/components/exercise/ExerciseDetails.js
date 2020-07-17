@@ -65,7 +65,7 @@ class ExerciseDetails extends Component {
 
   getPreviousExercise = () => {
     this.state.todaysExercises.map((e, i) => {
-      if (i == this.state.index - 1) {
+      if (i === this.state.index - 1) {
         this.setState(
           {
             id: e._id,
@@ -93,7 +93,7 @@ class ExerciseDetails extends Component {
   getNextExercise = () => {
 
     this.state.todaysExercises.map((e, i) => {
-      if (i == this.state.index + 1) {
+      if (i === this.state.index + 1) {
         this.setState(
           {
             id: e._id,
@@ -145,7 +145,7 @@ class ExerciseDetails extends Component {
 
             
 
-            {!this.state.index == 0
+            {!this.state.index === 0
             ? (
               <button onClick={this.getPreviousExercise}>Previous Exercise</button>
             )
@@ -156,15 +156,15 @@ class ExerciseDetails extends Component {
 
             <p>{this.state.index+1} / {this.state.todaysExercises.length}</p>
 
-            {this.state.index != this.state.todaysExercises.length-1
+            {this.state.index !== this.state.todaysExercises.length-1
             ? (
               <Button onClick={this.getNextExercise} className="btn-round" color="primary">Next Exercise</Button>
             )
             : (
-              this.props.loggedInUser.currentDay < 22
+              this.props.loggedInUser.currentDay < 30
               ? (
                 <Link to={{ pathname: "/share" }} onClick={this.clickHandler}>
-                COMPLETE
+                DAY COMPLETED!
                 </Link>
               )
               : (

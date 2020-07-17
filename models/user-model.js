@@ -26,7 +26,7 @@ const userSchema = new Schema({
   currentDay: {
     type: Number,
     default: 1,
-    max: 22
+    max: 30
   }
 }, 
 {

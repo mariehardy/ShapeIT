@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { singleDay } from "../../services/api";
 import "./DayDetails.css"
 
 class DayDetails extends Component {

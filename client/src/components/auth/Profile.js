@@ -12,7 +12,7 @@ class Profile extends React.Component {
       <div className="global-botton-margin">
         <h1>Hello from Profile Page!</h1>
         <div className="container">
-        <p><img src = {this.props.loggedInUser.avatarUrl}/></p>
+        <p><img src = {this.props.loggedInUser.avatarUrl} alt={this.props.loggedInUser.email}/></p>
         </div>
         {/* <p>My name is: {JSON.stringify(this.props.loggedInUser)}</p> */}
         <p>Email: {this.props.loggedInUser.email}</p>
