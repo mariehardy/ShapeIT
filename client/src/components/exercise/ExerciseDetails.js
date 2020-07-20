@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import ReactPlayer from "react-player";
-import './ExerciseDetails.scss'
-import {Button} from 'reactstrap';
+import {Button, Spinner, Container, Row, Col} from 'reactstrap';
 
 
 function getParameterByName(name, url) {
@@ -124,7 +123,7 @@ class ExerciseDetails extends Component {
   render() {
     console.log("props from exercise", this.state);
     return (
-      <div className="global-botton-margin">
+      <div>
         {this.state.singleExercise 
         ? (
           <div className="exercise-container" key={this.state.singleExercise._id}>
@@ -137,46 +136,55 @@ class ExerciseDetails extends Component {
               height='100%'/>
             </div>
             <div className="exercise-details-container">
-              <p className="exercise-name">{this.state.singleExercise.name}</p>
-              <p className="exercise-description">
-                {this.state.singleExercise.description}
-              </p>
+              <h3 className="exercise-name">{this.state.singleExercise.name}</h3>
+              <ol className="exercise-description paragraph-margin">
+                {this.state.singleExercise.description.map(el => (
+                  <li className="text-left">{el}</li>
+                ))}
+              </ol>
             </div>
-
-            
-
-            {!this.state.index === 0
-            ? (
-              <button onClick={this.getPreviousExercise}>Previous Exercise</button>
-            )
-            : (
-              <Link to={{ pathname: "/day/" + this.state.day }}>Back To Day</Link>
-            )
-            }
 
             <p>{this.state.index+1} / {this.state.todaysExercises.length}</p>
 
+            <Container>
+            <Row className="align-items-center">
+            <Col xs="6">
+            {this.state.index === 0
+            ? (
+              <Button as={Link} to={"/day/" + this.state.day} href={"/day/" + this.state.day} className="btn-round" color="primary">Back To Day</Button>
+            )
+            : (
+              <Button onClick={this.getPreviousExercise} className="btn-round" color="primary">Previous Exercise</Button>
+            )
+            }
+            </Col>
+  
+            <Col xs="6">
             {this.state.index !== this.state.todaysExercises.length-1
             ? (
               <Button onClick={this.getNextExercise} className="btn-round" color="primary">Next Exercise</Button>
             )
             : (
-              this.props.loggedInUser.currentDay < 30
+              this.state.day < this.props.loggedInUser.currentDay 
               ? (
-                <Link to={{ pathname: "/share" }} onClick={this.clickHandler}>
-                DAY COMPLETED!
-                </Link>
+                <Button as={Link} to="/plan" href="/plan" className="btn-round" color="primary">
+                Back to Plan
+                </Button>
               )
               : (
-                <Link to={{ pathname: "/share" }}>
+                <Button as={Link} to="/share" href="/share" onClick={this.clickHandler} className="btn-round" color="primary">
+                {/* <Link to={{ pathname: "/share" }} onClick={this.clickHandler}> */}
                 SHARE YOUR PROGRESS
-                </Link>
+                </Button>
               )
             )
             }
+            </Col>
+            </Row>
+          </Container>
           </div>
         ) : (
-          "LOADING..."
+          <Spinner color="warning" />
         )}
       </div>
     );

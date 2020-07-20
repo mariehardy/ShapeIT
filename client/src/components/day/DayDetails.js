@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import {Button, Spinner} from 'reactstrap';
 import "./DayDetails.css"
 
 class DayDetails extends Component {
@@ -31,11 +32,12 @@ class DayDetails extends Component {
   render() {
 
     return (
-      <div className="global-botton-margin">
+      <div>
         {
           this.state.singleDay 
         ? ( 
           <div>
+          <p>Day {this.state.singleDay.name}</p>
           {this.state.singleDay.map((filteredExercise,i) => (
             <div>
              <h3>{filteredExercise.type}</h3>
@@ -57,15 +59,10 @@ class DayDetails extends Component {
             </div>
           ))
           }
-
-
-
           </div>
-      
         )
         :(
-          'PAGE LOADING ...'
-
+          <Spinner color="warning" />
         )
         }
       </div>

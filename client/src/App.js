@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
-
+import { Container, Row, Col } from 'reactstrap';
 
 import Landing from './components/Landing/Landing';
 import Login from './components/auth/Login';
@@ -20,7 +19,6 @@ import NutritionBasics from '../src/components/nutrition/NutritionBascis';
 import NutritionHealthyMeal from '../src/components/nutrition/NutritionHealthyMeal';
 import NutritionHowToEat from '../src/components/nutrition/NutritionHowToEat';
 import Donate from './components/donate/Donate';
-
 
 
 
@@ -50,7 +48,8 @@ class App extends Component {
       <div className="App">
         <NavTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
 
-        <Container fluid>
+        <Container className="themed-container" fluid={true}>
+        <div className="global-top-botton-margin">
 
         <Switch>
           <Route exact path='/' render={() => {
@@ -204,7 +203,9 @@ class App extends Component {
           }} />
 
         </Switch>
-</Container>
+
+        </div>
+        </Container>
         {/* <NavBottom userInSession={this.state.loggedInUser} updateUser={this.updateUser} /> */}
 
       </div>
