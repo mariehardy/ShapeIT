@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Collapse } from 'react-bootstrap';
 import { logout } from '../../services/api.js'
-// import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import './NavTop.scss'
 
 
 const logoutUser = (props) =>{
@@ -17,28 +15,21 @@ const logoutUser = (props) =>{
 
 const NavTop = (props) => {
 
-  // const [isOpen, setIsOpen] = useState(false);
-
-  // const toggle = () => setIsOpen(!isOpen);
-
-  const [collapsed, setCollapsed] = useState(true);
-
-  const toggleNavbar = () => setCollapsed(!collapsed);
-
-
   if (!props.userInSession) { // when user is logged OUT
     return (   
     <div>
-      <Navbar collapseOnSelect expand='xs' color='light' className="navtop-background-color" light>
+      <Navbar collapseOnSelect expand='xs' bg="dark" variant="dark" className="navtop-background-color">
         <Navbar.Brand href="/">ShapeIt</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" 
         />
         <Navbar.Collapse id="basic-navbar-nav">
+          <div className="collapse-text">
           <Nav>
           <Nav.Link as={Link} to="/login" href="/login">Login</Nav.Link>
           {/* <Nav.Link href="http://localhost:5000/api/google">Login with google</Nav.Link> */}
           <Nav.Link as={Link} to='/signup' href="/signup">Signup</Nav.Link>
           </Nav>
+          </div>
         </Navbar.Collapse>
       </Navbar>
     </div>
@@ -46,7 +37,7 @@ const NavTop = (props) => {
   } else { // when user is logged IN
     return (
     <div>
-      <Navbar collapseOnSelect expand='xs' color='light' className="navtop-background-color" light>
+      <Navbar collapseOnSelect expand='xs' bg="dark" variant="dark" className="navtop-background-color" >
         <Navbar.Brand href="/">ShapeIt</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" 
         />

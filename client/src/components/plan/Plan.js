@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { allDays } from '../../services/api'
 import './Plan.scss'
+import {Button, Spinner, Container, Row, Col} from 'reactstrap';
 
 
 class Plan extends Component {
@@ -40,7 +41,7 @@ class Plan extends Component {
 
 
     return (
-      <div className="global-botton-margin">
+      <div>
         {
           this.state.listOfDays 
           ? (
@@ -53,7 +54,7 @@ class Plan extends Component {
                 <li key={el._id} className="plan-li">                
                 { el.name === 6 || el.name === 7 || el.name === 13 || el.name === 14 || el.name === 20 || el.name === 21 || el.name === 27 || el.name === 28
                 ? (
-                    <p style={{color: "red"}}>{el.name}</p>
+                    <p style={{color: "#D24B90"}}>{el.name}</p>
                   )
                   : (
                     el.name <= this.props.loggedInUser.currentDay 
@@ -69,10 +70,19 @@ class Plan extends Component {
               );
             })}
           </ul>
+          <Container>
+          <Row>
+            <Col xs="6">{Math.ceil(this.props.loggedInUser.currentDay*100/30)} %</Col>
+            <Col xs="6">+ {this.props.loggedInUser.currentDay*5} points</Col>
+          </Row>
+          </Container>
+          <Button as={Link} to={"/day/" + this.props.loggedInUser.currentDay} href={"/day/" + this.props.loggedInUser.currentDay} className="btn-round" color="primary" size="lg">
+            SHAPE!
+          </Button>
           </div>
           ) 
           : (
-          "LOADING ..."
+              <Spinner color="warning" />
           )
         }
       </div>
