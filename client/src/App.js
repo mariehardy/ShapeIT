@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+
 
 import Landing from './components/Landing/Landing';
 import Login from './components/auth/Login';
@@ -47,6 +49,8 @@ class App extends Component {
     return (
       <div className="App">
         <NavTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
+
+        <Container fluid>
 
         <Switch>
           <Route exact path='/' render={() => {
@@ -200,7 +204,7 @@ class App extends Component {
           }} />
 
         </Switch>
-
+</Container>
         {/* <NavBottom userInSession={this.state.loggedInUser} updateUser={this.updateUser} /> */}
 
       </div>
