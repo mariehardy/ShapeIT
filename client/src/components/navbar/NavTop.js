@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
 import { logout } from '../../services/api.js'
+// import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import './NavTop.scss'
 
 
@@ -12,45 +14,59 @@ const logoutUser = (props) =>{
 }
 
 
+
 const NavTop = (props) => {
 
-  if (!props.userInSession) { // when user is logged OUT
-    return (
-      <div className="navtop-container">
-        <nav className="nav-style">
-          <ul>
-            <li><Link to='/login' style={{ textDecoration: 'none' }}>Login</Link></li>
-            <li><a href="http://localhost:5000/api/google">log in with google</a></li>
-            <li><Link to='/signup' style={{ textDecoration: 'none' }}>Signup</Link></li>
-          </ul>
+  // const [isOpen, setIsOpen] = useState(false);
 
-        </nav>
-      </div>
+  // const toggle = () => setIsOpen(!isOpen);
+
+  const [collapsed, setCollapsed] = useState(true);
+
+  const toggleNavbar = () => setCollapsed(!collapsed);
+
+
+  if (!props.userInSession) { // when user is logged OUT
+    return (   
+    <div>
+      <Navbar collapseOnSelect expand='xs' color='light' className="navtop-background-color" light>
+        <Navbar.Brand href="/">ShapeIt</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" 
+        />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav>
+          <Nav.Link as={Link} to="/login" href="/login">Login</Nav.Link>
+          {/* <Nav.Link href="http://localhost:5000/api/google">Login with google</Nav.Link> */}
+          <Nav.Link as={Link} to='/signup' href="/signup">Signup</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
     )
   } else { // when user is logged IN
     return (
-      <div className="navtop-container">
-      <nav className="nav-style">
-        <ul>
-          <li>Welcome, {props.userInSession.email}</li>
-          <li>
-            <Link to='/profile'>Profile</Link>
-            <Link to='/plan'>Plan</Link>
-            <Link to='/nutrition'>Nutrition</Link>
-            <Link to='/donate'>Donate</Link>
-          </li>
-          <li>
-            <Link to='/'>
-              <button onClick={() => logoutUser(props)}>Logout</button>
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      </div>
-    )
+    <div>
+      <Navbar collapseOnSelect expand='xs' color='light' className="navtop-background-color" light>
+        <Navbar.Brand href="/">ShapeIt</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" 
+        />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Text>
+            Hi {props.userInSession.email}!
+          </Navbar.Text>
+          <Nav>
+          <Nav.Link as={Link} to="/profile" href="/profile">Profile</Nav.Link>
+          <Nav.Link as={Link} to="/plan" href="/plan">Plan</Nav.Link>
+          <Nav.Link as={Link} to="/nutrition" href="/nutrition">Nutrition</Nav.Link>
+          <Nav.Link as={Link} to="/donate" href="/donate">Donate</Nav.Link>
+          <Nav.Link as={Link} to="/" href="/" onClick={() => logoutUser(props)}>Logout</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
+  );
+}
 
-    
-  }
 }
 
 export default NavTop;
