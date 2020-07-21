@@ -80,6 +80,7 @@ class Plan extends Component {
             SHAPE!
           </Button>
           <p className="button-margin">Legend: <span style={{color: "#51bcda"}}>Daya completed</span> | <span style={{color: "#D24B90"}}>Days off</span> | Days not yet activated</p>
+          TEST
           </div>
           ) 
           : (
