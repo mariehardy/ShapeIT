@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const Day = require('./day-model')
 
@@ -17,7 +17,9 @@ const userSchema = new Schema({
   // Personal Data
   firstName: String,
   lastName: String,
-  birthday: Date, //new Date(year, month, day), ??
+  birthday: {
+    type: Date,
+  }, //new Date(year, month, day), ??
   country: String,
   city: String,
   weight: Number, //kg
@@ -28,10 +30,10 @@ const userSchema = new Schema({
     default: 1,
     max: 30
   }
-}, 
-{
-  timestamps: true
-}   
+},
+  {
+    timestamps: true
+  }
 );
 
 const User = mongoose.model('User', userSchema);
