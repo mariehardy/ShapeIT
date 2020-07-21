@@ -190,7 +190,7 @@ class EditProfile extends Component {
 
             </div>
 
-            <Button color="primary" type="submit" value="Submit">
+            <Button className="btn-round" color="primary" type="submit" value="Submit">
               Submit
         </Button>
           </Form>
