@@ -68,12 +68,12 @@ ol li {
   background-color: #D24B90;
   background: rgb(233,165,177);
   background: linear-gradient(42deg, rgba(233,165,177,1) 0%, rgba(210,75,144,1) 45%, rgba(255,66,66,1) 100%);
-}
+} 
 
-.collapse-text {
+/* .collapse-text {
   padding: 0;
   margin: 0;
-}
+}*/
 
 
 

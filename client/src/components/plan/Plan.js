@@ -46,6 +46,7 @@ class Plan extends Component {
           this.state.listOfDays 
           ? (
           <div className="plan-container">
+          <p className="h1">Plan</p>
           <ul className="flex-5-cols plan-ul">
           {sortedListOfDays.map((el) => {
               {/* console.log("el ========= ", el); */}
@@ -80,7 +81,6 @@ class Plan extends Component {
             SHAPE!
           </Button>
           <p className="button-margin">Legend: <span style={{color: "#51bcda"}}>Daya completed</span> | <span style={{color: "#D24B90"}}>Days off</span> | Days not yet activated</p>
-          TEST
           </div>
           ) 
           : (
