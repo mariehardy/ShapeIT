@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { Navbar, Nav, Collapse } from 'react-bootstrap';
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
+import { Navbar, Nav, Collapse } from 'react-bootstrap';
+// import Navbar from "react-bootstrap/Navbar";
+// import Nav from "react-bootstrap/Nav";
 import { logout } from '../../services/api.js'
 
 
@@ -40,7 +40,7 @@ const NavTop = (props) => {
     return (
     <div>
 
-      <Navbar collapseOnSelect expand='xs' bg="dark" variant="dark" className="navtop-background-color" >
+      <Navbar collapseOnSelect expand='lg' bg="dark" variant="dark" className="navtop-background-color" >
         <Navbar.Brand href="/">ShapeIt</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" 
         />
@@ -65,3 +65,57 @@ const NavTop = (props) => {
 }
 
 export default NavTop;
+
+
+
+
+// MIR'S REACTSTRAP NAVBAR
+
+// import React from "react";
+// import {
+//   Collapse,
+//   Navbar,
+//   NavbarToggler,
+//   NavbarBrand,
+//   Nav,
+//   NavItem,
+//   NavLink,
+//   UncontrolledDropdown,
+//   DropdownToggle,
+//   DropdownMenu,
+//   DropdownItem
+// } from "reactstrap";
+// import { Link } from "react-router-dom";
+
+// export default class NavTop extends React.Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.toggle = this.toggle.bind(this);
+//     this.state = {
+//       isOpen: false
+//     };
+//   }
+//   toggle() {
+//     this.setState({
+//       isOpen: !this.state.isOpen
+//     });
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <Navbar color="dark" dark expand="sm">
+//           <Link to="/">StarWars</Link>
+//           <NavbarToggler onClick={this.toggle} />
+//           <Collapse isOpen={this.state.isOpen} navbar>
+//             <Nav className="ml-auto" navbar>
+//               <NavItem>
+//                 <Link to="/weather">Weather</Link>
+//               </NavItem>
+//             </Nav>
+//           </Collapse>
+//         </Navbar>
+//       </div>
+//     );
+//   }
+// }

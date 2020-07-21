@@ -3,7 +3,7 @@ import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 
-import Landing from './components/Landing/Landing';
+import Landing from './components/landing/Landing';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import Profile from './components/auth/Profile'
@@ -19,6 +19,7 @@ import NutritionBasics from '../src/components/nutrition/NutritionBascis';
 import NutritionHealthyMeal from '../src/components/nutrition/NutritionHealthyMeal';
 import NutritionHowToEat from '../src/components/nutrition/NutritionHowToEat';
 import Donate from './components/donate/Donate';
+import Footer from './components/footer/Footer';
 
 
 
@@ -206,6 +207,9 @@ class App extends Component {
 
         </div>
         </Container>
+
+        {!this.state.loggedInUser ? ( null )  : ( <Footer /> )}
+
         <NavBottom userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
 
       </div>
