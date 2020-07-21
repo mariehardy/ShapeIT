@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import {Button, Spinner} from 'reactstrap';
-import "./DayDetails.css"
+import {Spinner} from 'reactstrap';
 
 class DayDetails extends Component {
   constructor(props) {
@@ -37,7 +36,7 @@ class DayDetails extends Component {
           this.state.singleDay 
         ? ( 
           <div>
-          <p>Day {this.state.singleDay.name}</p>
+          <p className="h1">Day {this.props.match.params.id}</p>
           {this.state.singleDay.map((filteredExercise,i) => (
             <div>
              <h3>{filteredExercise.type}</h3>

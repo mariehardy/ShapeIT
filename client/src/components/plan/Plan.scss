@@ -28,25 +28,23 @@
 }
 
 .plan-container {
-  // margin: auto 8%;
-  min-width: 400px;
+  min-width: 100px;
   width: 100%;
 }
 
 .flex-5-cols{
-  @include flex-grid(6, 20px);
+  @include flex-grid(6, 5px);
   display: flex;
   justify-content: center;
   align-items: center; 
 }
 
 .plan-ul {
-  // margin: 0;
   padding:0;
   list-style: none;
   margin-bottom: 30px;
 }
 
 .plan-li {
-  padding: 30px;
+  padding: 3vh;
 }

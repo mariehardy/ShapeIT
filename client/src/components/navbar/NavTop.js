@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Collapse } from 'react-bootstrap';
+// import { Navbar, Nav, Collapse } from 'react-bootstrap';
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 import { logout } from '../../services/api.js'
 
 
@@ -18,7 +20,7 @@ const NavTop = (props) => {
   if (!props.userInSession) { // when user is logged OUT
     return (   
     <div>
-      <Navbar collapseOnSelect expand='lg' bg="dark" variant="dark" className="navtop-background-color">
+      <Navbar collapseOnSelect expand='xs' bg="dark" variant="dark" className="navtop-background-color">
         <Navbar.Brand href="/">ShapeIt</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"
         />
@@ -37,6 +39,7 @@ const NavTop = (props) => {
   } else { // when user is logged IN
     return (
     <div>
+
       <Navbar collapseOnSelect expand='xs' bg="dark" variant="dark" className="navtop-background-color" >
         <Navbar.Brand href="/">ShapeIt</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" 
@@ -45,7 +48,7 @@ const NavTop = (props) => {
           <Navbar.Text>
             Hi {props.userInSession.email}!
           </Navbar.Text>
-          <Nav>
+          <Nav className="mr-auto">
           <Nav.Link as={Link} to="/profile" href="/profile">Profile</Nav.Link>
           <Nav.Link as={Link} to="/plan" href="/plan">Plan</Nav.Link>
           <Nav.Link as={Link} to="/nutrition" href="/nutrition">Nutrition</Nav.Link>
@@ -54,6 +57,7 @@ const NavTop = (props) => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+
     </div>
   );
 }

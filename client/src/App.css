@@ -78,7 +78,7 @@ ol li {
 
 
 .button-margin {
-  margin-top: 8vh;
+  margin-top: 5vh;
   /* margin-bottom: 6vh; */
 }
 
@@ -86,6 +86,15 @@ ol li {
   margin-top: 3vh;
   margin-bottom: 3vh;
 }
+
+
+
+/* ********** DAY DETAILS ********** */
+.day-exercise-thumbnail-box img {
+  height: 250px;
+}
+
+
 
 
 /* ********** EXERCISE DETAILS ********** */
