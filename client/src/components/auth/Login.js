@@ -68,7 +68,7 @@ class Login extends Component {
           <input type="text" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
           <input type="submit" value="Login" />
         </form>
-        <a href="http://localhost:5000/api/google">log in with google</a>
+        <a href={process.env.REACT_APP_BACKEND_URL + "/api/google"}>log in with google</a> 
         <p>Don't have account? 
            <Link to={"/signup"}> Signup</Link>
         </p>
