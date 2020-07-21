@@ -30,7 +30,7 @@ $placeholder-gray:           rgba(210, 210, 210, 1)  !default;
 
 $gray-input-bg:              #fffcf5 !default;
 $danger-input-bg:            #FFC0A4 !default;
-$success-input-bg:           #ABF3CB !default;
+$success-input-bg:           #D24B90 !default;
 $other-medium-gray:          #A49E93 !default;
 $transparent-bg:             transparent !default;
 
@@ -41,7 +41,10 @@ $default-states-color:       #403D39 !default;
 $primary-color:              #51cbce !default;
 $primary-states-color:       darken($primary-color, 10%) !default;
 
-$success-color:              #6bd098 !default;
+$secondary-color:            #D24B90 !default;
+$secodary-states-color:       darken($secondary-color, 10%) !default;
+
+$success-color:              #D24B90 !default;
 $success-states-color:       darken($success-color, 10%) !default;
 
 $info-color:                 #51bcda !default;
@@ -68,7 +71,7 @@ $brown-states-color:         darken($brown-color, 8%) !default;
 
 $light-blue:                 rgba($primary-color, .2);
 $light-azure:                rgba($info-color, .2);
-$light-green:                rgba($success-color, .2);
+$light-purple:                rgba($success-color, .2);
 $light-orange:               rgba($warning-color, .2);
 $light-red:                  rgba($danger-color, .2);
 
@@ -225,6 +228,7 @@ $red-navbar:                rgba(#FF4C40, .98);
 
 $bg-nude:               #FFFCF5 !default;
 $bg-primary:            lighten($primary-color, 7%) !default;
+$bg-secondary:          lighten($secondary-color, 7%) !default;
 $bg-info:               lighten($info-color, 7%) !default;
 $bg-success:            lighten($success-color, 7%) !default;
 $bg-warning:            lighten($warning-color, 7%) !default;
@@ -236,7 +240,7 @@ $preloader-color:          #D8D1C9 !default;
 
 $filter-blue:         darken($primary-color, 10%);
 $filter-azure:        darken($info-color, 10%);
-$filter-green:        darken($success-color, 10%);
+$filter-purple:        darken($success-color, 10%);
 $filter-orange:       darken($warning-color, 10%);
 $filter-red:          darken($danger-color, 10%);
 
@@ -307,6 +311,9 @@ $card-subtitle-orange:        #e95e37 !default;
 
 $card-background-primary:     #427C89 !default;
 $card-border-color:           #427C89 !default;
+
+$card-background-secondary:   #D24B90 !default;
+$card-border-color:           #D24B90 !default;
 
 $color-red-error: rgb(185, 74, 72) !default;
 $color-grey-arrow: rgba(204, 204, 204, 0.2) !default;

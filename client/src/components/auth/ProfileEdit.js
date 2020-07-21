@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+import {
+  Button,
+  Label,
+  FormGroup,
+  Form,
+  Input,
+  FormText,
+  InputGroupAddon,
+  InputGroupText,
+  InputGroup,
+  Row,
+  Col
+} from "reactstrap";
 
 class EditProfile extends Component {
   state = {
@@ -30,12 +43,12 @@ class EditProfile extends Component {
     const instagramID = this.state.instagramID;
     const avatarUrl = this.state.avatarUrl;
 
-    axios.put(`/api/profile-edit`, { email,instagramID,firstName,lastName,birthday,country,city,weight,height,avatarUrl})
+    axios.put(`/api/profile-edit`, { email, instagramID, firstName, lastName, birthday, country, city, weight, height, avatarUrl })
       .then(response => {
         //response.data
         this.props.updateUser(response.data)
         this.setState({ redirect: true })
-        
+
       })
       .catch(error => console.log(error))
   }
@@ -104,8 +117,8 @@ class EditProfile extends Component {
       this.setState({
         avatarUrl: resp.data.avatarUrl
       })
-    }).catch(error=>{
-      console.log("post doesnt work because : =>",error)
+    }).catch(error => {
+      console.log("post doesnt work because : =>", error)
     })
 
   }
@@ -113,15 +126,81 @@ class EditProfile extends Component {
   render() {
     return (
       <div>
-        { this.state.redirect ? <Redirect to="/profile"></Redirect> : null}
+        {this.state.redirect ? <Redirect to="/profile"></Redirect> : null}
         <hr />
         <h3>Edit form</h3>
         <form onSubmit={this.handleFormSubmit}>
 
+
+
+          <Form>
+            <div className="form-row">
+              <FormGroup className="col-md-6">
+                <label htmlFor="firstname">First Name</label>
+                <Input placeholder="Marie" input type="text" name="firstName" value={this.state.firstName} onChange={e => this.handleChangeFirstName(e)} ></Input>
+              </FormGroup>
+              <FormGroup className="col-md-6">
+                <label htmlFor="lastname">Last Name</label>
+                <Input placeholder="Jane" input type="text" name="lastName" value={this.state.lastName} onChange={e => this.handleChangeLastName(e)} ></Input>
+              </FormGroup>
+            </div>
+            <div className="form-row">
+              <FormGroup className="col-md-6">
+                <label htmlFor="email">Email</label>
+                <Input placeholder="example@gmail.com" id="inputEmail4" input type="email" name="email" value={this.state.email} onChange={e => this.handleChangeEmail(e)} ></Input>
+              </FormGroup>
+              <FormGroup className="col-md-6">
+                <label htmlFor="birthday">Date of Birth</label>
+                <Input placeholder="01.01.1988" type="date" name="birthday" value={this.state.birthday} onChange={e => this.handleChangeBirthday(e)}></Input>
+              </FormGroup>
+            </div>
+            <div className="form-row">
+              <FormGroup className="col-md-6">
+                <label htmlFor="country">Country</label>
+                <Input placeholder="Germany" type="text" name="country" value={this.state.country} onChange={e => this.handleChangeCountry(e)} ></Input>
+              </FormGroup>
+              <FormGroup className="col-md-6">
+                <label htmlFor="city">City</label>
+                <Input placeholder="Berlin" type="text" name="city" value={this.state.city} onChange={e => this.handleChangeCity(e)}></Input>
+              </FormGroup>
+            </div>
+
+            <div className="form-row">
+              <FormGroup className="col-md-6">
+                <label htmlFor="weight">Weight</label>
+                <Input placeholder="56 kg" type="number" name="weight" value={this.state.weight} onChange={e => this.handleChangeWeight(e)}></Input>
+              </FormGroup>
+              <FormGroup className="col-md-6">
+                <label htmlFor="height">Height</label>
+                <Input placeholder="170 cm" type="number" name="height" value={this.state.height} onChange={e => this.handleChangeHeight(e)}></Input>
+              </FormGroup>
+            </div>
+
+            <div className="form-row">
+
+              <FormGroup className="col-md-6">
+                <label htmlFor="insta">Instagram URL</label>
+                <Input placeholder="" type="text" name="instagramID" value={this.state.instagramID} onChange={e => this.handleChangeInstaURL(e)}></Input>
+              </FormGroup>
+
+              <FormGroup className="col-md-6">
+                <label htmlFor="height">Profile Picture</label>
+                <Input type="file" name="avatarUrl" onChange={e => this.handleFileUpload(e)} ></Input>
+              </FormGroup>
+
+            </div>
+
+            <Button color="primary" type="submit" value="Submit">
+              Submit
+        </Button>
+          </Form>
+{/* 
           <label>First Name:</label>
           <input type="text" name="firstName" value={this.state.firstName} onChange={e => this.handleChangeFirstName(e)} />
           <label>Last Name:</label>
           <input type="text" name="lastName" value={this.state.lastName} onChange={e => this.handleChangeLastName(e)} />
+          <label>Email:</label>
+          <input type="text" name="email" value={this.state.email} onChange={e => this.handleChangeEmail(e)} />
           <label>Date of Birth:</label>
           <input type="date" name="birthday" value={this.state.birthday} onChange={e => this.handleChangeBirthday(e)} />
           <label>Country:</label>
@@ -134,10 +213,10 @@ class EditProfile extends Component {
           <input type="number" name="height" value={this.state.height} onChange={e => this.handleChangeHeight(e)} />
           <label>Instagram URL:</label>
           <input type="text" name="instagramID" value={this.state.instagramID} onChange={e => this.handleChangeInstaURL(e)} />
-
+          <label> Profile Picture</label>
           <input type="file" name="avatarUrl" onChange={e => this.handleFileUpload(e)} />
 
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" /> */}
         </form>
       </div>
     )
