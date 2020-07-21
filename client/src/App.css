@@ -112,3 +112,17 @@ ol li {
   top: 0;
   left: 0;
 }
+
+.img_nutrition_size {
+  height: 50%;
+}
+
+.nutrutuin_1{
+  width: 300px;
+  height: 200px;
+  background-image: url("./assets/img/shapeIT/nutrition_main_first.jpg");
+  background-size: cover;
+}
+.nutrutuin_1:hover{
+  border: 2px solid blue;
+}
