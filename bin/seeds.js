@@ -3,7 +3,7 @@ const Day = require('../models/day-model');
 const Exercise = require('../models/exercise-model');
 
 mongoose
-  .connect('mongodb://localhost/shapeit-server', {useNewUrlParser: true})
+  .connect(process.env.MONGODB_URI, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
