@@ -51,7 +51,7 @@ class Plan extends Component {
               {/* console.log("el ========= ", el); */}
               {/* console.log("this.props.loggedInUser.currentDay ========= ", this.props.loggedInUser.currentDay); */}
               return (
-                <li key={el._id} className="plan-li">                
+                <li key={el._id} className="plan-li align-items-top">                
                 { el.name === 6 || el.name === 7 || el.name === 13 || el.name === 14 || el.name === 20 || el.name === 21 || el.name === 27 || el.name === 28
                 ? (
                     <p style={{color: "#D24B90"}}>{el.name}</p>
@@ -59,7 +59,7 @@ class Plan extends Component {
                   : (
                     el.name <= this.props.loggedInUser.currentDay 
                   ? (
-                    <Link to={"/day/" + el.name}>{el.name}</Link>
+                    <p><Link  to={"/day/" + el.name}>{el.name}</Link></p> 
                   )
                   : (
                     <p>{el.name}</p>
@@ -76,9 +76,10 @@ class Plan extends Component {
             <Col xs="6">+ {this.props.loggedInUser.currentDay*5} points</Col>
           </Row>
           </Container>
-          <Button as={Link} to={"/day/" + this.props.loggedInUser.currentDay} href={"/day/" + this.props.loggedInUser.currentDay} className="btn-round" color="primary" size="lg">
+          <Button as={Link} to={"/day/" + this.props.loggedInUser.currentDay} href={"/day/" + this.props.loggedInUser.currentDay} className="btn-round button-margin" color="primary" size="lg">
             SHAPE!
           </Button>
+          <p className="button-margin">Legend: <span style={{color: "#51bcda"}}>Daya completed</span> | <span style={{color: "#D24B90"}}>Days off</span> | Days not yet activated</p>
           </div>
           ) 
           : (

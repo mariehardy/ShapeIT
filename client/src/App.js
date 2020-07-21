@@ -9,7 +9,7 @@ import Signup from './components/auth/Signup';
 import Profile from './components/auth/Profile'
 import ProfileEdit from './components/auth/ProfileEdit';
 import NavTop from './components/navbar/NavTop';
-// import NavBottom from './components/navbar/NavBottom';
+import NavBottom from './components/navbar/NavBottom';
 import Plan from './components/plan/Plan';
 import DayDetails from './components/day/DayDetails';
 import ExerciseDetails from './components/exercise/ExerciseDetails';
@@ -206,7 +206,7 @@ class App extends Component {
 
         </div>
         </Container>
-        {/* <NavBottom userInSession={this.state.loggedInUser} updateUser={this.updateUser} /> */}
+        <NavBottom userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
 
       </div>
     );

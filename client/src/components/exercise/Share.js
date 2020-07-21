@@ -8,7 +8,7 @@ export class Share extends Component {
     console.log("location", window.location);
     return (
       <div>
-        <h1>Congrats!</h1>
+        <p className="h1">Congrats!</p>
         <div className="paragraph-top-margin">
         <p>You've completed Day {this.props.loggedInUser.currentDay -1} of your ShapeIT challenge! </p>
         <p>Share your progress on Facebook and get support from your community.</p>

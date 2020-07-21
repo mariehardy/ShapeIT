@@ -11,6 +11,9 @@ const NavBottom = (props) => {
       <nav className="nav-style">
         <ul className="navbottom-container">
           <li className="navbottom-item"> 
+            <Link to='/login'>Login</Link>
+          </li>
+          <li className="navbottom-item"> 
             <Link to='/profile'>Profile</Link>
           </li>
           <li className="navbottom-item"> 
@@ -26,9 +29,24 @@ const NavBottom = (props) => {
       </nav>
       </div>
     )
-
-    
   }
+else {
+  return (<div className="parent-wrapper">
+      <nav className="nav-style">
+        <ul className="navbottom-container">
+          <li className="navbottom-item"> 
+            <Link to='/login'>Login</Link>
+          </li>
+          <li className="navbottom-item"> 
+            <Link to='/signup'>Signup</Link>
+          </li>
+        </ul>
+      </nav>
+      </div>
+  )
+}
+    
+  
 }
 
 export default NavBottom;
