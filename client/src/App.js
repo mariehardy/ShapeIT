@@ -3,7 +3,7 @@ import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 
-import Landing from './components/landing/Landing';
+import Landing from './components/Landing/Landing';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import Profile from './components/auth/Profile'
