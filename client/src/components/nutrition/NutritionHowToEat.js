@@ -27,7 +27,7 @@ export class NutritionHowToEat extends Component {
             src={image2}
           ></CardImg>
           <CardImgOverlay>
-            <CardTitle className="text-white text-middle" tag="h1">How to Eat?</CardTitle>
+            <CardTitle className="text-white text-middle" tag="h4">How to Eat?</CardTitle>
             <CardText>
               <h7 className="text-white text-middle">This nutrition example can serve you as a basis for your culinary creativity</h7>
             </CardText>

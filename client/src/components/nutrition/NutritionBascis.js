@@ -27,18 +27,16 @@ export class NutritionBasics extends Component {
             src={image1}
           ></CardImg>
           <CardImgOverlay>
-            <CardTitle className="text-right" tag="h1">Nutrition Basics</CardTitle>
-            <CardText>
-              <h7>Practical recommendations for your nutrition adjustments</h7>
-            </CardText>
+            <CardTitle className="text-right" tag="h4">Nutrition Basics</CardTitle>
+
           </CardImgOverlay>
         </Card>
 
 
         <br />
         <div>
-          <p>
-            Keep in mind that it’s natural that your body needs time to adjust. Be true to yourself and always remember why you started this and why you are doing this.
+          
+        <p>Keep in mind that it’s natural that your body needs time to adjust. Be true to yourself and always remember why you started this and why you are doing this.
 The success rate for people who stick to this plan is over 90%, regardless of your starting physical level. </p>
 
           <h2>Energy Balance – what are calories about?</h2>

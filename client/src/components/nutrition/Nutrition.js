@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import image1 from '../../assets/img/shapeIT/nutrition_main_first.jpg'
 import image2 from '../../assets/img/shapeIT/nutrition_main_second.jpg'
 import image3 from '../../assets/img/shapeIT/nutrition_main_third.jpg'
+import image4 from '../../assets/img/shapeIT/lifestyle.jpg'
 // reactstrap components
 import {
   Button,
@@ -57,12 +58,9 @@ export class Nutrition extends Component {
             src={image1}
           ></CardImg>
           <CardImgOverlay>
-            <CardTitle tag="h1">Nutrition Basics</CardTitle>
+            <CardTitle tag="h4">Nutrition Basics</CardTitle>
             <CardText>
-              <h7>Practical recommendations for your nutrition adjustments</h7>
-            <Link className="text-white"  to="/nutrition-basics" >
-              <p><h6>Get to know more</h6></p>
-          </Link>
+              Practical recommendations for you
           </CardText>
           </CardImgOverlay>
         </Card>
@@ -75,11 +73,9 @@ export class Nutrition extends Component {
               src={image2}
             ></CardImg>
             <CardImgOverlay>
-              <CardTitle className="text-white text-middle" tag="h1">How to eat?</CardTitle>
+              <CardTitle className="text-white text-middle" tag="h4">How to eat?</CardTitle>
               <CardText className="text-white text-middle">
-              How to eat correctly to lose weight?               <Link className="text-white text-middle" to="/nutrition-how-to-eat" >
-                <p><h6> Get to know more</h6></p>
-          </Link>
+              How to eat correctly to lose weight?              
           </CardText>
             </CardImgOverlay>
           </Card>
@@ -92,12 +88,24 @@ export class Nutrition extends Component {
             src={image3}
           ></CardImg>
           <CardImgOverlay>
-            <CardTitle tag="h1">Healthy Meal Plan</CardTitle>
+            <CardTitle tag="h4">Healthy Meal Plan</CardTitle>
             <CardText>
-            Unleash your culinary creativity with our meal plan
-              <Link className="text-white" to="/nutrition-healthy-meals" >
-              <p><h6>Get to know more</h6></p>
-          </Link>
+            Unleash your culinary creativity 
+          </CardText>
+          </CardImgOverlay>
+        </Card>
+        </Link>
+
+        <Link to="/lifestyle" >
+        <Card className="text-white text-middle">
+          <CardImg
+            alt="..."
+            src={image4}
+          ></CardImg>
+          <CardImgOverlay>
+            <CardTitle className="text-white text-middle" tag="h4">ShapeIT Lifestyle</CardTitle>
+            <CardText className="text-white text-middle" >
+            Stronger together!
           </CardText>
           </CardImgOverlay>
         </Card>
