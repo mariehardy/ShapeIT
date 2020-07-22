@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import image1 from '../../assets/img/shapeIT/nutrition_main_first.jpg'
 import image2 from '../../assets/img/shapeIT/nutrition_main_second.jpg'
 import image3 from '../../assets/img/shapeIT/nutrition_main_third.jpg'
@@ -51,57 +51,57 @@ export class Nutrition extends Component {
       //   </Card>
       // </div>
       <div>
-        <Card className="text-white text-right">
+        <Link to="/nutrition-basics"> <Card className="text-white text-right">
           <CardImg
             alt="..."
             src={image1}
           ></CardImg>
           <CardImgOverlay>
-            <CardTitle tag="h4">Nutrition Basics</CardTitle>
+            <CardTitle tag="h1">Nutrition Basics</CardTitle>
             <CardText>
-              <h5>Here you will find out practical recommendations for your nutrition adjustments</h5>
-          </CardText>
-            <Link to="/nutrition-basics" >
-              Get to know more
+              <h7>Practical recommendations for your nutrition adjustments</h7>
+            <Link className="text-white"  to="/nutrition-basics" >
+              <p><h6>Get to know more</h6></p>
           </Link>
-
+          </CardText>
           </CardImgOverlay>
         </Card>
+        </Link>
 
-        <Card className="text-white text-middle">
-          <CardImg
-            alt="..."
-            src={image2}
-          ></CardImg>
-          <CardImgOverlay>
-            <CardTitle tag="h4">Nutrition Basics</CardTitle>
-            <CardText>
-              Here you will find out practical recommendations for your nutrition adjustments
-          </CardText>
-          <Link to="/nutrition-how-to-eat" >
-              Get to know more
+        <Link to="/nutrition-how-to-eat" >
+          <Card className="text-white text-middle">
+            <CardImg
+              alt="..."
+              src={image2}
+            ></CardImg>
+            <CardImgOverlay>
+              <CardTitle className="text-white text-middle" tag="h1">How to eat?</CardTitle>
+              <CardText className="text-white text-middle">
+              How to eat correctly to lose weight?               <Link className="text-white text-middle" to="/nutrition-how-to-eat" >
+                <p><h6> Get to know more</h6></p>
           </Link>
+          </CardText>
+            </CardImgOverlay>
+          </Card>
+        </Link>
 
-          </CardImgOverlay>
-        </Card>
-
+        <Link to="/nutrition-healthy-meals" >
         <Card className="text-white text-left">
           <CardImg
             alt="..."
             src={image3}
           ></CardImg>
           <CardImgOverlay>
-            <CardTitle tag="h4">Nutrition Basics</CardTitle>
+            <CardTitle tag="h1">Healthy Meal Plan</CardTitle>
             <CardText>
-              Here you will find out practical recommendations for your nutrition adjustments
-          </CardText>
-          <Link to="/nutrition-healthy-meals" >
-              Get to know more
+            Unleash your culinary creativity with our meal plan
+              <Link className="text-white" to="/nutrition-healthy-meals" >
+              <p><h6>Get to know more</h6></p>
           </Link>
-
-
+          </CardText>
           </CardImgOverlay>
         </Card>
+        </Link>
 
 
 

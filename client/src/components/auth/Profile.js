@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import profilepic from '../../assets/img/placeholder.jpg'
 import {
   Button,
   Card,
@@ -37,16 +38,20 @@ class Profile extends React.Component {
         </div></Card> */}
 
         <CardBody>
-
+        <blockquote className="blockquote">
+        <p className="mb-0">
           <CardTitle tag="h4">Hello {this.props.loggedInUser.firstName}!</CardTitle>
           <br/>
           <h6 className="card-category">Shape your will NOW</h6>
           <br/>
+          </p>  
+      </blockquote>
           
           <div className="card-avatar border-white">
           <img
-              alt="..."
-              src={this.props.loggedInUser.avatarUrl} alt={this.props.loggedInUser.email}
+              alt="Profile Picture"
+              src={this.props.loggedInUser.avatarUrl} 
+              // alt={this.props.loggedInUser.email}
             ></img>
           </div>
           <p className="card-description">
@@ -62,7 +67,7 @@ class Profile extends React.Component {
 
               <CardBody>
                 
-                <p className="card-description">
+                <div className="card-description">
                   Hey there! Welcome to your user card. As you can see, it is
                   already looking great.
                   
@@ -80,7 +85,7 @@ class Profile extends React.Component {
                     <p>Current Day: {this.props.loggedInUser.currentDay}</p>
 
                   </div>
-                </p>
+                </div>
                 <br/>
                 <Link to={'/profile-edit'}>Edit Profile</Link>
               </CardBody>
