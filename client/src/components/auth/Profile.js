@@ -68,7 +68,6 @@ class Profile extends React.Component {
                   
                   <div >
                   <br/>
-                  
                     {/* <p>My name is: {JSON.stringify(this.props.loggedInUser)}</p> */}
                     <p>Email: {this.props.loggedInUser.email}</p>
                     <p>Name: {this.props.loggedInUser.firstName}</p>
