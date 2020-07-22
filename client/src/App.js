@@ -22,6 +22,7 @@ import NutritionHowToEat from '../src/components/nutrition/NutritionHowToEat';
 import Donate from './components/donate/Donate';
 import Footer from './components/footer/Footer';
 import { Lifestyle } from './components/nutrition/Lifestyle';
+import DonateMyself from './components/donate/DonateMyself';
 
 
 
@@ -49,7 +50,7 @@ class App extends Component {
 
     return (
       <div className="App">
-      <NavbarTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
+        <NavbarTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
         {/* <NavTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} /> */}
 
         <Container className="themed-container" fluid={true}>
@@ -214,6 +215,16 @@ class App extends Component {
                 } else {
                   // if user IS logged in, show route
                   return <Donate updateUser={this.updateUser} loggedInUser={this.state.loggedInUser} />
+                }
+              }} />
+
+              <Route exact path="/donate-myself" render={() => {
+                if (!this.state.loggedInUser) {
+                  // if user is NOT logged in, redirect to '/'
+                  return <Redirect to={{ pathname: '/' }} />
+                } else {
+                  // if user IS logged in, show route
+                  return <DonateMyself updateUser={this.updateUser} loggedInUser={this.state.loggedInUser} />
                 }
               }} />
 

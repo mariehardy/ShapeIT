@@ -48,11 +48,13 @@ class Profile extends React.Component {
       </blockquote>
           
           <div className="card-avatar border-white">
+          <object data={profilepic} type="image/png">
           <img
               alt="Profile Picture"
               src={this.props.loggedInUser.avatarUrl} 
               // alt={this.props.loggedInUser.email}
             ></img>
+            </object>
           </div>
           <p className="card-description">
             Unlike fashionable design, it lasts many years – even in today’s

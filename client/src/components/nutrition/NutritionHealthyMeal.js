@@ -27,7 +27,7 @@ export class NutritionHealthyMeal extends Component {
             src={image3}
           ></CardImg>
           <CardImgOverlay>
-            <CardTitle className="text-left" tag="h4">HEALTHY MEAL</CardTitle>
+            <CardTitle className="text-left" tag="h4">Healthy Meal</CardTitle>
 
           </CardImgOverlay>
         </Card>

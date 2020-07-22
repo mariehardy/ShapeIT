@@ -52,6 +52,9 @@ export class Nutrition extends Component {
       //   </Card>
       // </div>
       <div>
+
+      <h1>Nutrition</h1>
+      <br/>
         <Link to="/nutrition-basics"> <Card className="text-white text-right">
           <CardImg
             alt="..."
