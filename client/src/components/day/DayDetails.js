@@ -38,16 +38,17 @@ class DayDetails extends Component {
           <div>
           <p className="h1">Day {this.props.match.params.id}</p>
           {this.state.singleDay.map((filteredExercise,i) => (
-            <div>
-             <h3>{filteredExercise.type}</h3>
-              <Link to={"/exercise/" + filteredExercise._id +"?index=" +i + "&&?day="+ this.props.match.params.id }>
+            <div className="day-exercise-card margin-top">
+            <Link to={"/exercise/" + filteredExercise._id +"?index=" +i + "&&?day="+ this.props.match.params.id }>
+
+             <p className="h3">{filteredExercise.name}</p>
                 <div className="day-exercise-box" key={filteredExercise._id}>
-                  <div className="day-exercise-thumbnail-box">
+                  <div className="day-exercise-thumbnail-box margin-top-bottom">
                     <img src={filteredExercise.thumbnail} alt={filteredExercise.name} />
                   </div>
                   <div className="day-exercise-details-box">
                     <p className="day-exercise-name">
-                      {filteredExercise.name}
+                      {filteredExercise.type}
                     </p>
                     <p className="day-exercise-repSec">
                       {filteredExercise.repSec}

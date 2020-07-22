@@ -11,26 +11,29 @@ function Footer() {
             <ul>
               <li>
                 <a
-                  href="https://www.creative-tim.com?ref=pkr-footer"
+                  href="https://twitter.com/ShapeIT"
                   target="_blank"
                 >
-                  Creative Tim
+                  <i className="fa fa-twitter" />
+                  <p className="d-lg-none">Twitter</p>
                 </a>
               </li>
               <li>
                 <a
-                  href="http://blog.creative-tim.com/?ref=pkr-footer"
+                  href="https://www.facebook.com/ShapeIT"
                   target="_blank"
                 >
-                  Blog
+                  <i className="fa fa-facebook-square" />
+                  <p className="d-lg-none">Facebook</p>
                 </a>
               </li>
               <li>
                 <a
-                  href="https://www.creative-tim.com/license?ref=pkr-footer"
+                  href="https://www.instagram.com/ShapeIT"
                   target="_blank"
                 >
-                  Licenses
+                  <i className="fa fa-instagram" />
+                  <p className="d-lg-none">Instagram</p>
                 </a>
               </li>
             </ul>

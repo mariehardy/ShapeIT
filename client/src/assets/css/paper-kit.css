@@ -3094,7 +3094,11 @@ License - nucleoapp.com/license/
     margin-left: auto;
     position: absolute; }
   .navbar.navbar-transparent {
-    background: transparent !important;
+    /* background: transparent !important; */
+    background-color: #D24B90;
+    background: rgb(210,75,144);
+    background: linear-gradient(42deg, rgba(233,165,177,1) 0%, rgba(210,75,144,1) 45%, rgba(255,66,66,1) 100%);
+  
     padding-top: 25px;
     box-shadow: none; }
     .navbar.navbar-transparent .navbar-brand {

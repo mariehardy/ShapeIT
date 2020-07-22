@@ -9,24 +9,24 @@ export class Share extends Component {
     return (
       <div>
         <p className="h1">Congrats!</p>
-        <div className="paragraph-top-margin">
+        <div className="paragraph-margin">
         <p>You've completed Day {this.props.loggedInUser.currentDay -1} of your ShapeIT challenge! </p>
         <p>Share your progress on Facebook and get support from your community.</p>
         </div>
         <div>
         <FacebookShareButton
           // url={window.location.href}
-          url="https://shapeit.kerokuapp.com"
-          title="ShapeIT!"
+          url="https://shapeitbaby.herokuapp.com"
+          title="ShapeIT"
           quote={`I am proud to say that I just completed day ${this.props.loggedInUser.currentDay-1} of my ShapeIT Fitness challenge!`}
           hashtag="#shapeit"
-          className="button-margin"
+          className="margin-top"
         >
           <FacebookIcon logoFillColor="white" size={100} round={false} borderRadius={10} />
         </FacebookShareButton>
         </div>
         <div>
-        <Button as={Link} to="/plan" href="/plan" className="btn-round" color="primary" className="button-margin">
+        <Button as={Link} to="/plan" href="/plan" className="btn-round margin-top" color="primary">
           Back to Plan
         </Button>
         </div>
