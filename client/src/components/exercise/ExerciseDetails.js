@@ -144,25 +144,26 @@ class ExerciseDetails extends Component {
               </ol>
             </div>
 
-            <p>{this.state.index+1} / {this.state.todaysExercises.length}</p>
 
             <Container>
-            <Row className="align-items-center">
-            <Col xs="6">
+            <Row className="align-items-center  margin-top">
+            <Col xs="4">
             {this.state.index === 0
             ? (
               <Button as={Link} to={"/day/" + this.state.day} href={"/day/" + this.state.day} className="btn-round" color="primary">Back To Day</Button>
             )
             : (
-              <Button onClick={this.getPreviousExercise} className="btn-round" color="primary">Previous Exercise</Button>
+              <Button onClick={this.getPreviousExercise} className="btn-round" color="primary">Previous</Button>
             )
             }
             </Col>
-  
-            <Col xs="6">
+            <Col xs="4">
+            <p>{this.state.index+1} / {this.state.todaysExercises.length}</p>
+            </Col>
+            <Col xs="4">
             {this.state.index !== this.state.todaysExercises.length-1
             ? (
-              <Button onClick={this.getNextExercise} className="btn-round" color="primary">Next Exercise</Button>
+              <Button onClick={this.getNextExercise} className="btn-round" color="primary">Next</Button>
             )
             : (
               this.state.day < this.props.loggedInUser.currentDay 
@@ -173,7 +174,6 @@ class ExerciseDetails extends Component {
               )
               : (
                 <Button as={Link} to="/share" href="/share" onClick={this.clickHandler} className="btn-round" color="primary">
-                {/* <Link to={{ pathname: "/share" }} onClick={this.clickHandler}> */}
                 SHARE YOUR PROGRESS
                 </Button>
               )

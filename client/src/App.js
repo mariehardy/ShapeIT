@@ -9,6 +9,7 @@ import Signup from './components/auth/Signup';
 import Profile from './components/auth/Profile'
 import ProfileEdit from './components/auth/ProfileEdit';
 import NavTop from './components/navbar/NavTop';
+import NavbarTop from './components/navbar/NavbarTop'
 import NavBottom from './components/navbar/NavBottom';
 import Plan from './components/plan/Plan';
 import DayDetails from './components/day/DayDetails';
@@ -47,7 +48,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <NavTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
+      <NavbarTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
+        {/* <NavTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} /> */}
 
         <Container className="themed-container" fluid={true}>
         <div className="global-top-botton-margin">
@@ -66,7 +68,7 @@ class App extends Component {
           <Route exact path='/signup' render={() => {
           if (!this.state.loggedInUser) {
             // if user is NOT logged in
-              return <Signup updateUser={this.updateUser}></Signup>
+              return <Signup updateUser={this.updateUser} loggedInUser = {this.state.loggedInUser}></Signup>
             } else {
             // once user IS logged in, redirect to `/profile-edit`
               return <Redirect to={{pathname: '/profile'}}/> 
@@ -76,7 +78,7 @@ class App extends Component {
           <Route exact path="/login" render={() => {
             if (!this.state.loggedInUser) {
             // if user is NOT logged in
-              return <Login updateUser={this.updateUser}></Login>
+              return <Login updateUser={this.updateUser} loggedInUser = {this.state.loggedInUser}></Login>
             } else {
             // once user IS logged in, redirect to `/plan`
               return <Redirect to={{pathname: '/plan'}}/> 
@@ -86,7 +88,7 @@ class App extends Component {
           <Route exact path="/profile" render={() => {
             if (!this.state.loggedInUser) {
               // if user is NOT logged in, redirect to '/'
-              return <Redirect to={{pathname: '/'}}/> 
+              return <Redirect to={{pathname: '/'}} updateUser={this.updateUser} loggedInUser={this.state.loggedInUser}/> 
             } else {
             // if user IS logged in, show route
             return <Profile updateUser={this.updateUser} loggedInUser = {this.state.loggedInUser} />
@@ -96,7 +98,7 @@ class App extends Component {
           <Route exact path="/profile-edit" render={() => {
             if (!this.state.loggedInUser) {
               // if user is NOT logged in, redirect to '/'
-              return <Redirect to={{pathname: '/'}}/> 
+              return <Redirect to={{pathname: '/'}} updateUser={this.updateUser} loggedInUser={this.state.loggedInUser}/> 
             } else {
             // if user IS logged in, show route
             return <ProfileEdit updateUser={this.updateUser} loggedInUser={this.state.loggedInUser}/>
@@ -106,7 +108,7 @@ class App extends Component {
           <Route exact path="/plan" render={() => {
             if (!this.state.loggedInUser) {
               // if user is NOT logged in, redirect to '/'
-              return <Redirect to={{pathname: '/'}}/> 
+              return <Redirect to={{pathname: '/'}} updateUser={this.updateUser} loggedInUser={this.state.loggedInUser}/> 
             } else {
             // if user IS logged in, show route
             return <Plan updateUser={this.updateUser} loggedInUser={this.state.loggedInUser} />
@@ -210,7 +212,7 @@ class App extends Component {
 
         {!this.state.loggedInUser ? ( null )  : ( <Footer /> )}
 
-        <NavBottom userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
+        {/* <NavBottom userInSession={this.state.loggedInUser} updateUser={this.updateUser} /> */}
 
       </div>
     );

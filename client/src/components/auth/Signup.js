@@ -8,7 +8,6 @@ import {
   FormGroup,
   Label,
   Input,
-  FormText,
   Button
 } from "reactstrap";
 
@@ -46,6 +45,9 @@ class Signup extends Component {
       <p className="h1">Sign up</p>
 
       <form onSubmit={this.handleFormSubmit} className="margin-top">
+      <div className="form-row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
       <FormGroup>
         <Label for="exampleEmail">Email address</Label>
         <Input
@@ -65,15 +67,19 @@ class Signup extends Component {
           id="examplePassword"
           value={this.state.password}
           onChange={ e => this.handleChange(e)}
-          placeholder="Password"
+          placeholder="Enter password"
           autoComplete="off"
         />
       </FormGroup>
-     
-      <Button color="primary btn-round" type="submit" value="Signup">
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+      <Button color="primary btn-round margin-top" type="submit" value="Signup">
         Sign up
       </Button>
+
     </form>
+
 
     <div className="margin-top"><a href={process.env.REACT_APP_BACKEND_URL + "/api/google"}><img src={ GoogleLogo } alt="Google Logo" className="google-logo" /> Signup with Google</a></div>
 

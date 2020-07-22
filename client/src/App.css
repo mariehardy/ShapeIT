@@ -59,27 +59,17 @@ ol li {
 }
 
 .global-top-botton-margin {
-  margin-top: 50px;
-  margin-bottom: 130px ;
+  margin-top: 130px;
+  margin-bottom: 100px ;
 }
-
-/* ********** NAVBAR ********** */
-.navtop-background-color {
-  background-color: #D24B90;
-  background: rgb(233,165,177);
-  background: linear-gradient(42deg, rgba(233,165,177,1) 0%, rgba(210,75,144,1) 45%, rgba(255,66,66,1) 100%);
-} 
-
-/* .collapse-text {
-  padding: 0;
-  margin: 0;
-}*/
-
-
 
 .margin-top {
   margin-top: 5vh;
-  /* margin-bottom: 6vh; */
+}
+
+.margin-top-bottom {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
 .paragraph-margin {
@@ -91,10 +81,17 @@ ol li {
 
 /* ********** DAY DETAILS ********** */
 .day-exercise-thumbnail-box img {
-  height: 250px;
+  height: 270px;
 }
 
+.day-exercise-card {
+  border: 1px solid #ccc;
+  border-radius: 2em;
+  background-color: #ccc;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
+}
 
 
 /* ********** EXERCISE DETAILS ********** */

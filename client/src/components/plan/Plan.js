@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { allDays } from '../../services/api'
 import './Plan.scss'
 import {Button, Spinner, Container, Row, Col} from 'reactstrap';
-
+import ProgressBar from '../progress/Progress'
 
 class Plan extends Component {
   state = {
@@ -72,17 +72,20 @@ class Plan extends Component {
               );
             })}
           </ul>
-          <Container>
+          <Container margin-top-bottom>
           <Row>
-            <Col xs="6">{Math.ceil(this.props.loggedInUser.currentDay*100/30)} %</Col>
+            <Col xs="6">
+            <ProgressBar value={this.props.loggedInUser.currentDay} />
+            {Math.ceil(this.props.loggedInUser.currentDay*100/30)} %
+            </Col>
             <Col xs="6">+ {this.props.loggedInUser.currentDay*5} points</Col>
           </Row>
           </Container>
-          <Button as={Link} to={"/day/" + this.props.loggedInUser.currentDay} href={"/day/" + this.props.loggedInUser.currentDay} className="btn-round button-margin" color="primary" size="lg">
+          <Button as={Link} to={"/day/" + this.props.loggedInUser.currentDay} href={"/day/" + this.props.loggedInUser.currentDay} className="btn-round margin-top-bottom" color="primary" size="lg">
             SHAPE!
           </Button>
-          <p className="button-margin">Legend: <span style={{color: "#51bcda"}}>Daya completed</span> | <span style={{color: "#D24B90"}}>Days off</span> | Days not yet activated</p>
           </div>
+          <p className="margin-top">Legend: <span style={{color: "#51bcda"}}>Daya completed</span> | <span style={{color: "#D24B90"}}>Days off</span> | Days not yet activated</p>
           </div>
           ) 
           : (
