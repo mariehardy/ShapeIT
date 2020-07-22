@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { signup } from '../../services/api.js';
 import { Link } from 'react-router-dom';
+import GoogleLogo from '../../assets/img/shapeIT/Google__G__Logo.svg'
+
 
 import {
   FormGroup,
@@ -43,7 +45,7 @@ class Signup extends Component {
       <div>
       <p className="h1">Sign up</p>
 
-      <form onSubmit={this.handleFormSubmit}>
+      <form onSubmit={this.handleFormSubmit} className="margin-top">
       <FormGroup>
         <Label for="exampleEmail">Email address</Label>
         <Input
@@ -54,9 +56,6 @@ class Signup extends Component {
           id="exampleEmail"
           placeholder="Enter email"
         />
-        <FormText color="muted">
-          We'll never share your email with anyone else.
-        </FormText>
       </FormGroup>
       <FormGroup>
         <Label for="examplePassword">Password</Label>
@@ -71,14 +70,14 @@ class Signup extends Component {
         />
       </FormGroup>
      
-      <Button color="primary" type="submit" value="Signup">
+      <Button color="primary btn-round" type="submit" value="Signup">
         Sign up
       </Button>
     </form>
 
-        <a href={process.env.REACT_APP_BACKEND_URL + "/api/google"}>log in with google</a> 
+    <div className="margin-top"><a href={process.env.REACT_APP_BACKEND_URL + "/api/google"}><img src={ GoogleLogo } alt="Google Logo" className="google-logo" /> Signup with Google</a></div>
 
-        <p>Already have account?
+        <p className="margin-top">Already have account?
             <Link to={"/login"}> Login</Link>
         </p>
 

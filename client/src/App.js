@@ -56,7 +56,7 @@ class App extends Component {
           <Route exact path='/' render={() => {
           if (!this.state.loggedInUser) {
             // if user is NOT logged in
-              return <Landing updateUser={this.updateUser} updateUser={this.updateUser}></Landing>
+              return <Landing updateUser={this.updateUser} ></Landing>
             } else {
             // if user IS logged in, redirect to `/plan`
               return <Redirect to={{pathname: '/plan'}}/>
@@ -69,7 +69,7 @@ class App extends Component {
               return <Signup updateUser={this.updateUser}></Signup>
             } else {
             // once user IS logged in, redirect to `/profile-edit`
-              return <Redirect to={{pathname: '/profile-edit'}}/> 
+              return <Redirect to={{pathname: '/profile'}}/> 
             }
           }} />
 
