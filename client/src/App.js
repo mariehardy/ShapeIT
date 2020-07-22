@@ -9,6 +9,7 @@ import Signup from './components/auth/Signup';
 import Profile from './components/auth/Profile'
 import ProfileEdit from './components/auth/ProfileEdit';
 import NavTop from './components/navbar/NavTop';
+import NavbarTop from './components/navbar/NavbarTop'
 import NavBottom from './components/navbar/NavBottom';
 import Plan from './components/plan/Plan';
 import DayDetails from './components/day/DayDetails';
@@ -48,9 +49,11 @@ class App extends Component {
 
     return (
       <div className="App">
-        <NavTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
+      <NavbarTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
+        {/* <NavTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} /> */}
 
         <Container className="themed-container" fluid={true}>
+
           <div className="global-top-botton-margin">
 
             <Switch>
@@ -217,11 +220,12 @@ class App extends Component {
             </Switch>
 
           </div>
+
         </Container>
 
         {!this.state.loggedInUser ? (null) : (<Footer />)}
 
-        <NavBottom userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
+        {/* <NavBottom userInSession={this.state.loggedInUser} updateUser={this.updateUser} /> */}
 
       </div>
     );

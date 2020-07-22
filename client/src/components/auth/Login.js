@@ -56,8 +56,13 @@ class Login extends Component {
       <div>
       <p className="h1">Login</p>
 
-      <form onSubmit={this.handleFormSubmit} className="margin-top">
-      <FormGroup>
+      <form onSubmit={this.handleFormSubmit} className="margin-top" >
+      <div className="form-row">
+      <div class="col-md-4"></div>
+
+      <div class="col-md-4">
+      {/* <div class="col-lg-1 col-offset-6 centered"> */}
+      <FormGroup >
         <Label for="exampleEmail">Email address</Label>
         <Input
           type="email"
@@ -80,6 +85,11 @@ class Login extends Component {
           autoComplete="off"
         />
       </FormGroup>
+      
+      </div>
+      <div class="col-md-4"></div>
+      </div>
+
      
       <Button color="primary" type="submit" value="Login" className="btn-round margin-top">
         Login
@@ -87,7 +97,7 @@ class Login extends Component {
     </form>
 
         <div className="margin-top"><a href={process.env.REACT_APP_BACKEND_URL + "/api/google"}><img src={ GoogleLogo } alt="Google Logo" className="google-logo" /> Login with Google</a></div>
-        <p className="margin-top">Don't have account? 
+        <p className="margin-top-bottom">Don't have account? 
            <Link to={"/signup"}> Signup</Link>
         </p>
       </div>
