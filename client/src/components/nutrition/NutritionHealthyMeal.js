@@ -27,10 +27,8 @@ export class NutritionHealthyMeal extends Component {
             src={image3}
           ></CardImg>
           <CardImgOverlay>
-            <CardTitle className="text-left" tag="h1">HEALTHY MEAL</CardTitle>
-            <CardText>
-              <h7>This nutrition example can serve you as a basis for your culinary creativity</h7>
-            </CardText>
+            <CardTitle className="text-left" tag="h4">HEALTHY MEAL</CardTitle>
+
           </CardImgOverlay>
         </Card>
 
@@ -56,7 +54,6 @@ export class NutritionHealthyMeal extends Component {
         </div>
         <p>
           <Link to="/nutrition">Back</Link>
-
         </p>
       </div>
     )
