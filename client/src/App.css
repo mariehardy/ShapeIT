@@ -77,7 +77,7 @@ ol li {
 
 
 
-.button-margin {
+.margin-top {
   margin-top: 5vh;
   /* margin-bottom: 6vh; */
 }
@@ -125,4 +125,10 @@ ol li {
 }
 .nutrutuin_1:hover{
   border: 2px solid blue;
+}
+
+
+.google-logo {
+  width: 30px;
+  height: auto;
 }
