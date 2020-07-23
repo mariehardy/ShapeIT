@@ -63,7 +63,7 @@ export class NutritionHowToEat extends Component {
 
 
 
-        <Link to="/nutrition">Back</Link>
+        <p><Link to="/nutrition">Back</Link></p>
       </div>
     )
   }

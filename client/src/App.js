@@ -20,9 +20,9 @@ import NutritionBasics from '../src/components/nutrition/NutritionBascis';
 import NutritionHealthyMeal from '../src/components/nutrition/NutritionHealthyMeal';
 import NutritionHowToEat from '../src/components/nutrition/NutritionHowToEat';
 import Donate from './components/donate/Donate';
+import DonateMyself from './components/donate/DonateMyself';
 import Footer from './components/footer/Footer';
 import { Lifestyle } from './components/nutrition/Lifestyle';
-import DonateMyself from './components/donate/DonateMyself';
 
 
 
@@ -54,6 +54,8 @@ class App extends Component {
         {/* <NavTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} /> */}
 
         <Container className="themed-container" fluid={true}>
+
+
 
             <Switch>
               <Route exact path='/' render={() => {
@@ -230,7 +232,10 @@ class App extends Component {
     
               </div>
 
-            </Switch>
+
+
+            </div>
+          </Switch>
 
 
         </Container>

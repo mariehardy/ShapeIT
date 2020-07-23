@@ -202,9 +202,15 @@ ol li {
   transform: translate(-50%, -50%);
 }
 
+.button-positioning{
+  top: 50%;
+  left: 50%;
+}
+
 .background-photo {
   background-image: url('./assets/img/shapeIT/IMG_8281-1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   /* background-color: #ccc; */
 }
+

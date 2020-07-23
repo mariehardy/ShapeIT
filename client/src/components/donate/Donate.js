@@ -77,8 +77,8 @@ export class Donate extends Component {
             src={donate_main2}
           ></CardImg>
           <CardImgOverlay>
-          <CardTitle className="text-right" tag="h4">Shape the future Together</CardTitle>
-          <CardText className="text-right">
+          <CardTitle className="text-right text-white" tag="h4">Shape the future Together</CardTitle>
+          <CardText className="text-right text-white">
           <h6>When you exercise for charity, you know what’s really important to you</h6>
           </CardText>
           </CardImgOverlay>
