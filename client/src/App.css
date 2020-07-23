@@ -129,3 +129,12 @@ ol li {
   width: 30px;
   height: auto;
 }
+
+.image--cover {
+  width: 100%;
+  height: auto;
+  border-radius: 0%;
+
+  object-fit: cover;
+  object-position: center right;
+}
