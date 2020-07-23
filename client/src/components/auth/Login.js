@@ -40,7 +40,6 @@ class Login extends Component {
       .then((resp) => {
         this.props.updateUser(resp.data)
         this.setState({ email: "", password: "" });
-
       }).catch((error) => {
         console.log("ERROR !!")
         console.log(error.response)
@@ -49,6 +48,7 @@ class Login extends Component {
         })
       })
   }
+
     
     
   render(){

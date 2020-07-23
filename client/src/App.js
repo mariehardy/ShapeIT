@@ -55,23 +55,23 @@ class App extends Component {
 
         <Container className="themed-container" fluid={true}>
 
-          <div className="global-top-botton-margin">
-
             <Switch>
               <Route exact path='/' render={() => {
                 if (!this.state.loggedInUser) {
                   // if user is NOT logged in
-                  return <Landing updateUser={this.updateUser} ></Landing>
+                  return <Landing updateUser={this.updateUser} loggedInUser={this.state.loggedInUser}></Landing>
                 } else {
                   // if user IS logged in, redirect to `/plan`
                   return <Redirect to={{ pathname: '/plan' }} />
                 }
               }} />
 
+              <div className="global-top-botton-margin">
+
               <Route exact path='/signup' render={() => {
                 if (!this.state.loggedInUser) {
                   // if user is NOT logged in
-                  return <Signup updateUser={this.updateUser}></Signup>
+                  return <Signup updateUser={this.updateUser} loggedInUser={this.state.loggedInUser}></Signup>
                 } else {
                   // once user IS logged in, redirect to `/profile-edit`
                   return <Redirect to={{ pathname: '/profile' }} />
@@ -81,7 +81,7 @@ class App extends Component {
               <Route exact path="/login" render={() => {
                 if (!this.state.loggedInUser) {
                   // if user is NOT logged in
-                  return <Login updateUser={this.updateUser}></Login>
+                  return <Login updateUser={this.updateUser} loggedInUser={this.state.loggedInUser}></Login>
                 } else {
                   // once user IS logged in, redirect to `/plan`
                   return <Redirect to={{ pathname: '/plan' }} />
@@ -227,10 +227,11 @@ class App extends Component {
                   return <DonateMyself updateUser={this.updateUser} loggedInUser={this.state.loggedInUser} />
                 }
               }} />
+    
+              </div>
 
             </Switch>
 
-          </div>
 
         </Container>
 

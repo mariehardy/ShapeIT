@@ -77,6 +77,10 @@ ol li {
   margin-bottom: 3vh;
 }
 
+.google-logo {
+  width: 30px;
+  height: auto;
+}
 
 
 /* ********** DAY DETAILS ********** */
@@ -87,10 +91,12 @@ ol li {
 .day-exercise-card {
   border: 1px solid #ccc;
   border-radius: 2em;
-  background-color: #ccc;
+  background-color: #000;
   padding-top: 20px;
   padding-bottom: 20px;
-
+  -webkit-box-shadow: 10px 10px 7px 0px rgba(189,189,189,1);
+  -moz-box-shadow: 10px 10px 7px 0px rgba(189,189,189,1);
+  box-shadow: 10px 10px 7px 0px rgba(189,189,189,1);
 }
 
 
@@ -110,6 +116,11 @@ ol li {
   left: 0;
 }
 
+
+
+/* ********** NUTRITION ********** */
+
+
 .img_nutrition_size {
   height: 50%;
 }
@@ -125,16 +136,11 @@ ol li {
 }
 
 
-.google-logo {
-  width: 30px;
-  height: auto;
-}
 
 .image--cover {
   width: 100%;
   height: auto;
   border-radius: 0%;
-
   object-fit: cover;
   object-position: center right;
 }
@@ -194,4 +200,11 @@ ol li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.background-photo {
+  background-image: url('./assets/img/shapeIT/IMG_8281-1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-color: #ccc; */
 }

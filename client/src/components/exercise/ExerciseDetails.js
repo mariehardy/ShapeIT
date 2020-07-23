@@ -4,6 +4,8 @@ import { Link, Redirect } from "react-router-dom";
 import ReactPlayer from "react-player";
 import {Button, Spinner, Container, Row, Col} from 'reactstrap';
 
+import './ExerciseDetails.scss'
+
 
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
@@ -150,7 +152,7 @@ class ExerciseDetails extends Component {
             <Col xs="4">
             {this.state.index === 0
             ? (
-              <Button as={Link} to={"/day/" + this.state.day} href={"/day/" + this.state.day} className="btn-round" color="primary">Back To Day</Button>
+              <Button as={Link} to={"/day/" + this.state.day} href={"/day/" + this.state.day} className="btn-round" color="primary">Back</Button>
             )
             : (
               <Button onClick={this.getPreviousExercise} className="btn-round" color="primary">Previous</Button>
