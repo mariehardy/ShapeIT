@@ -7,7 +7,7 @@ function Landing() {
     <div>
 
 <div className="vimeo-wrapper">
-   <iframe src="https://player.vimeo.com/video/441006850?background=1&autoplay=1&loop=0&byline=0&title=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+   <iframe src="https://player.vimeo.com/video/441006850?background=1&autoplay=1&loop=0&byline=0&title=0" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
    {/* <iframe src="https://player.vimeo.com/video/441006850?background=1&autoplay=1&loop=0&byline=0&title=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> */}
 </div> 
 
