@@ -12,21 +12,28 @@ class Plan extends Component {
     listOfDays: [],
   }
 
+  _isMounted = false;
+
   getAllDays = () => {
         allDays()
         .then(response => {
-          this.setState({
-            listOfDays: response,
-          });
+          if (this._isMounted) {
+            this.setState({
+              listOfDays: response,
+            });
+          }
           console.log("listOfDays ====== ", this.state.listOfDays);
     });
   };
 
   componentDidMount() {
+    this._isMounted = true;
     this.getAllDays();
   }
 
-  
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
 
 
   render() {
@@ -90,7 +97,7 @@ class Plan extends Component {
             SHAPE!
           </Button>
           </div>
-          <p className="margin-top">Legend: <span style={{color: "#51bcda"}}>Daya completed</span> | <span style={{color: "#D24B90"}}>Days off</span> | Days not yet activated</p>
+          <p className="margin-top">Legend: <span style={{color: "#51bcda"}}>Days completed</span> | <span style={{color: "#D24B90"}}>Days off</span> | Days not yet activated</p>
           </div>
           ) 
           : (

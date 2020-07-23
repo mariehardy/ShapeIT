@@ -11,16 +11,7 @@ function Footer() {
             <ul>
               <li>
                 <a
-                  href="https://twitter.com/ShapeIT"
-                  target="_blank"
-                >
-                  <i className="fa fa-twitter" />
-                  <p className="d-lg-none">Twitter</p>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.facebook.com/ShapeIT"
+                  href="https://www.facebook.com/shape2win"
                   target="_blank"
                 >
                   <i className="fa fa-facebook-square" />
@@ -29,7 +20,7 @@ function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/ShapeIT"
+                  href="https://www.instagram.com/shape2win"
                   target="_blank"
                 >
                   <i className="fa fa-instagram" />
