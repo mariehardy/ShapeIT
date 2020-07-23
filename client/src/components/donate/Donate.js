@@ -66,7 +66,7 @@ export class Donate extends Component {
         </Card>
         </Link>
 
-        <Link to="/nutrition-basics"> <Card className="text-white text-middle">
+        <Card className="text-white text-middle">
           <CardImg
             alt="..."
             src={picture2}
@@ -78,8 +78,7 @@ export class Donate extends Component {
           </CardText>
           </CardImgOverlay>
         </Card>
-        </Link>
-
+       
 
 
       </div>
