@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "dev": "DEBUG=shapeit-server:* nodemon ./bin/www",
     "dev-windows": "nodemon ./bin/www",
-    "build": "cd client && npm install && npm run build" 
+    "build": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -35,7 +35,8 @@
     "react-player": "^2.5.0",
     "react-share": "^4.2.1",
     "reactstrap": "^8.5.1",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "video-react": "^0.14.1"
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
