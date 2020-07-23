@@ -4,8 +4,6 @@ import { Link, Redirect } from "react-router-dom";
 import ReactPlayer from "react-player";
 import {Button, Spinner, Container, Row, Col} from 'reactstrap';
 
-import './ExerciseDetails.scss'
-
 
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;

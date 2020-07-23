@@ -8,9 +8,7 @@ import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import Profile from './components/auth/Profile'
 import ProfileEdit from './components/auth/ProfileEdit';
-import NavTop from './components/navbar/NavTop';
-import NavbarTop from './components/navbar/NavbarTop'
-import NavBottom from './components/navbar/NavBottom';
+import NavbarTop from './components/navbar/NavbarTop';
 import Plan from './components/plan/Plan';
 import DayDetails from './components/day/DayDetails';
 import ExerciseDetails from './components/exercise/ExerciseDetails';
@@ -51,7 +49,6 @@ class App extends Component {
     return (
       <div className="App">
         <NavbarTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} />
-        {/* <NavTop userInSession={this.state.loggedInUser} updateUser={this.updateUser} /> */}
 
         <Container className="themed-container" fluid={true}>
 
@@ -83,7 +80,7 @@ class App extends Component {
               <Route exact path="/login" render={() => {
                 if (!this.state.loggedInUser) {
                   // if user is NOT logged in
-                  return <Login updateUser={this.updateUser} loggedInUser={this.state.loggedInUser}></Login>
+                  return <Login updateUser={this.updateUser} loggedInUser={this.state.loggedInUser} />
                 } else {
                   // once user IS logged in, redirect to `/plan`
                   return <Redirect to={{ pathname: '/plan' }} />
@@ -238,8 +235,6 @@ class App extends Component {
         </Container>
 
         {!this.state.loggedInUser ? (null) : (<Footer />)}
-
-        {/* <NavBottom userInSession={this.state.loggedInUser} updateUser={this.updateUser} /> */}
 
       </div>
     );
