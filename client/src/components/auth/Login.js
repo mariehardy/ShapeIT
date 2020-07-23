@@ -38,8 +38,8 @@ class Login extends Component {
     axios.post("/api/login", { email, password })
       // 2xx status code
       .then((resp) => {
+        this.setState({ email: "", password: "" }); // This needs to happen BEFORE the updateUser
         this.props.updateUser(resp.data)
-        this.setState({ email: "", password: "" });
       }).catch((error) => {
         console.log("ERROR !!")
         console.log(error.response)

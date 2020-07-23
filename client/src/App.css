@@ -89,9 +89,9 @@ ol li {
 }
 
 .day-exercise-card {
-  border: 1px solid #ccc;
+  border: 1px solid #fff6eb;
   border-radius: 2em;
-  background-color: #000;
+  background-color: #fff6eb;
   padding-top: 20px;
   padding-bottom: 20px;
   -webkit-box-shadow: 10px 10px 7px 0px rgba(189,189,189,1);
@@ -206,11 +206,3 @@ ol li {
   top: 50%;
   left: 50%;
 }
-
-.background-photo {
-  background-image: url('./assets/img/shapeIT/IMG_8281-1.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* background-color: #ccc; */
-}
-
