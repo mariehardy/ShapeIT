@@ -129,7 +129,7 @@ class EditProfile extends Component {
         {this.state.redirect ? <Redirect to="/profile"></Redirect> : null}
         <hr />
         <h3>Edit form</h3>
-        <form onSubmit={this.handleFormSubmit}>
+        <div onSubmit={this.handleFormSubmit}>
 
 
 
@@ -217,7 +217,7 @@ class EditProfile extends Component {
           <input type="file" name="avatarUrl" onChange={e => this.handleFileUpload(e)} />
 
           <input type="submit" value="Submit" /> */}
-        </form>
+        </div>
       </div>
     )
   }

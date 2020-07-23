@@ -19,6 +19,7 @@ class Profile extends React.Component {
     return (
 
       // --- Second option ---
+      <div>
       <Card
         data-background="image"
         style={{
@@ -39,22 +40,25 @@ class Profile extends React.Component {
 
         <CardBody>
         <blockquote className="blockquote">
-        <p className="mb-0">
+        <div className="mb-0">
+  
           <CardTitle tag="h4">Hello {this.props.loggedInUser.firstName}!</CardTitle>
           <br/>
           <h6 className="card-category">Shape your will NOW</h6>
           <br/>
-          </p>  
+    
+          </div>  
       </blockquote>
           
           <div className="card-avatar border-white">
-          <object className = "image--cover" data={this.props.loggedInUser.avatarUrl} type="image/png">
+          {/* <object className = "image--cover" data={this.props.loggedInUser.avatarUrl} type="image/png"> */}
           <img
               alt="Profile Picture"
-              src={profilepic} 
+              src={this.props.loggedInUser.avatarUrl} 
+              onError={profilepic}
               // alt={this.props.loggedInUser.email}
             ></img>
-            </object>
+            {/* </object> */}
           </div>
           <p className="card-description">
             Unlike fashionable design, it lasts many years – even in today’s
@@ -97,7 +101,9 @@ class Profile extends React.Component {
           </CardFooter>
         </CardBody>
       </Card>
+      </div>
       // <Card className="card-profile">
+      
       //   <div
       //     className="card-cover"
       //     style={{
