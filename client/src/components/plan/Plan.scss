@@ -27,9 +27,20 @@
   }
 }
 
+.background-photo {
+  background-image: '../../assets/img/shapeIT/IMG_8111_optimized.jpg';
+  background-size: cover;
+  background-repeat: no-repeat;
+  // background-color: #ccc;
+}
+
 .plan-container {
-  border: 1px solid #ccc;
+  border: 1px solid #fff6eb;
   border-radius: 2em;
+  background-color: #fff6eb;
+  -webkit-box-shadow: 10px 10px 7px 0px rgba(189,189,189,1);
+  -moz-box-shadow: 10px 10px 7px 0px rgba(189,189,189,1);
+  box-shadow: 10px 10px 7px 0px rgba(189,189,189,1);
   min-width: 100px;
   width: 100%;
 }

@@ -18,17 +18,17 @@ import {
 } from "reactstrap";
 
 
-const logoutUser = (props) =>{
-  logout()
-  .then(() => {
-    props.updateUser(null);  // sets the global user object to 'null'
-  })
-}
+
 
 
 function NavbarTop(props) {
 
-
+  const logoutUser = (props) =>{
+    logout()
+    .then(() => {
+      props.updateUser(null);  // sets the global user object to 'null'
+    })
+  }
 
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
