@@ -3016,21 +3016,32 @@ License - nucleoapp.com/license/
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
   padding: 0;
-  background: #FFFFFF;
+  /* background: #FFFFFF; */
+  background-color: #D24B90;
+    background: rgb(210,75,144);
+    background: linear-gradient(42deg, rgba(233,165,177,1) 0%, rgba(210,75,144,1) 45%, rgba(255,66,66,1) 100%);
+  
   box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15); }
   .navbar .navbar-brand {
     font-weight: 600;
     margin: 5px 0px;
-    padding: 20px 15px;
+    padding: 10px 10px;
     font-size: 14px;
     color: #66615B;
-    text-transform: uppercase; }
+    /* text-transform: uppercase;  */
+  }
+  .navbar .navbar-brand img {
+   height: 50px;
+   width: auto;
+  }
   .navbar .navbar-toggler:focus {
     outline: none; }
   .navbar .form-control-feedback {
     padding-left: 0px; }
   .navbar:not([class*="bg"]) .navbar-toggler .navbar-toggler-bar {
-    background: #66615B !important; }
+    /* background: #66615B !important;  */
+    background: #ffffff !important;
+  }
   .navbar .navbar-nav .nav-item .nav-link {
     line-height: 1.6;
     margin: 15px 3px;
@@ -3070,7 +3081,12 @@ License - nucleoapp.com/license/
   .navbar .navbar-collapse.show .navbar-nav .nav-item {
     padding-right: 10px; }
   .navbar .navbar-collapse:after {
-    background-color: #FFFCF5; }
+    background-color: #D24B90;
+    background: rgb(210,75,144);
+    background: linear-gradient(42deg, rgba(233,165,177,1) 0%, rgba(210,75,144,1) 45%, rgba(255,66,66,1) 100%);
+  
+    /* background-color: #FFFCF5;  */
+  }
   .navbar #navbarSupportedContent .nav-item {
     position: relative; }
   .navbar .notification-bubble {
@@ -5333,14 +5349,17 @@ License - nucleoapp.com/license/
       border-bottom: 0; }
     .navbar-collapse .navbar-nav > .nav-item > .nav-link {
       margin: 0px 0px;
-      color: #9A9A9A !important;
+      /* color: #9A9A9A !important; */
+      color: #ffffff !important; 
       text-transform: uppercase;
       font-weight: 600;
       font-size: 12px;
       line-height: 1.5em;
       padding: 15px 0; }
       .navbar-collapse .navbar-nav > .nav-item > .nav-link:hover, .navbar-collapse .navbar-nav > .nav-item > .nav-link:active {
-        color: #403D39 !important; }
+        /* color: #403D39 !important;  */
+        color: #fab526 !important; 
+      }
     .navbar-collapse::after {
       top: 0;
       left: 0;

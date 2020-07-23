@@ -146,7 +146,7 @@ class ExerciseDetails extends Component {
 
 
             <Container>
-            <Row className="align-items-center  margin-top">
+            <Row className="align-items-center margin-top">
             <Col xs="4">
             {this.state.index === 0
             ? (

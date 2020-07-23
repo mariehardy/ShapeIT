@@ -1,9 +1,10 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 // nodejs library that concatenates strings
 import classnames from "classnames";
-import { logout } from '../../services/api.js'
+import shapeitLogo from '../../assets/img/shapeIT/shapeit-logo-white-svg.svg';
+
+import { logout } from '../../services/api.js';
 
 // reactstrap components
 import {
@@ -77,7 +78,7 @@ function NavbarTop(props) {
             title="ShapeIT"
             tag={Link}
           >
-            ShapeIT
+            <img src={ shapeitLogo } alt="Shape IT logo" />
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
@@ -130,7 +131,8 @@ function NavbarTop(props) {
             title="ShapeIT"
             tag={Link}
           >
-            ShapeIT
+            <img src={ shapeitLogo } alt="Shape IT logo" />
+
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}

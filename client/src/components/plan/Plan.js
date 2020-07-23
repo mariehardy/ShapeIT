@@ -4,6 +4,8 @@ import { allDays } from '../../services/api'
 import './Plan.scss'
 import {Button, Spinner, Container, Row, Col} from 'reactstrap';
 import ProgressBar from '../progress/Progress'
+import piggy from '../../assets/img/shapeIT/piggy-bank-icon-png-14.jpg';
+
 
 class Plan extends Component {
   state = {
@@ -72,13 +74,16 @@ class Plan extends Component {
               );
             })}
           </ul>
-          <Container margin-top-bottom>
-          <Row>
+          <Container>
+          <Row className="row align-items-end">
             <Col xs="6">
-            <ProgressBar value={this.props.loggedInUser.currentDay} />
-            {Math.ceil(this.props.loggedInUser.currentDay*100/30)} %
+            <ProgressBar value={Math.round((this.props.loggedInUser.currentDay-1)*100/30)} />
+            <div className="margin-top">{Math.round((this.props.loggedInUser.currentDay-1)*100/30)} % completed</div>
             </Col>
-            <Col xs="6">+ {this.props.loggedInUser.currentDay*5} points</Col>
+            <Col xs="6">
+            <div><img src={ piggy } alt="Shape IT logo" /></div>
+            + {this.props.loggedInUser.currentDay*5} points
+            </Col>
           </Row>
           </Container>
           <Button as={Link} to={"/day/" + this.props.loggedInUser.currentDay} href={"/day/" + this.props.loggedInUser.currentDay} className="btn-round margin-top-bottom" color="primary" size="lg">
