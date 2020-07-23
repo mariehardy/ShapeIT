@@ -50,43 +50,53 @@ export class Donate extends Component {
   render() {
     
     return (
-      <div className = "container global-botton-margin">
-        <h1>Shape the future together!</h1>
 
-        {this.state.donationID ? <div className="plg-donate" key={this.state.donationID} data-widget-id={this.state.donationID}></div> : null}
+      <div>
 
-        Donate now for any cause of your choice
+        <h1>Donate</h1>
+        <Card>
+          <CardImg
+            alt="..."
+            src={donate_main2}
+          ></CardImg>
+          <CardImgOverlay>
+          <CardTitle className="text-right" tag="h4">Shape the future Together</CardTitle>
+          <CardText className="text-right">
+          <h6>When you exercise for charity, you know what’s really important to you</h6>
+          </CardText>
+          </CardImgOverlay>
 
-        {/* COVID Link {this.state.first && <div className="plg-donate" data-widget-id="M_5C04BdeZzFbPe4GHRihg"></div>} */}
-        
-        {/* <a href="https://hello.pledgeling.com/widgets/donate/IXmd3cAELs9Yobg7_nhAzw"> */}
-        
-        <h2 onClick={() => this.setDonationID("M_5C04BdeZzFbPe4GHRihg")}>Against Covid-19 Together</h2> 
-        {/* </a> */}
+          </Card>
 
-        <img src= {picture6}></img>
-        
+        <p>Shape the future together!</p>
+   
+        <Link to="/donate-myself"> <Card className="text-white text-right">
+          <CardImg
+            alt="..."
+            src={picture1}
+          ></CardImg>
+          <CardImgOverlay>
+            <CardTitle className="text-white text-middle" tag="h1">Pledge Yourself</CardTitle>
+            <CardText className="text-white text-middle">
+              Make a positive change by donating just a little for a good cause of your choice. Make this world a better place for everyone
+          </CardText>
+          </CardImgOverlay>
+        </Card>
+        </Link>
 
-        {/* <div class="plg-donate" data-widget-id="w7WdyTPSTifiNdBcJ4eCjA"></div> */}
-        
-        <h2 onClick={() => this.setDonationID("w7WdyTPSTifiNdBcJ4eCjA")}>Protect Women at Risk</h2>
-        <img src= {picture7}></img>
-
-        {/* <div class="plg-donate" data-widget-id="cN1_jPMIYgrpWjz-Yqv3dQ"></div> */}
-        
-        <h2 onClick={() => this.setDonationID("cN1_jPMIYgrpWjz-Yqv3dQ")}>Clean the Ocean Together</h2>
-        <img src= {picture5}></img>
-
-        {/* <div class="plg-donate" data-widget-id="IXmd3cAELs9Yobg7_nhAzw"></div> */}
-
-        <h2 onClick={() => this.setDonationID("IXmd3cAELs9Yobg7_nhAzw")}>Help Children Around the World</h2>
-        <img src= {picture2}></img>
-
-        
-        
-        {/* <button onClick={this.first} > first </button>
-        <button onClick={this.second} > two </button>
-
+        <Card className="text-white text-middle">
+          <CardImg
+            alt="..."
+            src={picture2}
+          ></CardImg>
+          <CardImgOverlay>
+            <CardTitle className="text-white text-middle" tag="h1">Donate ShapeCoins</CardTitle>
+            <CardText className="text-white text-middle">
+              Get sponsored by Companies and donate your ShapeCoins from exercises for a good cause
+          </CardText>
+          </CardImgOverlay>
+        </Card>
+       
 
 
        {this.state.first && <div className="plg-donate" data-widget-id="M_5C04BdeZzFbPe4GHRihg"></div>}
