@@ -1,19 +1,32 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { Button, Spinner, Container, Row, Col } from 'reactstrap'
+
 
 function Landing() {
   return (
 
     //WORKING version with vimeo
     <div>
+      <div className="button-positioning">
 
-<div className="vimeo-wrapper">
-   <iframe src="https://player.vimeo.com/video/441006850?background=1&autoplay=1&loop=0&byline=0&title=0" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
-   {/* <iframe src="https://player.vimeo.com/video/441006850?background=1&autoplay=1&loop=0&byline=0&title=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> */}
-</div> 
+        <Button as={Link} href="/signup" to="/signup" className="btn-round" color="primary" size="lg">Shape Now!</Button>
 
-{/* Partially working version with youtube */}
+      </div>
 
-      {/* <div className="video-background">
+      <div>
+
+        <div className="vimeo-wrapper">
+          <iframe src="https://player.vimeo.com/video/441006850?background=1&autoplay=1&loop=0&byline=0&title=0" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
+        </div>
+
+
+
+
+
+        {/* Partially working version with youtube */}
+
+        {/* <div className="video-background">
         <div className="video-foreground">
           <iframe width="862" height="485" src="https://www.youtube.com/embed/5iWtLt9v_CI?autoplay=1 " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -27,12 +40,13 @@ function Landing() {
 	 <a href="/500/Use-YouTube-Videos-as-Fullscreen-Web-Page-Backgrounds">Full article</a>
   </div>
 </div> */}
-</div>
+      </div>
+    </div>
   )
 }
 
 // Attempt with the player from W3Scode
-          {/* HERE IS THE LANDING FOR UNAUTHORISED USERS WITH A VIDEO BACKGROUND
+{/* HERE IS THE LANDING FOR UNAUTHORISED USERS WITH A VIDEO BACKGROUND
       <video autoplay muted loop id="myVideo">
         <source src={video} type="video/mp4"/>
 </video>
@@ -45,12 +59,12 @@ function Landing() {
           <button id="myBtn" onclick="myFunction()">Pause</button>
         </div> */}
 
-          {/* <Player
+{/* <Player
       playsInline
       poster="/assets/poster.png"
       src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
     /> */}
-        
+
 
 
 export default Landing

@@ -20,9 +20,9 @@ import NutritionBasics from '../src/components/nutrition/NutritionBascis';
 import NutritionHealthyMeal from '../src/components/nutrition/NutritionHealthyMeal';
 import NutritionHowToEat from '../src/components/nutrition/NutritionHowToEat';
 import Donate from './components/donate/Donate';
+import DonateMyself from './components/donate/DonateMyself';
 import Footer from './components/footer/Footer';
 import { Lifestyle } from './components/nutrition/Lifestyle';
-import DonateMyself from './components/donate/DonateMyself';
 
 
 
@@ -55,18 +55,20 @@ class App extends Component {
 
         <Container className="themed-container" fluid={true}>
 
-          <div className="global-top-botton-margin">
 
-            <Switch>
-              <Route exact path='/' render={() => {
-                if (!this.state.loggedInUser) {
-                  // if user is NOT logged in
-                  return <Landing updateUser={this.updateUser} ></Landing>
-                } else {
-                  // if user IS logged in, redirect to `/plan`
-                  return <Redirect to={{ pathname: '/plan' }} />
-                }
-              }} />
+          <Switch>
+
+            <Route exact path='/' render={() => {
+              if (!this.state.loggedInUser) {
+                // if user is NOT logged in
+                return <Landing updateUser={this.updateUser} ></Landing>
+              } else {
+                // if user IS logged in, redirect to `/plan`
+                return <Redirect to={{ pathname: '/plan' }} />
+              }
+            }} />
+
+            <div className="global-top-botton-margin">
 
               <Route exact path='/signup' render={() => {
                 if (!this.state.loggedInUser) {
@@ -228,9 +230,9 @@ class App extends Component {
                 }
               }} />
 
-            </Switch>
 
-          </div>
+            </div>
+          </Switch>
 
         </Container>
 
