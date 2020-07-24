@@ -54,10 +54,16 @@ class Profile extends React.Component {
           {/* <object className = "image--cover" data={this.props.loggedInUser.avatarUrl} type="image/png"> */}
           <img
               alt="Profile Picture"
-              src={this.props.loggedInUser.avatarUrl} 
-              onError={profilepic}
+              src={this.props.loggedInUser.avatarUrl? this.props.loggedInUser.avatarUrl : profilepic} 
               // alt={this.props.loggedInUser.email}
             ></img>
+            
+            {/* this.props.loggedInUser.avatarUrl? this.props.loggedInUser.avatarUrlv:profilepic
+            if (this.props.loggedInUser.avatarUrl){
+              this.props.loggedInUser
+            } else {
+              Avatar*/}
+        
             {/* </object> */}
           </div>
           <p className="card-description">

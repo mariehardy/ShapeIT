@@ -237,7 +237,8 @@ class App extends Component {
 
         </Container>
 
-        {!this.state.loggedInUser ? (null) : (<Footer />)}
+        {/* {!this.state.loggedInUser ? (null) : (<Footer />)} */}
+        <Footer />
 
         {/* <NavBottom userInSession={this.state.loggedInUser} updateUser={this.updateUser} /> */}
 

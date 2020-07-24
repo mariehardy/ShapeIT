@@ -189,7 +189,7 @@ ol li {
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  overflow: hidden;
+  overflow: visible;
 }
 .vimeo-wrapper iframe {
   width: 100vw;
@@ -203,6 +203,7 @@ ol li {
 }
 
 .button-positioning{
+  z-index: 30;
   top: 50%;
   left: 50%;
 }
@@ -213,4 +214,12 @@ ol li {
   background-repeat: no-repeat;
   /* background-color: #ccc; */
 }
+
+/* .carousel{
+  width: 100%;
+  height: auto;
+  bottom: 10px;
+  left: 320px;
+  position: relative;
+} */
 
