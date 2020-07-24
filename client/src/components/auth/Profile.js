@@ -83,7 +83,7 @@ class Profile extends React.Component {
                   Hey there! Welcome to your user card. As you can see, it is
                   already looking great.
                   
-                  <div>
+                  <div >
                   <br/>
                     {/* <p>My name is: {JSON.stringify(this.props.loggedInUser)}</p> */}
                     <p>Email: {this.props.loggedInUser.email}</p>
@@ -99,7 +99,7 @@ class Profile extends React.Component {
                   </div>
                 </div>
                 <br/>
-                <Button to={'/profile-edit'} as={Link} href={'/profile-edit'} className="btn-round" size="lg" >Edit Profile</Button>
+                <Link to={'/profile-edit'}><Button className="btn-round" color="default">Edit Profile</Button></Link>
               </CardBody>
 
 
