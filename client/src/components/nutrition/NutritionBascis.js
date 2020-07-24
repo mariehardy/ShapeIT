@@ -50,9 +50,11 @@ Well, this primarily depends upon your Energy Balance.  In the most basic terms 
           <p>
             Your daily calories intake is like a scale, which represents Calories IN (Food and beverages intake) vs. Calories OUT (Body function and physical activity). If you eat more than you burn – you are going to store fat and experience a weight gain. If the amount of burned energy is greater than your calories consumption – the calories deficit is in place. The latter results in the desired weight loss! However, it doesn’t mean that you are going to lose weight extremely once your daily norm is cut in half! For example, if you have to consume 2000 kcal on a daily basis and you reduce them to 1000 kcal/day only – you are not only going to be powerless, but it might also result in counterproductive weight gain, since you might go out of temper and eat everything that you have got in the fridge at once. Then all your efforts will be wasted. This is not something we want to achieve here. Our organism has evolved as such, that it won’t give everything away – it would mean you would starve to death straight away.
 However, if you reduce your daily calories consumption to the norm, that you have calculated with the calculator in the Shape Insights section – you will identify a comfortable zone for you organism to lose weight while keeping your metabolism speed at the highest possible level.</p>
-          <p>
+          
+          <div>
             <h4>Macronutrients </h4>
-Once you have accomplished calculating your daily calories intake requirements – you need to identify how these calories are going to be allocated across Macronutrients (Carbohydrates, Fats and Proteins).
+            </div>
+            <p>Once you have accomplished calculating your daily calories intake requirements – you need to identify how these calories are going to be allocated across Macronutrients (Carbohydrates, Fats and Proteins).
 
 As easy as that, it should look somewhat like this:
 PICTURE OF PROTEINS, CARBS, FAT
@@ -77,13 +79,17 @@ In general, one can identify two types of it, namely, complex carbohydrates and 
 
           <p>A healthy way to use the GI principles is to incorporate a range of lower GI carbs that are also low in fat and calories into your meals. Try to avoid the fast absorbing carbs like white bread, sugar, potatoes. To find out more which foods are low, medium or high in GI, please, click here</p>
 
-          <p>As a general rule of thumb, you should hold the lower values and try to omit the high ones:
+          <p>As a general rule of thumb, you should hold the lower values and try to omit the high ones:</p>
+          <div>
           <ol>
+          <p>
               <li>0-55 = Low (good)</li>
               <li>56-69 = Medium</li>
               <li>70 or higher = High (bad) </li>
+              </p>
             </ol>
-          </p>
+            </div>
+          
 
           <h2>DOs and DON’Ts by Carbohydrates:</h2>
           <p>

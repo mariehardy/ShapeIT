@@ -28,36 +28,36 @@ function Landing() {
 
     //WORKING version with vimeo
     <div>
-      
-        <div style={{ "height": "50vh" }}></div>
-        
-        <div className="description">
-          <h1 className="text-white">Social Fitness Platform</h1>
-          <div>
+
+      <div style={{ "height": "50vh" }}></div>
+
+      <div className="description">
+        <h1 className="text-white">Social Fitness Platform</h1>
+        <div>
           <h4 className="text-white">
             Build healthy habits with FUN and make a real IMPACT
             </h4>
-          </div>
-          <br/>
-      
+        </div>
+        <br />
+
         <div className="button-positioning">
 
           <Button as={Link} href="/signup" to="/signup" className="btn-round" color="primary" size="lg">Shape Now!</Button>
 
         </div>
-        <br/>
+        <br />
 
 
         <a href='#info_page'>
-        <div className="btn-move-down btn-round">
-        <div className="info">
-        <div className="icon icon-primary">
-        <i className="nc-icon nc-minimal-down" />
-        </div>
-        </div>
-        </div>
+          <div className="btn-move-down btn-round">
+            <div className="info">
+              <div className="icon icon-primary">
+                <i className="nc-icon nc-minimal-down" />
+              </div>
+            </div>
+          </div>
         </a>
-  
+
 
         <div>
 
@@ -68,8 +68,10 @@ function Landing() {
         </div>
 
       </div>
-      <div style={{ "height": "30vh" }}></div>
-      <Container id="info_page">
+      <div id="info_page" style={{ "height": "30vh" }}></div>
+      <h1 className ="text-white text-middle">Benefits</h1>
+
+      <Container >
         <Row>
           <Col xs={12} md={4}>
             <div className="card-big-shadow">
@@ -86,12 +88,12 @@ function Landing() {
               </a>
                   </CardTitle>
                   <div className="card-description">
-                  <div align = "left">
-                    <li>Work out at Home, in the Park, Wherever You Want</li>
-                    <li>Spend 20-40 minutes for a complete workout only</li>
-                    <li>Set your fitness level and goals </li>
+                    <div align="left">
+                      <li>Work out at Home, in the Park, Wherever You Want</li>
+                      <li>Spend 20-40 minutes for a complete workout only</li>
+                      <li>Set your fitness level and goals </li>
                     </div>
-            </div>
+                  </div>
                 </CardBody>
               </Card>
               {/* end card */}
@@ -116,13 +118,13 @@ function Landing() {
               </a>
                   </CardTitle>
                   <div className="card-description">
-                  <div align = "left">
+                    <div align="left">
 
-                  <li>Eat clean and each your goals</li>
-                  <li>Get insights into Nutrtion Basics</li>
-                  <li>Receive best tipps on how eat smart and sustain the energy throighout the day</li>
+                      <li>Eat clean and each your goals</li>
+                      <li>Get insights into Nutrtion Basics</li>
+                      <li>Receive best tipps on how eat smart and sustain the energy throighout the day</li>
+                    </div>
                   </div>
-            </div>
                 </CardBody>
               </Card>
               {/* end card */}
@@ -147,31 +149,33 @@ function Landing() {
               </a>
                   </CardTitle>
                   <div className="card-description">
-                  <div align = "left">
+                    <div align="left">
 
-                  <li>Pledge to a Non-Profit of Your Choice, Connect with Likeminded Shapers</li>
-                  <li>Make This World a Better Place for Everyone</li>
-                  <li>(Coming Soon) Collect ShapeCoins and Sponsor Your Donations</li>
+                      <li>Pledge to a Non-Profit of Your Choice, Connect with Likeminded Shapers</li>
+                      <li>Make This World a Better Place for Everyone</li>
+                      <li>(Coming Soon) Collect ShapeCoins and Sponsor Your Donations</li>
+                    </div>
                   </div>
-            </div>
                 </CardBody>
               </Card>
               {/* end card */}
             </div>
           </Col>
-          
+
         </Row>
-        
+
       </Container>
-      <Carousel/>
-      <br/>
+
+      <h1 className ="text-white text-middle">Shapers' Testimonials</h1>
+      <Carousel />
+      <br />
 
       <div className="button-positioning">
 
-<Button as={Link} href="/signup" to="/signup" className="btn-round" color="primary" size="lg">Shape Now!</Button>
+        <Button as={Link} href="/signup" to="/signup" className="btn-round" color="primary" size="lg">Shape Now!</Button>
 
-</div>
-<br/>
+      </div>
+      <br />
 
     </div>
   )
