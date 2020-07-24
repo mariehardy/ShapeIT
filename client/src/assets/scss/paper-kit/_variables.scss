@@ -64,7 +64,8 @@ $purple-states-color:        darken($purple-color, 8%) !default;
 $brown-color:                #dcb285 !default;
 $brown-states-color:         darken($brown-color, 8%) !default;
 
-
+$shapeit-color:                #D24B90 !default;
+$shapeit-states-color:      darken($shapeit-color, 10%) !default;
 
 
 /*      light colors - used for select dropdown         */
@@ -235,6 +236,7 @@ $bg-warning:            lighten($warning-color, 7%) !default;
 $bg-danger:             lighten($danger-color, 7%) !default;
 $bg-brown:              lighten($brown-color, 7%) !default;
 $bg-purple:             lighten($purple-color, 7%) !default;
+$bg-shapeit:            lighten($shapeit-color, 7%) !default;  
 
 $preloader-color:          #D8D1C9 !default;
 

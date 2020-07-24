@@ -189,7 +189,7 @@ ol li {
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  overflow: hidden;
+  overflow: visible;
 }
 .vimeo-wrapper iframe {
   width: 100vw;
@@ -203,10 +203,29 @@ ol li {
 }
 
 .button-positioning{
+  z-index: 30;
   top: 50%;
   left: 50%;
 }
 
+
+.background-photo {
+  background-image: url('./assets/img/shapeIT/IMG_8281-1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-color: #ccc; */
+}
+
+/* .carousel{
+  width: 100%;
+  height: auto;
+  bottom: 10px;
+  left: 320px;
+  position: relative;
+} */
+
+
 .bg-black {
   background-color: #000000 !important;
 }
+
