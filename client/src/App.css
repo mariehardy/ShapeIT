@@ -206,3 +206,7 @@ ol li {
   top: 50%;
   left: 50%;
 }
+
+.bg-black {
+  background-color: #000000 !important;
+}
