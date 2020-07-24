@@ -38,8 +38,8 @@ class Login extends Component {
     axios.post("/api/login", { email, password })
       // 2xx status code
       .then((resp) => {
+        this.setState({ email: "", password: "" }); // This needs to happen BEFORE the updateUser
         this.props.updateUser(resp.data)
-        this.setState({ email: "", password: "" });
       }).catch((error) => {
         console.log("ERROR !!")
         console.log(error.response)
@@ -55,6 +55,7 @@ class Login extends Component {
     return(
       <div>
       <p className="h1">Login</p>
+      {this.state.errorMessage ? <p className="h3" className="text-danger margin-top">{this.state.errorMessage}</p> : null}
 
       <form onSubmit={this.handleFormSubmit} className="margin-top" >
       <div className="form-row">

@@ -14,7 +14,11 @@ import {
 class Signup extends Component {
   constructor(props){
     super(props);
-    this.state = { email: '', password: '' };
+    this.state = { 
+      email: '', 
+      password: '',
+      errorMessage: ''
+    };
   }
 
   handleFormSubmit = (event) => {
@@ -30,7 +34,14 @@ class Signup extends Component {
         });
         this.props.updateUser(response)
       })
-      .catch(error => console.log(error))
+      // .catch(error => console.log(error))
+      .catch((error) => {
+        console.log("ERROR !!")
+        console.log(error.response)
+        this.setState({
+          errorMessage: error.response.data.message
+        })
+      })
   }
 
   handleChange = (event) => {
@@ -43,6 +54,7 @@ class Signup extends Component {
     return (
       <div>
       <p className="h1">Sign up</p>
+      {this.state.errorMessage ? <p className="h3" className="text-danger margin-top">{this.state.errorMessage}</p> : null}
 
       <form onSubmit={this.handleFormSubmit} className="margin-top">
       <div className="form-row">
