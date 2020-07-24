@@ -55,6 +55,7 @@ class Login extends Component {
     return(
       <div>
       <p className="h1">Login</p>
+      {this.state.errorMessage ? <p className="h3" className="text-danger margin-top">{this.state.errorMessage}</p> : null}
 
       <form onSubmit={this.handleFormSubmit} className="margin-top" >
       <div className="form-row">

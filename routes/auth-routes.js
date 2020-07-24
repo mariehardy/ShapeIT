@@ -28,12 +28,12 @@ authRoutes.post("/signup", (req, res, next) => {
 
   User.findOne({ email }, (err, foundUser) => {
     if (err) {
-      res.status(500).json({ message: "email check went bad." });
+      res.status(500).json({ message: "Email check went wrong." });
       return;
     }
 
     if (foundUser) {
-      res.status(400).json({ message: "email taken. Choose another one." });
+      res.status(400).json({ message: "Email taken. Choose another one please :)" });
       return;
     }
 
@@ -57,7 +57,7 @@ authRoutes.post("/signup", (req, res, next) => {
       // .login() here is actually a predefined passport method
       req.login(aNewUser, (err) => {
         if (err) {
-          res.status(500).json({ message: "Login after signup went bad." });
+          res.status(500).json({ message: "Login after signup went wrong." });
           return;
         }
 
