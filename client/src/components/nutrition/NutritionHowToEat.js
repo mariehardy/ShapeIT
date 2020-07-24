@@ -29,7 +29,7 @@ export class NutritionHowToEat extends Component {
           <CardImgOverlay>
             <CardTitle className="text-white text-middle" tag="h4">How to Eat?</CardTitle>
             <CardText>
-              <h7 className="text-white text-middle">This nutrition example can serve you as a basis for your culinary creativity</h7>
+              <div className="text-white text-middle" tag="h5">Unleash your culinary creativity</div>
             </CardText>
           </CardImgOverlay>
         </Card>
@@ -38,19 +38,21 @@ export class NutritionHowToEat extends Component {
         <p>Your training and your Shaping highly depend (up to 70%) on your nutrition behavior! You exercise 6-7 hours per week at most, what do you do for the left hours? Work and/or study, eat, sleep and live life. And only food gives you power! It is only fuel to your body. And depending on the quality of that fuel, body operates accordingly.
         So, the main question is: How eat correctly to lose weight and at the same time have enough energy for a whole day?
         Note: For someone, changing the eating behavior will be harder than for another one. But if you want to achieve the great results from training, you should find a way to pass through challenges! Remember: The only one who can stop you – it’s you!
-        You should eat 3 regular healthy meals each day with 2 snacks.
-</p>
+        You should eat 3 regular healthy meals each day with 2 snacks.</p>
+
 
         <h2>Try to eat every 3 - 4 hours</h2>
         <p>For example, if you get up at 7:30 and go to bed at 23:00, you can have this timetable: 8:00 – breakfast, 11:00 – first snack, 14:00 – lunch, 17:00 – second snack, 20:00 – dinner. Never skip a main meal.</p>
         <h2>Maintain the healthy volume and caloric intake</h2>
-        <p>Like: 
+        Like:
         <ul >
-        <li>Breakfast – 25%</li> 
-        <li>first snack – 15%</li>
-        <li>lunch – 30%</li>
-        <li>second snack – 10%</li>
-        <li>dinner – 20%.</li></ul></p>
+          <div>
+            <p>
+              <li>Breakfast – 25%</li>
+              <li>first snack – 15%</li>
+              <li>lunch – 30%</li>
+              <li>second snack – 10%</li>
+              <li>dinner – 20%.</li></p></div></ul>
         <h2>Drink water</h2>
         <p>Always drink 1-2 glasses of clean water 15-20 minutes BEFORE any meal. Never drink anything DURING your meal. You can drink water, tea or coffee one hour AFTER the meal. The most important condition of your effective slimming – a minimum of 30 ml/kg of pure water per day!</p>
         <h2>Use small spoon</h2>

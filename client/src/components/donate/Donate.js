@@ -85,33 +85,41 @@ export class Donate extends Component {
 
           </Card>
 
-        <p>Shape the future together!</p>
+        
    
-        <Link to="/donate-myself"> <Card className="text-white text-right">
+        <Link to="/donate-myself"> <Card className="text-white text-middle">
           <CardImg
             alt="..."
             src={picture1}
           ></CardImg>
+          <CardBody>
           <CardImgOverlay>
-            <CardTitle className="text-white text-middle" tag="h1">Pledge Yourself</CardTitle>
-            <CardText className="text-white text-middle">
+            <CardTitle className="text-white text-middle" tag="h2">Pledge Yourself</CardTitle>
+          </CardImgOverlay>
+          <CardText className="text-black text-middle">
               Make a positive change by donating just a little for a good cause of your choice. Make this world a better place for everyone
           </CardText>
-          </CardImgOverlay>
+          </CardBody>
         </Card>
         </Link>
 
         <Card className="text-white text-middle">
+        
           <CardImg
             alt="..."
             src={picture2}
           ></CardImg>
+          <CardBody>
           <CardImgOverlay>
-            <CardTitle className="text-white text-middle" tag="h1">Donate ShapeCoins</CardTitle>
-            <CardText className="text-white text-middle">
+          
+            <CardTitle className="text-white text-middle" tag="h2">Donate ShapeCoins</CardTitle>
+
+          
+          </CardImgOverlay>
+          <CardText className="text-black text-middle">
               Get sponsored by Companies and donate your ShapeCoins from exercises for a good cause
           </CardText>
-          </CardImgOverlay>
+          </CardBody>
         </Card>
        
 
