@@ -54,17 +54,17 @@ export class DonateMyself extends Component {
     
    
         <h1 id="donation" >Donate</h1>
-        <h4 >Shape the future together!</h4>
+        <h4 >Let's shape the future together!</h4>
 
         {this.state.donationID ? <div className="plg-donate" key={this.state.donationID} data-widget-id={this.state.donationID}></div> : null}
 
-        Donate now for any cause of your choice
+        Donate now to the cause of your choice
         <br/>
 
         {/* COVID Link {this.state.first && <div className="plg-donate" data-widget-id="M_5C04BdeZzFbPe4GHRihg"></div>} */}
 
         {/* <a href="https://hello.pledgeling.com/widgets/donate/IXmd3cAELs9Yobg7_nhAzw"> */}
-        <div><a href='#donation'>
+        <div className='margin-top'><a href='#donation'>
         <Link onClick={() => this.setDonationID("M_5C04BdeZzFbPe4GHRihg")} >
           <Card className="text-white text-middle">
          
