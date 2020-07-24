@@ -89,9 +89,9 @@ function Landing() {
                   </CardTitle>
                   <div className="card-description">
                     <div align="left">
-                      <li>Work out at Home, in the Park, Wherever You Want</li>
-                      <li>Spend 20-40 minutes for a complete workout only</li>
-                      <li>Set your fitness level and goals </li>
+                      <li>Work out at home, in the park, wherever you want</li>
+                      <li>Spend 20-40 minutes only for a complete workout</li>
+                      <li>Set your fitness level and goals</li>
                     </div>
                   </div>
                 </CardBody>
@@ -120,9 +120,9 @@ function Landing() {
                   <div className="card-description">
                     <div align="left">
 
-                      <li>Eat clean and each your goals</li>
-                      <li>Get insights into Nutrtion Basics</li>
-                      <li>Receive best tipps on how eat smart and sustain the energy throighout the day</li>
+                      <li>Eat clean and reach your goals</li>
+                      <li>Get insights into nutrition basics</li>
+                      <li>Learn the best tips on how to eat smart and sustain your energy throughout the day</li>
                     </div>
                   </div>
                 </CardBody>
@@ -151,9 +151,9 @@ function Landing() {
                   <div className="card-description">
                     <div align="left">
 
-                      <li>Pledge to a Non-Profit of Your Choice, Connect with Likeminded Shapers</li>
-                      <li>Make This World a Better Place for Everyone</li>
-                      <li>(Coming Soon) Collect ShapeCoins and Sponsor Your Donations</li>
+                      <li>Pledge to a non-profit of your choice, connect with like-minded Shapers</li>
+                      <li>Make this world a better place for everyone</li>
+                      <li>(Coming Soon) Collect ShapeCoins and sponsor your donations</li>
                     </div>
                   </div>
                 </CardBody>

@@ -117,7 +117,7 @@ export class Donate extends Component {
           
           </CardImgOverlay>
           <CardText className="text-black text-middle">
-              Get sponsored by Companies and donate your ShapeCoins from exercises for a good cause
+              Get sponsored by companies and donate your ShapeCoins from exercises for a good cause
           </CardText>
           </CardBody>
         </Card>
