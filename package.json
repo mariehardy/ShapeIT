@@ -39,7 +39,7 @@
     "video-react": "^0.14.1"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "nodemon": "^2.0.4"
   },
   "nodemonConfig": {
     "ignore": [
