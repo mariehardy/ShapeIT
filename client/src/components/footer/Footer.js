@@ -13,6 +13,7 @@ function Footer() {
                 <a
                   href="https://www.facebook.com/shape2win"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fa fa-facebook-square" />
                   <p className="d-lg-none">Facebook</p>
@@ -22,6 +23,7 @@ function Footer() {
                 <a
                   href="https://www.instagram.com/shape2win"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fa fa-instagram" />
                   <p className="d-lg-none">Instagram</p>

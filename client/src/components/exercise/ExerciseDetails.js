@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import {Button, Spinner, Container, Row, Col} from 'reactstrap';
 
 
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
-  name = name.replace(/[\[\]]/g, "\\$&");
+  name = name.replace(/[[\]]/g, "\\$&");
   var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
     results = regex.exec(url);
   if (!results) return null;
@@ -33,7 +33,6 @@ class ExerciseDetails extends Component {
       this.setState({
         todaysExercises: response.data,
       });
-      console.log("index ======= ", this.state.index)
       // console.log("last index of array ======= ", this.state.todaysExercises.length-1)
     });
   };
@@ -90,7 +89,6 @@ class ExerciseDetails extends Component {
 
 
   getNextExercise = () => {
-
     this.state.todaysExercises.map((e, i) => {
       if (i === this.state.index + 1) {
         this.setState(
@@ -121,7 +119,6 @@ class ExerciseDetails extends Component {
   }
 
   render() {
-    console.log("props from exercise", this.state);
     return (
       <div>
         {this.state.singleExercise 
@@ -139,7 +136,7 @@ class ExerciseDetails extends Component {
               <h3 className="exercise-name">{this.state.singleExercise.name}</h3>
               <ol className="exercise-description paragraph-margin">
                 {this.state.singleExercise.description.map(el => (
-                  <li className="text-left">{el}</li>
+                  <li key={el} className="text-left">{el}</li>
                 ))}
               </ol>
             </div>

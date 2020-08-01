@@ -6,18 +6,11 @@ import image3 from '../../assets/img/shapeIT/nutrition_main_third.jpg'
 import image4 from '../../assets/img/shapeIT/lifestyle.jpg'
 // reactstrap components
 import {
-  Button,
   Card,
-  CardBody,
-  CardFooter,
   CardImg,
   CardImgOverlay,
-  CardLink,
   CardTitle,
-  CardSubtitle,
-  CardText,
-  ListGroupItem,
-  ListGroup
+  CardText
 } from "reactstrap";
 
 export class Nutrition extends Component {

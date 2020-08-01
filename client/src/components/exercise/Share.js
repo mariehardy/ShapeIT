@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {Button, Spinner} from 'reactstrap';
+import { Button } from 'reactstrap';
 import { FacebookShareButton, FacebookIcon } from "react-share";
 
 export class Share extends Component {

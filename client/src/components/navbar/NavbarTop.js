@@ -99,12 +99,14 @@ function NavbarTop(props) {
         >
           <Nav navbar>
             <NavItem>
-              <NavLink to="/login" tag={Link} href="/login">
+              <NavLink to="/login" tag={Link} href="/login"
+              onClick={toggleNavbarCollapse}>
                 <i className="nc-icon nc-layout-11" /> Login
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/signup" tag={Link} href="/signup">
+              <NavLink to="/signup" tag={Link} href="/signup"
+              onClick={toggleNavbarCollapse}>
                 <i className="nc-icon nc-layout-11" /> Sign up
               </NavLink>
             </NavItem>
@@ -153,22 +155,26 @@ function NavbarTop(props) {
         >
           <Nav navbar>
             <NavItem>
-              <NavLink to="/profile" tag={Link} href="/profile">
+              <NavLink to="/profile" tag={Link} href="/profile"
+              onClick={toggleNavbarCollapse}>
                 Profile
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/plan" tag={Link} href="/plan">
+              <NavLink to="/plan" tag={Link} href="/plan"
+              onClick={toggleNavbarCollapse}>
                 Plan
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/nutrition" tag={Link} href="/nutrition">
+              <NavLink to="/nutrition" tag={Link} href="/nutrition"
+              onClick={toggleNavbarCollapse}>
                 Nutrition
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/donate" tag={Link} href="/donate">
+              <NavLink to="/donate" tag={Link} href="/donate"
+              onClick={toggleNavbarCollapse}>
                 Donate
               </NavLink>
             </NavItem>

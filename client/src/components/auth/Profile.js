@@ -53,7 +53,7 @@ class Profile extends React.Component {
           <div className="card-avatar border-white">
           {/* <object className = "image--cover" data={this.props.loggedInUser.avatarUrl} type="image/png"> */}
           <img
-              alt="Profile Picture"
+              alt="Your Avatar"
               src={this.props.loggedInUser.avatarUrl? this.props.loggedInUser.avatarUrl : profilepic} 
               // alt={this.props.loggedInUser.email}
             ></img>

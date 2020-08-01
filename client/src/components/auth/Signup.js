@@ -54,12 +54,12 @@ class Signup extends Component {
     return (
       <div>
       <p className="h1">Sign up</p>
-      {this.state.errorMessage ? <p className="h3" className="text-danger margin-top">{this.state.errorMessage}</p> : null}
+      {this.state.errorMessage ? <p className="h3 text-danger margin-top">{this.state.errorMessage}</p> : null}
 
       <form onSubmit={this.handleFormSubmit} className="margin-top">
       <div className="form-row">
-      <div class="col-md-4"></div>
-      <div class="col-md-4">
+      <div className="col-md-4"></div>
+      <div className="col-md-4">
       <FormGroup>
         <Label for="exampleEmail">Email address</Label>
         <Input
@@ -84,7 +84,7 @@ class Signup extends Component {
         />
       </FormGroup>
       </div>
-      <div class="col-md-4"></div>
+      <div className="col-md-4"></div>
     </div>
       <Button color="primary btn-round margin-top" type="submit" value="Signup">
         Sign up
