@@ -1,5 +1,4 @@
 import React from "react";
-import testimonial1 from '../../assets/img/shapeIT/Olga-Testimonial2_2.jpg'
 
 // reactstrap components
 import { UncontrolledCarousel } from "reactstrap";

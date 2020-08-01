@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import { login } from '../../services/api.js'
 import GoogleLogo from '../../assets/img/shapeIT/Google__G__Logo.svg'
 
@@ -9,7 +9,6 @@ import {
   FormGroup,
   Label,
   Input,
-  FormText,
   Button
 } from "reactstrap";
 
@@ -31,15 +30,17 @@ class Login extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-
     const email = this.state.email;
     const password = this.state.password;
 
-    axios.post("/api/login", { email, password })
+    login(email, password)
       // 2xx status code
-      .then((resp) => {
-        this.setState({ email: "", password: "" }); // This needs to happen BEFORE the updateUser
-        this.props.updateUser(resp.data)
+      .then((response) => {
+        this.setState({ 
+          email: "", 
+          password: "" 
+        }); // This needs to happen BEFORE the updateUser
+        this.props.updateUser(response)
       }).catch((error) => {
         console.log("ERROR !!")
         console.log(error.response)
@@ -55,7 +56,9 @@ class Login extends Component {
     return(
       <div>
       <p className="h1">Login</p>
-      {this.state.errorMessage ? <p className="h3" className="text-danger margin-top">{this.state.errorMessage}</p> : null}
+      {this.state.errorMessage ? 
+      <p className="h3 text-danger margin-top">{this.state.errorMessage}
+      </p> : null}
 
       <form onSubmit={this.handleFormSubmit} className="margin-top" >
       <div className="form-row">

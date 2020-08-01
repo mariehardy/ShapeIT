@@ -5,21 +5,11 @@ import {
   Button,
   Card,
   CardBody,
-  CardFooter,
-  CardImg,
-  CardImgOverlay,
-  CardLink,
   CardTitle,
-  CardSubtitle,
-  CardText,
-  ListGroupItem,
-  ListGroup,
   Row,
   Col,
-  Container,
-  UncontrolledCarousel
+  Container
 } from "reactstrap";
-import Footer from '../footer/Footer';
 
 
 
@@ -62,7 +52,7 @@ function Landing() {
         <div>
 
           <div className="vimeo-wrapper">
-            <iframe src="https://player.vimeo.com/video/441006850?background=1&autoplay=1&loop=0&byline=0&title=0" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
+            <iframe src="https://player.vimeo.com/video/441006850?background=1&autoplay=1&loop=0&byline=0&title=0" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen title="ShapeItVideo"></iframe>
           </div>
 
         </div>

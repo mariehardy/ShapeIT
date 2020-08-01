@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 import Landing from './components/Landing/Landing';
 import Login from './components/auth/Login';

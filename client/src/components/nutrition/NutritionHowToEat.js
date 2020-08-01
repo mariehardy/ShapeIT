@@ -2,18 +2,11 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import image2 from '../../assets/img/shapeIT/nutrition_main_second.jpg'
 import {
-  Button,
   Card,
-  CardBody,
-  CardFooter,
   CardImg,
   CardImgOverlay,
-  CardLink,
   CardTitle,
-  CardSubtitle,
-  CardText,
-  ListGroupItem,
-  ListGroup
+  CardText
 } from "reactstrap";
 
 export class NutritionHowToEat extends Component {

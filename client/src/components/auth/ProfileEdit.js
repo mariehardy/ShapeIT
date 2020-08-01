@@ -3,16 +3,9 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import {
   Button,
-  Label,
   FormGroup,
   Form,
   Input,
-  FormText,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Row,
-  Col
 } from "reactstrap";
 
 class EditProfile extends Component {
@@ -137,17 +130,17 @@ class EditProfile extends Component {
             <div className="form-row">
               <FormGroup className="col-md-6">
                 <label htmlFor="firstname">First Name</label>
-                <Input placeholder="Marie" input type="text" name="firstName" value={this.state.firstName} onChange={e => this.handleChangeFirstName(e)} ></Input>
+                <Input placeholder="Marie"  type="text" name="firstName" value={this.state.firstName} onChange={e => this.handleChangeFirstName(e)} ></Input>
               </FormGroup>
               <FormGroup className="col-md-6">
                 <label htmlFor="lastname">Last Name</label>
-                <Input placeholder="Jane" input type="text" name="lastName" value={this.state.lastName} onChange={e => this.handleChangeLastName(e)} ></Input>
+                <Input placeholder="Jane"  type="text" name="lastName" value={this.state.lastName} onChange={e => this.handleChangeLastName(e)} ></Input>
               </FormGroup>
             </div>
             <div className="form-row">
               <FormGroup className="col-md-6">
                 <label htmlFor="email">Email</label>
-                <Input placeholder="example@gmail.com" id="inputEmail4" input type="email" name="email" value={this.state.email} onChange={e => this.handleChangeEmail(e)} ></Input>
+                <Input placeholder="example@gmail.com" id="inputEmail4"  type="email" name="email" value={this.state.email} onChange={e => this.handleChangeEmail(e)} ></Input>
               </FormGroup>
               <FormGroup className="col-md-6">
                 <label htmlFor="birthday">Date of Birth</label>

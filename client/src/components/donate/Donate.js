@@ -1,26 +1,16 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-// import axios from 'axios'
-import picture7 from '../../images/picture7.jpg'
-import picture6 from '../../images/picture6.jpg'
-import picture5 from '../../images/picture5.jpg'
 import picture2 from '../../images/picture2.jpg'
 import picture1 from '../../images/picture1.jpg'
 import donate_main2 from '../../assets/img/shapeIT/donate_main2.jpg'
 
 import {
-  Button,
   Card,
   CardBody,
-  CardFooter,
   CardImg,
   CardImgOverlay,
-  CardLink,
   CardTitle,
-  CardSubtitle,
-  CardText,
-  ListGroupItem,
-  ListGroup
+  CardText
 } from "reactstrap";
 
 

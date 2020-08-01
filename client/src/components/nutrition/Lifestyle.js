@@ -2,18 +2,10 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import image4 from '../../assets/img/shapeIT/lifestyle.jpg'
 import {
-  Button,
   Card,
-  CardBody,
-  CardFooter,
   CardImg,
   CardImgOverlay,
-  CardLink,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-  ListGroupItem,
-  ListGroup
+  CardTitle
 } from "reactstrap";
 
 export class Lifestyle extends Component {

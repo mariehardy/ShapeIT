@@ -22,7 +22,7 @@ class Plan extends Component {
               listOfDays: response,
             });
           }
-          console.log("listOfDays ====== ", this.state.listOfDays);
+          // console.log("listOfDays ====== ", this.state.listOfDays);
     });
   };
 
@@ -59,8 +59,6 @@ class Plan extends Component {
           <div className="plan-container">
           <ul className="flex-5-cols plan-ul">
           {sortedListOfDays.map((el) => {
-              {/* console.log("el ========= ", el); */}
-              {/* console.log("this.props.loggedInUser.currentDay ========= ", this.props.loggedInUser.currentDay); */}
               return (
                 <li key={el._id} className="plan-li align-items-top">                
                 { el.name === 6 || el.name === 7 || el.name === 13 || el.name === 14 || el.name === 20 || el.name === 21 || el.name === 27 || el.name === 28
