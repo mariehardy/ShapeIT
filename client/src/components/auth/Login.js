@@ -59,10 +59,9 @@ class Login extends Component {
 
       <form onSubmit={this.handleFormSubmit} className="margin-top" >
       <div className="form-row">
-      <div class="col-md-4"></div>
+      <div className="col-md-4"></div>
 
-      <div class="col-md-4">
-      {/* <div class="col-lg-1 col-offset-6 centered"> */}
+      <div className="col-md-4">
       <FormGroup >
         <Label for="exampleEmail">Email address</Label>
         <Input
@@ -88,7 +87,7 @@ class Login extends Component {
       </FormGroup>
       
       </div>
-      <div class="col-md-4"></div>
+      <div className="col-md-4"></div>
       </div>
 
      
