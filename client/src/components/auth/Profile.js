@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import profilepic from '../../assets/img/placeholder.jpg'
+import profilepic from '../../assets/img/placeholder.jpg';
 import {
   Button,
   Card,
   CardBody,
   CardFooter,
   CardTitle,
-} from "reactstrap"
+} from "reactstrap";
 
 class Profile extends React.Component {
 
