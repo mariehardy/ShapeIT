@@ -14,7 +14,7 @@ router.put('/profile-edit', (req, res, next)=>{  //,uploadCloud.single('avatarUr
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
   }
-
+  
   const {
     email,
     instagramID,
@@ -28,7 +28,7 @@ router.put('/profile-edit', (req, res, next)=>{  //,uploadCloud.single('avatarUr
     avatarUrl
   } = req.body
 
-  console.log (req.body.avatarUrl)
+  // console.log('profile-routes req.body.birthday ==== ', req.body.birthday)
   
   User.findByIdAndUpdate( req.user._id,{
 
@@ -44,12 +44,8 @@ router.put('/profile-edit', (req, res, next)=>{  //,uploadCloud.single('avatarUr
       avatarUrl
       
   }, { new: true})
-    // .then(() => {
-    //   res.json({ message: `Project with ${req.user._id} is updated successfully.` });
-    // })
     .then((user) => {
           res.json(user)
-          // res.json({ secure_url: req.file.secure_url })
       })
     .catch(err => {
       res.json(err);
@@ -66,47 +62,5 @@ router.post('/profile-edit', uploadCloud.single("avatarUrl"), (req, res, next) =
 })
 
 
-// ---> Module 2 Project
-// router.get('/profile-edit', ensureLogin.ensureLoggedIn(), (req, res) => {
-//   res.render('auth/ProfileEdit')
-// })
-
-// router.post('/profile-edit', (req, res) => {
-//   const {
-//       email,
-//       instagramID,
-//       firstName,
-//       lastName,
-//       birthday,
-//       country,
-//       city,
-//       weight,
-//       height
-
-//   } = req.body
-
-//   // const imgPath = req.file.url Edit img at a later point 
-//   User.findByIdAndUpdate(req.user._id, {
-
-//     email,
-//     instagramID,
-//     firstName,
-//     lastName,
-//     birthday,
-//     country,
-//     city,
-//     weight,
-//     height
-
-//   })
-
-//       .then((result) => {
-//           res.redirect('/profile')
-//       })
-//       .catch(() => {
-//           console.log('error')
-//       })
-
-// })
 
 module.exports = router;

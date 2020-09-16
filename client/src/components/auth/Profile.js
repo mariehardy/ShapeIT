@@ -7,6 +7,7 @@ import {
   CardBody,
   CardFooter,
   CardTitle,
+  Container, Row, Col
 } from "reactstrap";
 
 class Profile extends React.Component {
@@ -15,7 +16,12 @@ class Profile extends React.Component {
 
   }
 
+
   render() {
+
+    // let birthdayDate = this.props.loggedInUser.birthday
+    // console.log('typeof(birthdayDate) ====', typeof(birthdayDate))
+
     return (
 
       // --- Second option ---
@@ -66,44 +72,46 @@ class Profile extends React.Component {
         
             {/* </object> */}
           </div>
-          <p className="card-description">
-            Unlike fashionable design, it lasts many years – even in today’s
-            throwaway society.
-          </p>
+          
           <CardFooter>
-            <Button
+            {/* <Button
               className="btn-round card-link"
               color="primary"
               onClick={e => e.preventDefault()}
-            >
+            > */}
 
               <CardBody>
                 
                 <div className="card-description">
-                  Hey there! Welcome to your user card. As you can see, it is
-                  already looking great.
                   
-                  <div >
-                  <br/>
+                  <div>
+                  <Container>
+                    <Row className="row align-items-start">
+                    <Col className="text-left">
                     {/* <p>My name is: {JSON.stringify(this.props.loggedInUser)}</p> */}
-                    <p>Email: {this.props.loggedInUser.email}</p>
-                    <p>Name: {this.props.loggedInUser.firstName}</p>
-                    <p>Surname: {this.props.loggedInUser.lastName}</p>
-                    <p>Birthday: {this.props.loggedInUser.birthday}</p>
-                    <p>Country: {this.props.loggedInUser.country}</p>
-                    <p>City: {this.props.loggedInUser.city}</p>
-                    <p>Weight: {this.props.loggedInUser.weight}</p>
-                    <p>Height: {this.props.loggedInUser.height}</p>
-                    <p>Current Day: {this.props.loggedInUser.currentDay}</p>
-
+                    <h5><strong>Email:</strong> {this.props.loggedInUser.email}</h5>
+                    <hr />
+                    <h5><strong>First Name:</strong> {this.props.loggedInUser.firstName}</h5>
+                    <hr />
+                    <h5><strong>Surname:</strong> {this.props.loggedInUser.lastName}</h5>
+                    <hr />
+                    {!this.props.loggedInUser.birthday ? null : <h5><strong>Birthday: </strong> {this.props.loggedInUser.birthday} <hr /> </h5>  } 
+                    {!this.props.loggedInUser.country ? null : <h5><strong>Country:</strong> {this.props.loggedInUser.country} <hr /> </h5> }
+                    {!this.props.loggedInUser.city ? null : <h5><strong>City:</strong> {this.props.loggedInUser.city} <hr /> </h5> }
+                    {!this.props.loggedInUser.weight ? null : <h5><strong>Weight:</strong> {this.props.loggedInUser.weight} <hr /></h5> }
+                    {!this.props.loggedInUser.height ? null : <h5><strong>Height:</strong> {this.props.loggedInUser.height} <hr /> </h5> }
+                    <h5><strong>Current Day:</strong> {this.props.loggedInUser.currentDay}</h5>
+                    </Col>
+                    </Row>
+                  </Container>
                   </div>
                 </div>
                 <br/>
-                <Link to={'/profile-edit'}><Button className="btn-round" color="default">Edit Profile</Button></Link>
+                <Link to={'/profile-edit'}><Button className="btn-round" color="primary">Edit Profile</Button></Link>
               </CardBody>
 
 
-            </Button>
+            {/* </Button> */}
           </CardFooter>
         </CardBody>
       </Card>

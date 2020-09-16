@@ -13,6 +13,7 @@ class EditProfile extends Component {
     email: this.props.loggedInUser.email,
     firstName: this.props.loggedInUser.firstName,
     lastName: this.props.loggedInUser.lastName,
+    birthday: this.props.loggedInUser.birthday,
     country: this.props.loggedInUser.country,
     city: this.props.loggedInUser.city,
     weight: this.props.loggedInUser.weight,
@@ -36,6 +37,7 @@ class EditProfile extends Component {
     const instagramID = this.state.instagramID;
     const avatarUrl = this.state.avatarUrl;
 
+    // put = updates user data
     axios.put(`/api/profile-edit`, { email, instagramID, firstName, lastName, birthday, country, city, weight, height, avatarUrl })
       .then(response => {
         //response.data
@@ -100,13 +102,13 @@ class EditProfile extends Component {
     })
   }
 
-  handleFileUpload = (e) => {
+  handleFileUpload = (e) => { // e = event!
 
     const uploadData = new FormData();
     uploadData.append("avatarUrl", e.target.files[0]);
 
     axios.post('/api/profile-edit', uploadData).then((resp) => {
-      console.log(resp.data.avatarUrl)
+      console.log('resp.data.avatarUrl', resp.data.avatarUrl)
       this.setState({
         avatarUrl: resp.data.avatarUrl
       })
@@ -144,7 +146,7 @@ class EditProfile extends Component {
               </FormGroup>
               <FormGroup className="col-md-6">
                 <label htmlFor="birthday">Date of Birth</label>
-                <Input placeholder="01.01.1988" type="date" name="birthday" value={this.state.birthday} onChange={e => this.handleChangeBirthday(e)}></Input>
+                <Input type="date" name="birthday" value={this.state.birthday} onChange={e => this.handleChangeBirthday(e)}></Input>
               </FormGroup>
             </div>
             <div className="form-row">
@@ -187,29 +189,7 @@ class EditProfile extends Component {
               Submit
         </Button>
           </Form>
-{/* 
-          <label>First Name:</label>
-          <input type="text" name="firstName" value={this.state.firstName} onChange={e => this.handleChangeFirstName(e)} />
-          <label>Last Name:</label>
-          <input type="text" name="lastName" value={this.state.lastName} onChange={e => this.handleChangeLastName(e)} />
-          <label>Email:</label>
-          <input type="text" name="email" value={this.state.email} onChange={e => this.handleChangeEmail(e)} />
-          <label>Date of Birth:</label>
-          <input type="date" name="birthday" value={this.state.birthday} onChange={e => this.handleChangeBirthday(e)} />
-          <label>Country:</label>
-          <input type="text" name="country" value={this.state.country} onChange={e => this.handleChangeCountry(e)} />
-          <label>City:</label>
-          <input type="text" name="city" value={this.state.city} onChange={e => this.handleChangeCity(e)} />
-          <label>Weight:</label>
-          <input type="number" name="weight" value={this.state.weight} onChange={e => this.handleChangeWeight(e)} />
-          <label>Height:</label>
-          <input type="number" name="height" value={this.state.height} onChange={e => this.handleChangeHeight(e)} />
-          <label>Instagram URL:</label>
-          <input type="text" name="instagramID" value={this.state.instagramID} onChange={e => this.handleChangeInstaURL(e)} />
-          <label> Profile Picture</label>
-          <input type="file" name="avatarUrl" onChange={e => this.handleFileUpload(e)} />
 
-          <input type="submit" value="Submit" /> */}
         </div>
       </div>
     )

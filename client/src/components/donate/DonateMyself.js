@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import picture7 from '../../images/picture7.jpg'
 import picture6 from '../../images/picture6.jpg'
 import picture5 from '../../images/picture5.jpg'
@@ -15,7 +14,7 @@ import {
 } from "reactstrap";
 
 
-export class DonateMyself extends Component {
+class DonateMyself extends Component {
 
   state = {
     donationID: ""
@@ -28,24 +27,13 @@ export class DonateMyself extends Component {
     })
   }
 
-  // first = () =>{
-  //   this.setState({
-  //     first: !this.state.first
-  //   })
-  // }
-  // second = ()=>{
-  //   this.setState({
-  //     secaund: !this.state.secaund
-  //   })
-  // }
   render() {
 
     return (
       <div >
     
-   
-        <h1 id="donation" >Donate</h1>
-        <h4 >Let's shape the future together!</h4>
+        <h1 id="donation">Donate</h1>
+        <h4>Let's shape the future together!</h4>
 
         {this.state.donationID ? <div className="plg-donate" key={this.state.donationID} data-widget-id={this.state.donationID}></div> : null}
 
@@ -55,10 +43,11 @@ export class DonateMyself extends Component {
         {/* COVID Link {this.state.first && <div className="plg-donate" data-widget-id="M_5C04BdeZzFbPe4GHRihg"></div>} */}
 
         {/* <a href="https://hello.pledgeling.com/widgets/donate/IXmd3cAELs9Yobg7_nhAzw"> */}
-        <div className='margin-top'><a href='#donation'>
-        <Link onClick={() => this.setDonationID("M_5C04BdeZzFbPe4GHRihg")} >
-          <Card className="text-white text-middle">
-         
+        
+        
+        <div className='margin-top'>
+        <a href='#donation'>
+          <Card className="text-white text-middle" onClick={() => this.setDonationID("M_5C04BdeZzFbPe4GHRihg")}>
             <CardImg
               alt="..."
               src={picture6}
@@ -69,15 +58,13 @@ export class DonateMyself extends Component {
               </CardBody>
             </CardImgOverlay>
           </Card>
-        </Link>
         </a>
         </div>
 
+
         <div> 
         <a href='#donation'>
-        <Link onClick={() => this.setDonationID("w7WdyTPSTifiNdBcJ4eCjA")} >
-        
-          <Card className="text-white text-middle">
+          <Card className="text-white text-middle" onClick={() => this.setDonationID("w7WdyTPSTifiNdBcJ4eCjA")}>
             <CardImg
               alt="..."
               src={picture7}
@@ -86,14 +73,13 @@ export class DonateMyself extends Component {
               <CardTitle className="text-white text-middle" tag="h1">Shape Society</CardTitle>
             </CardImgOverlay>
           </Card>
-        </Link>
         </a>
         </div>
 
+
         <div> 
         <a href='#donation'>
-        <Link onClick={() => this.setDonationID("cN1_jPMIYgrpWjz-Yqv3dQ")} >
-          <Card className="text-white text-middle">
+          <Card className="text-white text-middle" onClick={() => this.setDonationID("cN1_jPMIYgrpWjz-Yqv3dQ")}>
             <CardImg
               alt="..."
               src={picture5}
@@ -104,14 +90,13 @@ export class DonateMyself extends Component {
               </CardBody>
             </CardImgOverlay>
           </Card>
-        </Link>
         </a>
         </div>
 
+
         <div> 
         <a href='#donation'>
-        <Link onClick={() => this.setDonationID("IXmd3cAELs9Yobg7_nhAzw")} >
-          <Card className="text-white text-middle">
+          <Card className="text-white text-middle" onClick={() => this.setDonationID("IXmd3cAELs9Yobg7_nhAzw")}>
             <CardImg
               alt="..."
               src={picture1}
@@ -120,11 +105,8 @@ export class DonateMyself extends Component {
               <CardTitle className="text-white text-middle" tag="h1">Inequality</CardTitle>
             </CardImgOverlay>
           </Card>
-        </Link>
         </a>
         </div>
-
-
 
       </div>
     )

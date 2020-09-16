@@ -39,7 +39,7 @@ class DayDetails extends Component {
           <p className="h1">Day {this.props.match.params.id}</p>
           {this.state.singleDay.map((filteredExercise,i) => (
             <div key={i} className="day-exercise-card margin-top">
-            <Link to={"/exercise/" + filteredExercise._id +"?index=" +i + "&&?day="+ this.props.match.params.id }>
+            <Link to={"/exercise/" + filteredExercise._id + "?index=" + i + "&&?day=" + this.props.match.params.id }>
 
              <p className="h3">{filteredExercise.name}</p>
                 <div className="day-exercise-box" key={filteredExercise._id}>

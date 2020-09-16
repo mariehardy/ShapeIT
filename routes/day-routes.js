@@ -20,12 +20,14 @@ router.get('/day/:id', (req, res, next) => {
       Exercise.find({ videoUrl: { $in: day.exercises }})
       .then(response => {
         // console.log('Day Route response is ======== ', response)
-        
-        let warmups =response.filter(e=> e.type == "Warm-up")
-        let cardio =response.filter(e=> e.type == "Cardio")
-        let vacuum =response.filter(e=> e.type == "Vacuum")
-        let isolation =response.filter(e=> e.type == "Isolation")
-        let stretching =response.filter(e=> e.type == "Stretching")
+        // Here I tell the API in which order I want the different
+        // types of exercises to be loaded, otherwise they are 
+        // added in random order
+        let warmups = response.filter(e=> e.type == "Warm-up")
+        let cardio = response.filter(e=> e.type == "Cardio")
+        let vacuum = response.filter(e=> e.type == "Vacuum")
+        let isolation = response.filter(e=> e.type == "Isolation")
+        let stretching = response.filter(e=> e.type == "Stretching")
 
         data = [...warmups, ...cardio, ...vacuum, ...isolation, ...stretching]
 
