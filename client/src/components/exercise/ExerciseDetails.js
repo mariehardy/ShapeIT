@@ -12,6 +12,8 @@ function getParameterByName(name, url) {
     results = regex.exec(url);
   if (!results) return null;
   if (!results[2]) return "";
+  // decodeURIComponent cannot be used directly to parse 
+  // query parameters from a URL. It needs a bit of preparation.
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
@@ -94,7 +96,7 @@ class ExerciseDetails extends Component {
         this.setState(
           {
             id: e._id,
-            index:this.state.index +1
+            index: this.state.index +1
           },
           () => {
             axios

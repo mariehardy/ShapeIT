@@ -38,15 +38,15 @@ class Plan extends Component {
 
   render() {
     
-    // SORT DAYS IN ORDER
-    let copiedListOfDays = [...this.state.listOfDays]
-    let sortedListOfDays = copiedListOfDays.sort(function (a, b) {
-       if (a.name > b.name) {
-         return 1;
-     } else {
-         return -1;
-     }
-     })
+    // // SORT DAYS IN ORDER
+    // let copiedListOfDays = [...this.state.listOfDays]
+    // let sortedListOfDays = copiedListOfDays.sort(function (a, b) {
+    //    if (a.name > b.name) {
+    //      return 1;
+    //  } else {
+    //      return -1;
+    //  }
+    //  })
 
 
     return (
@@ -58,7 +58,7 @@ class Plan extends Component {
           <p className="h1">Plan</p>
           <div className="plan-container">
           <ul className="flex-5-cols plan-ul">
-          {sortedListOfDays.map((el) => {
+          {this.state.listOfDays.map((el) => {
               return (
                 <li key={el._id} className="plan-li align-items-top">                
                 { el.name === 6 || el.name === 7 || el.name === 13 || el.name === 14 || el.name === 20 || el.name === 21 || el.name === 27 || el.name === 28

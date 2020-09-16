@@ -14,7 +14,7 @@ import {
 } from "reactstrap";
 
 
-export class Donate extends Component {
+class Donate extends Component {
 
   state = {
     donationID: ""
@@ -61,6 +61,7 @@ export class Donate extends Component {
       <div>
 
         <h1>Donate</h1>
+
         <Card>
           <CardImg
             alt="..."
@@ -68,11 +69,10 @@ export class Donate extends Component {
           ></CardImg>
           <CardImgOverlay>
           <CardTitle className="text-right text-white" tag="h4">Shape the future Together</CardTitle>
-          <CardText className="text-right text-white">
-          <h6>When you exercise for charity, you know what’s really important to you</h6>
+          <CardText className="text-right text-white" tag="h6">
+          When you exercise for charity, you know what’s really important to you
           </CardText>
           </CardImgOverlay>
-
           </Card>
 
         
@@ -93,18 +93,16 @@ export class Donate extends Component {
         </Card>
         </Link>
 
+
+
         <Card className="text-white text-middle">
-        
           <CardImg
             alt="..."
             src={picture2}
           ></CardImg>
           <CardBody>
           <CardImgOverlay>
-          
             <CardTitle className="text-white text-middle" tag="h2">Donate ShapeCoins</CardTitle>
-
-          
           </CardImgOverlay>
           <CardText className="text-black text-middle">
               Get sponsored by companies and donate your ShapeCoins from exercises for a good cause
