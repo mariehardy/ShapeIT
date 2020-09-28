@@ -9,6 +9,8 @@ import {
   CardTitle,
   Container, Row, Col
 } from "reactstrap";
+import moment from 'moment';
+
 
 class Profile extends React.Component {
 
@@ -95,7 +97,7 @@ class Profile extends React.Component {
                     <hr />
                     <h5><strong>Surname:</strong> {this.props.loggedInUser.lastName}</h5>
                     <hr />
-                    {!this.props.loggedInUser.birthday ? null : <h5><strong>Birthday: </strong> {this.props.loggedInUser.birthday} <hr /> </h5>  } 
+                    {!this.props.loggedInUser.birthday ? null : <h5><strong>Birthday: </strong> {moment(this.props.loggedInUser.birthday).format('DD/MM/YYYY')}<hr /> </h5>  } 
                     {!this.props.loggedInUser.country ? null : <h5><strong>Country:</strong> {this.props.loggedInUser.country} <hr /> </h5> }
                     {!this.props.loggedInUser.city ? null : <h5><strong>City:</strong> {this.props.loggedInUser.city} <hr /> </h5> }
                     {!this.props.loggedInUser.weight ? null : <h5><strong>Weight:</strong> {this.props.loggedInUser.weight} <hr /></h5> }
