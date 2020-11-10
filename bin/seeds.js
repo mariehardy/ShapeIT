@@ -34,11 +34,11 @@ const daysSeed = [
   }),
   new Day({
     name: 6,
-    exercises: ['']
+    exercises: []
   }),
   new Day({
     name: 7,
-    exercises: ['']
+    exercises: []
   }),
   new Day({
     name: 8,
@@ -62,11 +62,11 @@ const daysSeed = [
   }),
   new Day({
     name: 13,
-    exercises: ['']
+    exercises: []
   }),
   new Day({
     name: 14,
-    exercises: ['']
+    exercises: []
   }),
   new Day({
     name: 15,
@@ -90,11 +90,11 @@ const daysSeed = [
   }),
   new Day({
     name: 20,
-    exercises: ['']
+    exercises: []
   }),
   new Day({
     name: 21,
-    exercises: ['']
+    exercises: []
   }),
   new Day({
     name: 22,
@@ -118,11 +118,11 @@ const daysSeed = [
   }),
   new Day({
     name: 27,
-    exercises: ['']
+    exercises: []
   }),
   new Day({
     name: 28,
-    exercises: ['']
+    exercises: []
   }),
   new Day({
     name: 29,
