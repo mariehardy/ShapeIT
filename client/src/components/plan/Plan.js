@@ -82,7 +82,7 @@ class Plan extends Component {
           <Container>
           <Row className="row align-items-end">
             <Col xs="6">
-            <ProgressBar value={Math.round((this.props.loggedInUser.currentDay-1)*100/30)} />
+            <ProgressBar value={Math.round(this.props.loggedInUser.currentDay-1)} />
             <div className="margin-top">{Math.round((this.props.loggedInUser.currentDay-1)*100/30)} % completed</div>
             </Col>
             <Col xs="6">
