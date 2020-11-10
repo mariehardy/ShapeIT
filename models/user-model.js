@@ -19,7 +19,7 @@ const userSchema = new Schema({
   lastName: String,
   birthday: {
     type: Date,
-  }, //new Date(year, month, day), ??
+  }, 
   country: String,
   city: String,
   weight: Number, //kg

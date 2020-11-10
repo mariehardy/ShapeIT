@@ -37,17 +37,6 @@ class Plan extends Component {
 
 
   render() {
-    
-    // // SORT DAYS IN ORDER
-    // let copiedListOfDays = [...this.state.listOfDays]
-    // let sortedListOfDays = copiedListOfDays.sort(function (a, b) {
-    //    if (a.name > b.name) {
-    //      return 1;
-    //  } else {
-    //      return -1;
-    //  }
-    //  })
-
 
     return (
       <div>
